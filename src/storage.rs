@@ -2,18 +2,12 @@ use crate::config::{ACSV_MAGIC, ACSV_VERSION, ZSTD_COMPRESSION_LEVEL};
 use crate::error::AppError;
 use indicatif::{ProgressBar, ProgressStyle};
 use sha2::{Digest, Sha256};
-use std::fs::{self, File}; // Combine fs imports
+use std::fs::{self, File};
 use std::io::{Read, Write};
 use std::path::Path;
 use std::time::Duration;
 
-/// Saves the processed ASCII frames to a compressed .acsv file with integrity check.
 pub fn save_ascii_frames(file_path: &Path, ascii_frames: &[String]) -> Result<(), AppError> {
-    // log::info!(
-    //     "Saving {} ASCII frames to {}...",
-    //     ascii_frames.len(),
-    //     file_path.display()
-    // );
     let start_time = std::time::Instant::now();
 
     if let Some(parent) = file_path.parent() {
@@ -24,15 +18,12 @@ pub fn save_ascii_frames(file_path: &Path, ascii_frames: &[String]) -> Result<()
     let mut encoder =
         zstd::Encoder::new(file, ZSTD_COMPRESSION_LEVEL).map_err(AppError::Compression)?;
 
-    // Prepare data for hashing
     let mut data_to_hash: Vec<u8> = Vec::new();
 
-    // Header: Magic Bytes + Version + Frame Count
     data_to_hash.write_all(ACSV_MAGIC)?;
     data_to_hash.write_all(&[ACSV_VERSION])?;
     data_to_hash.write_all(&(ascii_frames.len() as u32).to_le_bytes())?;
 
-    // Frame Data: Length + UTF-8 Encoded Frame for each frame
     let mut frames_data: Vec<u8> = Vec::new();
     let pb_frames = ProgressBar::new(ascii_frames.len() as u64);
     pb_frames.set_style(
@@ -53,11 +44,8 @@ pub fn save_ascii_frames(file_path: &Path, ascii_frames: &[String]) -> Result<()
     pb_frames.finish_and_clear();
     data_to_hash.append(&mut frames_data);
 
-    // Calculate Checksum
     let checksum = Sha256::digest(&data_to_hash);
 
-    // Write all data (header + frames + checksum) to the compressed stream
-    // log::info!("Compressing and writing frame data...");
     let pb_write = ProgressBar::new_spinner();
     pb_write.set_style(
         ProgressStyle::default_spinner()
@@ -82,7 +70,6 @@ pub fn save_ascii_frames(file_path: &Path, ascii_frames: &[String]) -> Result<()
     Ok(())
 }
 
-/// Loads ASCII frames from a compressed .acsv file, verifying integrity.
 pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
     log::info!("Loading ASCII frames from {}...", file_path.display());
     let start_time = std::time::Instant::now();
@@ -92,7 +79,6 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
     let mut full_data = Vec::new();
     decoder.read_to_end(&mut full_data)?;
 
-    // Verify Integrity
     let checksum_len = 32;
     if full_data.len() < (4 + 1 + 4 + checksum_len) {
         return Err(AppError::InvalidAcsv(format!(
@@ -115,7 +101,6 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
         return Err(AppError::AcsvIntegrity);
     }
 
-    // Parse Header
     let mut offset = 0;
     if &data_without_hash[offset..offset + 4] != ACSV_MAGIC {
         return Err(AppError::InvalidAcsv("Incorrect magic header".to_string()));
@@ -132,7 +117,6 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
     let frame_count = u32::from_le_bytes(frame_count_bytes);
     offset += 4;
 
-    // Read Frame Data
     let mut ascii_frames = Vec::with_capacity(frame_count as usize);
     let pb = ProgressBar::new(frame_count as u64);
     pb.set_style(
@@ -164,7 +148,7 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
         if offset + frame_len > data_without_hash.len() {
             return Err(AppError::InvalidAcsv(format!(
                 "Unexpected end of file ({} bytes short) while reading frame data for frame {}",
-                (offset + frame_len).saturating_sub(data_without_hash.len()), // Avoid underflow
+                (offset + frame_len).saturating_sub(data_without_hash.len()),
                 i + 1
             )));
         }
@@ -194,7 +178,6 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
     Ok(ascii_frames)
 }
 
-/// Cleans up the directory containing extracted raw frame images.
 pub fn cleanup_frame_directory(frames_dir: &Path) -> Result<(), AppError> {
     if frames_dir.exists() && frames_dir.is_dir() {
         log::info!(

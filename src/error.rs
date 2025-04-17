@@ -1,9 +1,9 @@
-use image::ImageError; // Import for clarity
+use image::ImageError;
 use rodio::{PlayError, decoder::DecoderError};
-use std::num::{ParseFloatError, ParseIntError}; // Import ParseFloatError
+use std::num::{ParseFloatError, ParseIntError};
 use std::path::PathBuf;
-use std::string::FromUtf8Error; // Import for clarity
-use thiserror::Error; // Import for clarity
+use std::string::FromUtf8Error;
+use thiserror::Error;
 
 #[derive(Error, Debug)]
 pub enum AppError {
@@ -46,8 +46,8 @@ pub enum AppError {
     #[error("Failed to parse integer: {0}")]
     ParseInt(#[from] ParseIntError),
 
-    #[error("Failed to parse float: {0}")] // <-- Added Variant
-    ParseFloat(#[from] ParseFloatError), // <-- Added From impl
+    #[error("Failed to parse float: {0}")]
+    ParseFloat(#[from] ParseFloatError),
 
     #[error("Failed to decode UTF-8: {0}")]
     Utf8(#[from] FromUtf8Error),
@@ -77,7 +77,6 @@ pub enum AppError {
     SystemInfo(String),
 }
 
-// Helper for converting crossterm::Result to our AppError
 pub fn map_terminal_error(e: std::io::Error) -> AppError {
     AppError::Terminal(e)
 }

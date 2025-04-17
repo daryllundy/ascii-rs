@@ -1,10 +1,8 @@
 use crate::error::AppError;
-// Removed unused: use crate::terminal::TerminalManager;
 use indicatif::{ProgressBar, ProgressStyle};
 use std::fs;
-// Removed unused: use std::io::Read; // No longer needed with wait_with_output
 use std::path::{Path, PathBuf};
-use std::process::{Command, Output, Stdio}; // Added Output for type clarity
+use std::process::{Command, Output, Stdio};
 use std::time::Duration;
 use tempfile::Builder;
 
@@ -25,7 +23,6 @@ pub struct VideoInfo {
 }
 
 impl VideoInfo {
-    /// Gathers video metadata using ffprobe and sets up paths.
     pub fn analyze(video_path: &Path, terminal_size: (u16, u16)) -> Result<Self, AppError> {
         if !video_path.exists() {
             return Err(AppError::VideoNotFound(video_path.to_path_buf()));
@@ -54,7 +51,7 @@ impl VideoInfo {
         ));
 
         log::info!("Running ffprobe for metadata...");
-        let output: Output = Command::new("ffprobe") // Type annotation for clarity
+        let output: Output = Command::new("ffprobe")
             .args([
                 "-v",
                 "error",
@@ -146,7 +143,6 @@ impl VideoInfo {
         })
     }
 
-    /// Extracts audio using ffmpeg.
     pub fn extract_audio(&self) -> Result<(), AppError> {
         log::info!("Extracting audio to {}...", self.audio_path.display());
         let start_time = std::time::Instant::now();
@@ -180,7 +176,6 @@ impl VideoInfo {
         );
         spinner.enable_steady_tick(Duration::from_millis(100));
 
-        // Use wait_with_output to capture stderr easily
         let output = child
             .wait_with_output()
             .map_err(|e| AppError::FFmpeg(format!("Failed to wait for ffmpeg (audio): {}", e)))?;
@@ -188,7 +183,7 @@ impl VideoInfo {
         spinner.finish_and_clear();
 
         if !output.status.success() {
-            let stderr_output = String::from_utf8_lossy(&output.stderr); // Read from Output struct
+            let stderr_output = String::from_utf8_lossy(&output.stderr);
             log::error!("FFmpeg audio extraction failed: {}", stderr_output);
             return Err(AppError::FFmpeg(format!(
                 "Audio extraction failed (code {}): {}",
@@ -204,7 +199,6 @@ impl VideoInfo {
         Ok(())
     }
 
-    /// Extracts frames using ffmpeg into the temporary directory.
     pub fn extract_frames(&self) -> Result<Vec<PathBuf>, AppError> {
         log::info!("Extracting frames to {}...", self.frames_dir.display());
         let start_time = std::time::Instant::now();
@@ -260,20 +254,18 @@ impl VideoInfo {
             std::thread::sleep(Duration::from_millis(200));
         }
 
-        let output = child
-            .wait_with_output() // Use wait_with_output
-            .map_err(|e| {
-                AppError::FFmpeg(format!(
-                    "Failed waiting for ffmpeg final status (frames): {}",
-                    e
-                ))
-            })?;
+        let output = child.wait_with_output().map_err(|e| {
+            AppError::FFmpeg(format!(
+                "Failed waiting for ffmpeg final status (frames): {}",
+                e
+            ))
+        })?;
 
         pb.set_position(self.total_frames);
         pb.finish_and_clear();
 
         if !output.status.success() {
-            let stderr_output = String::from_utf8_lossy(&output.stderr); // Read from Output struct
+            let stderr_output = String::from_utf8_lossy(&output.stderr);
             log::error!("FFmpeg frame extraction failed: {}", stderr_output);
             return Err(AppError::FFmpeg(format!(
                 "Frame extraction failed (code {}): {}",
@@ -298,7 +290,6 @@ impl VideoInfo {
 
         let min_expected_frames = (self.total_frames as f64 * 0.95).floor() as usize;
         if frame_paths.len() < min_expected_frames && self.total_frames > 0 {
-            // Avoid warning if total_frames was 0
             log::warn!(
                 "Expected ~{} frames (min {}), but found only {}. Playback might be incomplete or end abruptly.",
                 self.total_frames,

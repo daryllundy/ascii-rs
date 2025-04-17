@@ -1,6 +1,5 @@
 use crate::config::{ASCII_CHARS, CHAR_ASPECT_RATIO};
 use crate::error::AppError;
-// Removed unused Pixel import
 use image::imageops::FilterType;
 use image::{DynamicImage, GenericImageView, ImageBuffer, Luma, Rgb};
 use indicatif::{ProgressBar, ProgressStyle};
@@ -8,10 +7,6 @@ use rayon::prelude::*;
 use std::path::{Path, PathBuf};
 use std::sync::Mutex;
 
-// ... (rest of the file remains the same as the previous corrected version) ...
-
-/// Resizes the image to fit the terminal dimensions while maintaining aspect ratio,
-/// then centers it on a black canvas.
 fn resize_and_center(
     img: &DynamicImage,
     terminal_cols: u16,
@@ -71,7 +66,6 @@ fn resize_and_center(
     canvas
 }
 
-/// Converts a single frame (as an image buffer) to its ASCII representation with ANSI colors.
 fn convert_image_to_ascii(img: &ImageBuffer<Rgb<u8>, Vec<u8>>) -> String {
     let (width, height) = img.dimensions();
     if width == 0 || height == 0 {
@@ -111,7 +105,6 @@ fn convert_image_to_ascii(img: &ImageBuffer<Rgb<u8>, Vec<u8>>) -> String {
     frame_buffer
 }
 
-/// Processes a single image file: reads, resizes, converts to ASCII.
 fn process_single_frame(image_path: &Path, terminal_size: (u16, u16)) -> Result<String, AppError> {
     log::trace!("Processing frame: {}", image_path.display());
     let img = image::open(image_path)?;
@@ -120,13 +113,10 @@ fn process_single_frame(image_path: &Path, terminal_size: (u16, u16)) -> Result<
     Ok(ascii_frame)
 }
 
-/// Processes all frame images in parallel using Rayon.
 pub fn process_frames_parallel(
     frame_paths: &[PathBuf],
     terminal_size: (u16, u16),
-    // *** REMOVED total_frames parameter ***
 ) -> Result<Vec<String>, AppError> {
-    // <--- Parameter removed here
     log::info!("Processing {} frames in parallel...", frame_paths.len());
     if frame_paths.is_empty() {
         log::warn!("No frame paths provided for parallel processing.");
@@ -134,8 +124,7 @@ pub fn process_frames_parallel(
     }
     let start_time = std::time::Instant::now();
 
-    // Use the actual number of paths for the progress bar length
-    let pb_len = frame_paths.len() as u64; // <--- Uses len() here
+    let pb_len = frame_paths.len() as u64;
     let pb = ProgressBar::new(pb_len);
 
     pb.set_style(ProgressStyle::default_bar()

@@ -1,9 +1,8 @@
 use crate::config::METRICS_UPDATE_INTERVAL;
 use crate::error::AppError;
-// Need ProcessesToUpdate enum
 use std::sync::{Arc, Mutex};
 use std::thread;
-use sysinfo::{Pid, ProcessRefreshKind, ProcessesToUpdate, System}; // Keep ProcessesToUpdate
+use sysinfo::{Pid, ProcessRefreshKind, ProcessesToUpdate, System};
 
 pub struct MetricsMonitor {
     system: Arc<Mutex<System>>,
@@ -53,25 +52,18 @@ impl MetricsMonitor {
             while *running_arc.lock().unwrap() {
                 let mut sys_guard = system_arc.lock().unwrap();
 
-                // --- CORRECTED CALL for sysinfo 0.34 (using plural + Some variant) ---
                 let refresh_kind = ProcessRefreshKind::nothing().with_cpu().with_memory();
-                // Create array first to extend its lifetime
                 let pids_array = [pid];
-                // Use ProcessesToUpdate::Some with a slice containing the pid
                 let pids_to_update = ProcessesToUpdate::Some(&pids_array);
-                // Call the plural version, passing the correct enum variant
                 let updated_count: usize = (&mut *sys_guard).refresh_processes_specifics(
                     pids_to_update,
-                    false, // Don't remove dead processes
+                    false,
                     refresh_kind,
                 );
-                // --- End Corrected Call ---
 
-                // Check if *our* process was updated (updated_count > 0 implies it was)
                 let refreshed = updated_count > 0;
 
                 let (mem_usage_mb, cpu_usage) = if refreshed {
-                    // Access process using the guard (immutable deref)
                     if let Some(proc) = sys_guard.process(pid) {
                         let mem_usage_bytes = proc.memory();
                         let mem_usage_mb = mem_usage_bytes as f64 / 1024.0 / 1024.0;
@@ -85,7 +77,6 @@ impl MetricsMonitor {
                         (0.0, 0.0)
                     }
                 } else {
-                    // This now means the process likely didn't exist or wasn't updated
                     log::trace!(
                         "Process PID {} not found or not updated during refresh.",
                         pid
@@ -98,7 +89,7 @@ impl MetricsMonitor {
 
                 *metrics_str_arc.lock().unwrap() = new_metrics;
 
-                drop(sys_guard); // Release lock
+                drop(sys_guard);
 
                 if *running_arc.lock().unwrap() {
                     thread::sleep(METRICS_UPDATE_INTERVAL);
