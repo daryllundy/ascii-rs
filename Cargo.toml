@@ -1,0 +1,32 @@
+[package]
+name = "ascii-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] } # Argument parsing
+crossterm = "0.29"          # Terminal manipulation (size, cursor, raw mode, colors, events)
+image = "0.25"              # Image loading, processing, resizing
+rodio = { version = "0.20", features = ["wav"] } # Audio playback (using wav format from ffmpeg)
+zstd = "0.13"               # Zstandard compression/decompression
+sha2 = "0.10"               # SHA-256 hashing
+rayon = "1.10"              # Data parallelism (for frame processing)
+indicatif = "0.17"          # Progress bars
+sysinfo = "0.34"           # System information (CPU/Memory)
+chrono = "0.4"             # Time/Duration formatting
+thiserror = "2.0"          # Error handling helper
+log = "0.4"                # Logging facade
+ctrlc = "3.4"
+env_logger = "0.11"         # Logging implementation
+lazy_static = "1.5"         # For static initialization (like ASCII_CHARS)
+tempfile = "3.19"           # For temporary directories/files if needed during frame extraction
+cpal = "0.15"   # Audio output and device handling
+hound = "3.5"   # Wav file reading
+ringbuf = "0.4"
+crossbeam-channel = "0.5"
+
+# [profile.release]
+# lto = true           # Link-Time Optimization
+# codegen-units = 1    # Optimize for speed over compile time
+# panic = 'abort'      # Abort on panic for smaller binary size (optional)
+# strip = true         # Strip symbols
