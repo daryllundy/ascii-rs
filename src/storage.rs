@@ -1,57 +1,62 @@
+use crate::ascii::RleFrame;
 use crate::config::{ACSV_MAGIC, ACSV_VERSION, ZSTD_COMPRESSION_LEVEL};
 use crate::error::AppError;
 use indicatif::{ProgressBar, ProgressStyle};
+use serde_cbor;
 use sha2::{Digest, Sha256};
 use std::fs::{self, File};
 use std::io::{Read, Write};
 use std::path::Path;
 use std::time::Duration;
 
-pub fn save_ascii_frames(file_path: &Path, ascii_frames: &[String]) -> Result<(), AppError> {
+pub fn save_ascii_frames(file_path: &Path, rle_frames: &[RleFrame]) -> Result<(), AppError> {
     let start_time = std::time::Instant::now();
+    log::info!(
+        "Saving {} frames to cache: {}",
+        rle_frames.len(),
+        file_path.display()
+    );
 
     if let Some(parent) = file_path.parent() {
         fs::create_dir_all(parent).map_err(|e| AppError::CreateDir(parent.to_path_buf(), e))?;
     }
 
+    let pb_encode = ProgressBar::new_spinner();
+    pb_encode.set_style(
+        ProgressStyle::default_spinner()
+            .template("{spinner} Serializing frame data...")
+            .unwrap(),
+    );
+    pb_encode.enable_steady_tick(Duration::from_millis(100));
+
+    let serialized_frames_data = serde_cbor::to_vec(&rle_frames)
+        .map_err(|e| AppError::CacheWrite(format!("Frames serialization failed: {}", e)))?;
+
+    pb_encode.finish_and_clear();
+    log::debug!(
+        "Serialized frames size: {} bytes",
+        serialized_frames_data.len()
+    );
+
+    let mut data_to_hash: Vec<u8> = Vec::new();
+    data_to_hash.write_all(ACSV_MAGIC)?;
+    data_to_hash.write_all(&[ACSV_VERSION])?;
+    data_to_hash.write_all(&(rle_frames.len() as u32).to_le_bytes())?;
+    data_to_hash.write_all(&serialized_frames_data)?;
+
+    let checksum = Sha256::digest(&data_to_hash);
+    log::debug!("Computed checksum: {:x?}", checksum.as_slice());
+
     let file = File::create(file_path)?;
     let mut encoder =
         zstd::Encoder::new(file, ZSTD_COMPRESSION_LEVEL).map_err(AppError::Compression)?;
-
-    let mut data_to_hash: Vec<u8> = Vec::new();
-
-    data_to_hash.write_all(ACSV_MAGIC)?;
-    data_to_hash.write_all(&[ACSV_VERSION])?;
-    data_to_hash.write_all(&(ascii_frames.len() as u32).to_le_bytes())?;
-
-    let mut frames_data: Vec<u8> = Vec::new();
-    let pb_frames = ProgressBar::new(ascii_frames.len() as u64);
-    pb_frames.set_style(
-        ProgressStyle::default_spinner()
-            .template("{spinner} Encoding frame data: {pos}/{len}")
-            .unwrap(),
-    );
-
-    pb_frames.enable_steady_tick(Duration::from_millis(100));
-
-    for frame in ascii_frames {
-        let encoded_frame = frame.as_bytes();
-        let frame_len = encoded_frame.len() as u32;
-        frames_data.write_all(&frame_len.to_le_bytes())?;
-        frames_data.write_all(encoded_frame)?;
-        pb_frames.inc(1);
-    }
-    pb_frames.finish_and_clear();
-    data_to_hash.append(&mut frames_data);
-
-    let checksum = Sha256::digest(&data_to_hash);
 
     let pb_write = ProgressBar::new_spinner();
     pb_write.set_style(
         ProgressStyle::default_spinner()
             .template(&format!(
                 "{{spinner}} Compressing and writing frames data to {}...",
-                file_path.to_str().unwrap()
+                file_path.to_str().unwrap_or("cache file")
             ))
             .unwrap(),
     );
@@ -63,21 +68,30 @@ pub fn save_ascii_frames(file_path: &Path, ascii_frames: &[String]) -> Result<()
     pb_write.finish_and_clear();
 
     log::info!(
-        "Saved ASCII frames to {} successfully in {:.2}s",
+        "Saved frames data to {} successfully (took {:.2}s)",
         file_path.display(),
         start_time.elapsed().as_secs_f64()
     );
     Ok(())
 }
 
-pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
-    log::info!("Loading ASCII frames from {}...", file_path.display());
+pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<RleFrame>, AppError> {
+    log::info!("Loading frames from {}...", file_path.display());
     let start_time = std::time::Instant::now();
 
     let file = File::open(file_path)?;
     let mut decoder = zstd::Decoder::new(file).map_err(AppError::Decompression)?;
     let mut full_data = Vec::new();
+
+    let pb_read = ProgressBar::new_spinner();
+    pb_read.set_style(
+        ProgressStyle::default_spinner()
+            .template("{spinner} Decompressing and reading cache file...")
+            .unwrap(),
+    );
+    pb_read.enable_steady_tick(Duration::from_millis(100));
     decoder.read_to_end(&mut full_data)?;
+    pb_read.finish_and_clear();
 
     let checksum_len = 32;
     if full_data.len() < (4 + 1 + 4 + checksum_len) {
@@ -94,12 +108,13 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
 
     if stored_checksum != computed_checksum.as_slice() {
         log::error!(
-            "ACSV Checksum mismatch! Stored: {:x?}, Computed: {:x?}",
+            "Checksum mismatch! Stored: {:x?}, Computed: {:x?}",
             stored_checksum,
             computed_checksum.as_slice()
         );
         return Err(AppError::AcsvIntegrity);
     }
+    log::debug!("Checksum verified successfully.");
 
     let mut offset = 0;
     if &data_without_hash[offset..offset + 4] != ACSV_MAGIC {
@@ -109,7 +124,14 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
     let version = data_without_hash[offset];
     offset += 1;
     if version != ACSV_VERSION {
+        // log::warn!(
+        //     "Loaded cache version {} differs from current version {}",
+        //     version,
+        //     ACSV_VERSION
+        // );
         return Err(AppError::UnsupportedAcsvVersion(version));
+    } else {
+        log::debug!("Cache version {} matches current version.", version);
     }
     let frame_count_bytes: [u8; 4] = data_without_hash[offset..offset + 4]
         .try_into()
@@ -117,65 +139,42 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<String>, AppError> {
     let frame_count = u32::from_le_bytes(frame_count_bytes);
     offset += 4;
 
-    let mut ascii_frames = Vec::with_capacity(frame_count as usize);
-    let pb = ProgressBar::new(frame_count as u64);
-    pb.set_style(
+    let serialized_frames_data = &data_without_hash[offset..];
+    log::debug!(
+        "Attempting to deserialize {} bytes of data for {} frames.",
+        serialized_frames_data.len(),
+        frame_count
+    );
+
+    let pb_decode = ProgressBar::new(frame_count as u64);
+    pb_decode.set_style(
         ProgressStyle::default_spinner()
-            .template("{spinner} Decoding frame data: {pos}/{len}")
+            .template("{spinner} Deserializing frame data: {pos}/{len}")
             .unwrap(),
     );
-    pb.enable_steady_tick(Duration::from_millis(100));
+    pb_decode.enable_steady_tick(Duration::from_millis(100));
 
-    for i in 0..frame_count {
-        if offset + 4 > data_without_hash.len() {
-            return Err(AppError::InvalidAcsv(format!(
-                "Unexpected end of file while reading frame length for frame {}",
-                i + 1
-            )));
-        }
-        let frame_len_bytes: [u8; 4] =
-            data_without_hash[offset..offset + 4]
-                .try_into()
-                .map_err(|_| {
-                    AppError::InvalidAcsv(format!(
-                        "Could not read length bytes for frame {}",
-                        i + 1
-                    ))
-                })?;
-        let frame_len = u32::from_le_bytes(frame_len_bytes) as usize;
-        offset += 4;
+    let rle_frames: Vec<RleFrame> = serde_cbor::from_slice(serialized_frames_data)
+        .map_err(|e| AppError::CacheRead(format!("Frames deserialization failed: {}", e)))?;
 
-        if offset + frame_len > data_without_hash.len() {
-            return Err(AppError::InvalidAcsv(format!(
-                "Unexpected end of file ({} bytes short) while reading frame data for frame {}",
-                (offset + frame_len).saturating_sub(data_without_hash.len()),
-                i + 1
-            )));
-        }
-        let frame_data = &data_without_hash[offset..offset + frame_len];
-        offset += frame_len;
+    pb_decode.set_position(frame_count as u64);
+    pb_decode.finish_and_clear();
 
-        let frame_string = String::from_utf8(frame_data.to_vec())?;
-        ascii_frames.push(frame_string);
-        pb.inc(1);
-    }
-    pb.finish_and_clear();
-
-    if offset != data_without_hash.len() {
+    if rle_frames.len() != frame_count as usize {
         log::warn!(
-            "Data length mismatch after reading frames. Expected offset {}, actual {}. File might have trailing data.",
-            data_without_hash.len(),
-            offset
+            "Header expected {} frames, but deserialized {} frames.",
+            frame_count,
+            rle_frames.len()
         );
     }
 
     log::info!(
-        "Loaded {} frames from {} successfully in {:.2}s",
-        ascii_frames.len(),
+        "Loaded {} frames from {} successfully (took {:.2}s)",
+        rle_frames.len(),
         file_path.display(),
         start_time.elapsed().as_secs_f64()
     );
-    Ok(ascii_frames)
+    Ok(rle_frames)
 }
 
 pub fn cleanup_frame_directory(frames_dir: &Path) -> Result<(), AppError> {

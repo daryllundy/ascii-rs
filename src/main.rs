@@ -8,6 +8,7 @@ mod storage;
 mod terminal;
 mod video;
 
+use crate::ascii::RleFrame;
 use crate::error::AppError;
 use crate::terminal::TerminalManager;
 use crate::video::VideoInfo;
@@ -21,24 +22,40 @@ use log4rs::{
     encode::pattern::PatternEncoder,
     filter::threshold::ThresholdFilter,
 };
-use std::io::{self, Write};
 use std::path::PathBuf;
 use std::process::exit;
 use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering};
+use std::{
+    io::{self, Write},
+    path::Path,
+};
 
 fn run_app() -> Result<(), AppError> {
     let level = log::LevelFilter::Info;
     let file_path = "latest.log";
 
-    let stderr = ConsoleAppender::builder().target(Target::Stdout).build();
+    let stderr = ConsoleAppender::builder()
+        .target(Target::Stderr)
+        .encoder(Box::new(PatternEncoder::new(
+            "[{d(%Y-%m-%d %H:%M:%S)} {h({l})}] {m}\n",
+        )))
+        .build();
 
     let logfile = FileAppender::builder()
-        .encoder(Box::new(PatternEncoder::new("{l} - {m}\n")))
+        .encoder(Box::new(PatternEncoder::new(
+            "[{d(%Y-%m-%d %H:%M:%S)} {l}] {m}\n",
+        )))
+        .append(false)
         .build(file_path)
-        .unwrap();
+        .map_err(|e| {
+            AppError::Io(io::Error::new(
+                io::ErrorKind::Other,
+                format!("Failed to create log file: {}", e),
+            ))
+        })?;
 
-    let config = Config::builder()
+    let log_config = Config::builder()
         .appender(Appender::builder().build("logfile", Box::new(logfile)))
         .appender(
             Appender::builder()
@@ -49,21 +66,35 @@ fn run_app() -> Result<(), AppError> {
             Root::builder()
                 .appender("logfile")
                 .appender("stderr")
-                .build(LevelFilter::Trace),
+                .build(LevelFilter::Debug),
         )
-        .unwrap();
+        .map_err(|e| {
+            AppError::Io(io::Error::new(
+                io::ErrorKind::Other,
+                format!("Failed to build log config: {}", e),
+            ))
+        })?;
 
-    log4rs::init_config(config).unwrap();
+    log4rs::init_config(log_config).map_err(|e| {
+        AppError::Io(io::Error::new(
+            io::ErrorKind::Other,
+            format!("Failed to init log config: {}", e),
+        ))
+    })?;
 
     log::info!("Starting ASCII Video Player v{}", env!("CARGO_PKG_VERSION"));
     log::info!("By: {}", config::AUTHOR);
+    log::info!(
+        "Log file: {}",
+        Path::new(file_path).canonicalize()?.display()
+    );
 
-    let mut terminal_manager = TerminalManager::new();
+    let terminal_manager = TerminalManager::new();
 
     let global_stop_signal = Arc::new(AtomicBool::new(false));
     let signal_clone = Arc::clone(&global_stop_signal);
     ctrlc::set_handler(move || {
-        log::info!("Ctrl+C detected, setting stop signal.");
+        log::debug!("Ctrl+C detected, setting stop signal.");
         signal_clone.store(true, Ordering::Relaxed);
     })
     .map_err(|e| {
@@ -75,30 +106,32 @@ fn run_app() -> Result<(), AppError> {
     })?;
 
     let args = cli::parse_args();
+
     let video_path = match args.video {
         Some(path) => path,
         None => {
-            let path = {
-                let mut stdout_handle = io::stdout();
-                crossterm::execute!(stdout_handle, crossterm::cursor::Show)
-                    .map_err(error::map_terminal_error)?;
-                crossterm::terminal::disable_raw_mode().map_err(error::map_terminal_error)?;
+            let mut stdout_handle = io::stdout();
+            let _ = crossterm::execute!(stdout_handle, crossterm::cursor::Show);
+            let _ = crossterm::terminal::disable_raw_mode();
 
-                print!("Enter path to video file: ");
-                stdout_handle.flush()?;
+            print!("Enter path to video file: ");
+            stdout_handle.flush()?;
 
-                let mut input_line = String::new();
-                io::stdin().read_line(&mut input_line)?;
+            let mut input_line = String::new();
+            io::stdin().read_line(&mut input_line)?;
 
-                PathBuf::from(input_line.trim().to_string())
-            };
+            let file_path_str = input_line.trim();
+            if file_path_str.is_empty() {
+                log::error!("No video path provided.");
+                return Err(AppError::VideoNotFound("Video path cannot be empty".into()));
+            }
+            let file_path = PathBuf::from(file_path_str);
 
-            crossterm::terminal::enable_raw_mode().map_err(error::map_terminal_error)?;
-            crossterm::execute!(io::stdout(), crossterm::cursor::Hide)
-                .map_err(error::map_terminal_error)?;
-            terminal_manager.clear()?;
-
-            path
+            if !file_path.exists() || !file_path.is_file() {
+                log::error!("Video file not found at '{}'", file_path.display());
+                return Err(AppError::VideoNotFound(file_path));
+            }
+            file_path
         }
     };
 
@@ -109,8 +142,14 @@ fn run_app() -> Result<(), AppError> {
 
     let terminal_size = TerminalManager::get_size()?;
     log::info!("Terminal size: {}x{}", terminal_size.0, terminal_size.1);
-    if terminal_size.0 < 10 || terminal_size.1 < 5 {
-        log::warn!("Terminal size is very small, playback might look strange.");
+    if terminal_size.0 < 30 || terminal_size.1 < 20 {
+        log::warn!(
+            "Terminal size ({},{}) is smaller than recommended ({},{}). Playback might be suboptimal.",
+            terminal_size.0,
+            terminal_size.1,
+            30,
+            20
+        );
     }
 
     let video_info = VideoInfo::analyze(&video_path, terminal_size)?;
@@ -124,7 +163,7 @@ fn run_app() -> Result<(), AppError> {
         return Err(AppError::Interrupted);
     }
 
-    let ascii_frames: Vec<String>;
+    let rle_frames: Vec<RleFrame>;
     let mut cleanup_frames_dir = false;
 
     if video_info.ascii_cache_path.exists() && !args.regenerate {
@@ -135,7 +174,7 @@ fn run_app() -> Result<(), AppError> {
         match storage::load_ascii_frames(&video_info.ascii_cache_path) {
             Ok(frames) => {
                 log::info!("Successfully loaded {} frames from cache.", frames.len());
-                ascii_frames = frames;
+                rle_frames = frames;
             }
             Err(e) => {
                 log::warn!(
@@ -148,19 +187,19 @@ fn run_app() -> Result<(), AppError> {
                     return Err(AppError::Interrupted);
                 }
                 cleanup_frames_dir = true;
-                ascii_frames = ascii::process_frames_parallel(&frame_paths, terminal_size)?;
+                rle_frames = ascii::process_frames_parallel(&frame_paths, terminal_size)?;
                 if global_stop_signal.load(Ordering::Relaxed) {
                     return Err(AppError::Interrupted);
                 }
-                storage::save_ascii_frames(&video_info.ascii_cache_path, &ascii_frames)?;
+                storage::save_ascii_frames(&video_info.ascii_cache_path, &rle_frames)?;
             }
         }
     } else {
         if args.regenerate {
-            log::info!("Regenerate flag set, processing frames...");
+            log::info!("Regenerate flag set, processing frames into RLE format...");
         } else {
             log::info!(
-                "No valid cache file found at {}, processing frames...",
+                "No valid cache file found at {}, processing frames into RLE format...",
                 video_info.ascii_cache_path.display()
             );
         }
@@ -170,11 +209,11 @@ fn run_app() -> Result<(), AppError> {
             return Err(AppError::Interrupted);
         }
         cleanup_frames_dir = true;
-        ascii_frames = ascii::process_frames_parallel(&frame_paths, terminal_size)?;
+        rle_frames = ascii::process_frames_parallel(&frame_paths, terminal_size)?;
         if global_stop_signal.load(Ordering::Relaxed) {
             return Err(AppError::Interrupted);
         }
-        storage::save_ascii_frames(&video_info.ascii_cache_path, &ascii_frames)?;
+        storage::save_ascii_frames(&video_info.ascii_cache_path, &rle_frames)?;
     }
 
     if cleanup_frames_dir {
@@ -184,17 +223,17 @@ fn run_app() -> Result<(), AppError> {
         return Err(AppError::Interrupted);
     }
 
-    if ascii_frames.is_empty() {
-        log::error!("No ASCII frames were generated or loaded. Cannot play.");
+    if rle_frames.is_empty() {
+        log::error!("No frames were generated or loaded. Cannot play.");
         return Err(AppError::FrameProcessing);
     }
 
-    log::info!("Prepared {} ASCII frames for playback.", ascii_frames.len());
+    log::info!("Prepared {} frames for playback.", rle_frames.len());
 
     let metrics_monitor = metrics::MetricsMonitor::new()?;
 
     let mut player = playback::Player::new(
-        ascii_frames,
+        rle_frames,
         video_info.audio_path.clone(),
         video_info.frame_rate,
         terminal_manager,
@@ -211,24 +250,40 @@ fn run_app() -> Result<(), AppError> {
 }
 
 fn main() {
-    match run_app() {
-        Ok(_) => {
+    let main_result = std::panic::catch_unwind(|| run_app());
+
+    let mut stdout = io::stdout();
+    let _ = crossterm::execute!(stdout, crossterm::cursor::Show);
+    let _ = crossterm::terminal::disable_raw_mode();
+
+    match main_result {
+        Ok(Ok(_)) => {
             log::info!("Playback finished successfully.");
-            println!("Playback finished. Press Enter to exit...");
-            let mut buffer = String::new();
-            let _ = io::stdin().read_line(&mut buffer);
             exit(0);
         }
-        Err(AppError::Interrupted) => {
+        Ok(Err(AppError::Interrupted)) => {
             eprintln!("\nPlayback interrupted by user.");
+            log::warn!("Playback interrupted by user.");
             exit(130);
         }
-        Err(e) => {
+        Ok(Err(e)) => {
             eprintln!("\n\x1b[0m\x1b[31mError:\x1b[0m {}", e);
-            println!("An error occurred. Press Enter to exit...");
-            let mut buffer = String::new();
-            let _ = io::stdin().read_line(&mut buffer);
+            log::error!("Application exited with error: {}", e);
             exit(1);
+        }
+        Err(panic_payload) => {
+            eprintln!("\n\x1b[0m\x1b[91mCritical Error: Application Panicked!\x1b[0m");
+            log::error!("Application panicked: {:?}", panic_payload);
+            if let Some(s) = panic_payload.downcast_ref::<String>() {
+                eprintln!("Panic message: {}", s);
+                log::error!("Panic message: {}", s);
+            } else if let Some(s) = panic_payload.downcast_ref::<&str>() {
+                eprintln!("Panic message: {}", s);
+                log::error!("Panic message: {}", s);
+            } else {
+                eprintln!("Panic occurred with unknown payload type.");
+            }
+            exit(101);
         }
     }
 }

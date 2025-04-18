@@ -24,7 +24,7 @@ pub struct VideoInfo {
 
 impl VideoInfo {
     pub fn analyze(video_path: &Path, terminal_size: (u16, u16)) -> Result<Self, AppError> {
-        if !video_path.exists() {
+        if !video_path.exists() || !video_path.is_file() {
             return Err(AppError::VideoNotFound(video_path.to_path_buf()));
         }
 

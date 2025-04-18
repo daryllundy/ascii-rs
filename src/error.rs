@@ -37,6 +37,12 @@ pub enum AppError {
     #[error("Invalid ACSV file: {0}")]
     InvalidAcsv(String),
 
+    #[error("Error during cache write operation: {0}")]
+    CacheWrite(String),
+
+    #[error("Error during cache read operation: {0}")]
+    CacheRead(String),
+
     #[error("ACSV integrity check failed")]
     AcsvIntegrity,
 
