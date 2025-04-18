@@ -2,6 +2,7 @@ use crate::error::AppError;
 use crate::metrics::MetricsMonitor;
 use crate::terminal::TerminalManager;
 use rodio::{Decoder, OutputStream, Sink, Source};
+use std::collections::VecDeque;
 use std::fs::File;
 use std::io::BufReader;
 use std::path::PathBuf;
@@ -89,16 +90,21 @@ impl Player {
             return Ok(());
         }
 
-        let (_stream, stream_handle) = OutputStream::try_default()
-            .map_err(|_| AppError::AudioPlayback(rodio::PlayError::NoDevice))?;
-        let sink = Sink::try_new(&stream_handle)
-            .map_err(|_| AppError::AudioPlayback(rodio::PlayError::NoDevice))?;
+        let (_stream, stream_handle) = OutputStream::try_default().map_err(|e| {
+            log::error!("Failed to get default audio output stream: {}", e);
+            AppError::AudioPlayback(rodio::PlayError::NoDevice)
+        })?;
+        let sink = Sink::try_new(&stream_handle).map_err(|e| {
+            log::error!("Failed to create audio sink: {}", e);
+            AppError::AudioPlayback(rodio::PlayError::NoDevice)
+        })?;
 
         match File::open(&self.audio_path) {
             Ok(file) => match Decoder::new(BufReader::new(file)) {
                 Ok(source) => {
                     sink.append(source);
                     log::info!("Audio loaded from {}", self.audio_path.display());
+                    sink.pause();
                 }
                 Err(e) => log::warn!(
                     "Failed to decode audio file {}: {}. Silent playback.",
@@ -118,11 +124,11 @@ impl Player {
             self.ascii_frames.len()
         );
 
+        thread::sleep(Duration::from_millis(100));
+
         self.terminal_manager.setup()?;
-
-        thread::sleep(Duration::from_millis(500));
-
         self.terminal_manager.clear()?;
+        thread::sleep(Duration::from_millis(50));
 
         sink.play();
         log::debug!("Audio sink playing.");
@@ -133,8 +139,9 @@ impl Player {
         log::debug!("Playback loop starting at: {:?}", playback_start_time);
 
         let num_frames = self.ascii_frames.len();
-        let mut last_frame_actual_finish_time = Instant::now();
         let mut idx: usize = 0;
+
+        let mut frame_finish_times: VecDeque<Instant> = VecDeque::with_capacity(128);
 
         while idx < num_frames {
             if TerminalManager::check_for_exit()? || self.stop_signal.load(Ordering::Relaxed) {
@@ -145,10 +152,11 @@ impl Player {
 
             let target_display_time = playback_start_time + self.sync_frame_delay * (idx as u32);
 
-            let mut now = Instant::now();
-            if now < target_display_time {
-                while now < target_display_time {
-                    let remaining_wait = target_display_time.saturating_duration_since(now);
+            let mut now_before_wait = Instant::now();
+            if now_before_wait < target_display_time {
+                while now_before_wait < target_display_time {
+                    let remaining_wait =
+                        target_display_time.saturating_duration_since(now_before_wait);
 
                     if remaining_wait > SLEEP_THRESHOLD {
                         thread::sleep(remaining_wait.saturating_sub(Duration::from_millis(1)));
@@ -157,20 +165,27 @@ impl Player {
                     } else if !remaining_wait.is_zero() {
                         std::hint::spin_loop();
                     }
-                    now = Instant::now();
+                    now_before_wait = Instant::now();
                 }
+                now_before_wait = Instant::now();
             }
 
-            let actual_elapsed_since_last_frame = last_frame_actual_finish_time.elapsed();
-            let actual_elapsed_playback_time = now.saturating_duration_since(playback_start_time);
-            let current_fps = if actual_elapsed_since_last_frame.as_secs_f32() > 1e-6 {
-                1.0 / actual_elapsed_since_last_frame.as_secs_f32()
-            } else {
-                f32::INFINITY
-            };
+            let actual_elapsed_playback_time =
+                now_before_wait.saturating_duration_since(playback_start_time);
             let time_str = format_duration(actual_elapsed_playback_time);
             let total_time_str = format_duration(self.total_audio_duration);
             let metrics_text = self.metrics_monitor.get_metrics();
+
+            let now_for_fps = Instant::now();
+            while let Some(first_time) = frame_finish_times.front() {
+                if now_for_fps.duration_since(*first_time) > Duration::from_secs(1) {
+                    frame_finish_times.pop_front();
+                } else {
+                    break;
+                }
+            }
+            let current_fps = frame_finish_times.len() as f32;
+
             let status_line = format!(
                 "Time: {} / {} | Frame: {}/{} | FPS: {:>6.1} | {}",
                 time_str,
@@ -183,13 +198,18 @@ impl Player {
 
             let frame = &self.ascii_frames[idx];
             let (cols, _lines) = TerminalManager::get_size()?;
-            let status_bar = format!("\x1b[0m[{}]", status_line);
-            let status_bar_trimmed = if status_bar.chars().count() > cols as usize {
-                status_bar.chars().take(cols as usize).collect::<String>()
+
+            let status_bar_content = format!("[{}]", status_line);
+            let status_bar_trimmed = if status_bar_content.chars().count() > cols as usize {
+                status_bar_content
+                    .chars()
+                    .take(cols as usize)
+                    .collect::<String>()
             } else {
-                status_bar
+                status_bar_content
             };
-            let padding_total = cols.saturating_sub(status_bar_trimmed.chars().count() as u16 + 2);
+
+            let padding_total = cols.saturating_sub(status_bar_trimmed.chars().count() as u16);
             let padding_left = padding_total / 2;
             let padding_right = padding_total - padding_left;
             let centered_status = format!(
@@ -201,9 +221,10 @@ impl Player {
             let output_buffer = format!("{}\n{}", frame, centered_status);
 
             self.terminal_manager.draw(&output_buffer)?;
-            last_frame_actual_finish_time = Instant::now();
 
-            let time_after_draw = last_frame_actual_finish_time;
+            let time_after_draw = Instant::now();
+            frame_finish_times.push_back(time_after_draw);
+
             let next_frame_target_time =
                 playback_start_time + self.sync_frame_delay * (idx as u32 + 1);
 
@@ -216,11 +237,11 @@ impl Player {
 
                 if num_frames_to_skip > 0 {
                     log::debug!(
-                        "Lag detected: {:?}. Skipping {} frame(s). (Current: {}, Next target: {})",
+                        "Lag detected: {:?}. Skipping {} frame(s). (Current: {}, Next target frame index: {})",
                         lag_duration,
                         num_frames_to_skip,
-                        idx + 1,
-                        idx + 1 + num_frames_to_skip + 1
+                        idx,
+                        idx + num_frames_to_skip + 1
                     );
                     idx += num_frames_to_skip + 1;
                 } else {
@@ -254,8 +275,25 @@ fn format_duration(duration: Duration) -> String {
 }
 
 fn get_audio_duration(audio_path: &PathBuf) -> Result<Duration, AppError> {
-    let file = File::open(audio_path)?;
-    let source = Decoder::new(BufReader::new(file))?;
+    let file = match File::open(audio_path) {
+        Ok(f) => f,
+        Err(e) => {
+            log::error!("Failed to open audio file {}: {}", audio_path.display(), e);
+            return Err(AppError::Io(e));
+        }
+    };
+    let source = match Decoder::new(BufReader::new(file)) {
+        Ok(s) => s,
+        Err(e) => {
+            log::error!(
+                "Failed to decode audio file {}: {}",
+                audio_path.display(),
+                e
+            );
+            return Err(AppError::AudioDecode(e));
+        }
+    };
+
     match source.total_duration() {
         Some(duration) => {
             log::debug!(

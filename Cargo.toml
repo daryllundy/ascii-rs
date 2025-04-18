@@ -24,6 +24,8 @@ cpal = "0.15"   # Audio output and device handling
 hound = "3.5"   # Wav file reading
 ringbuf = "0.4"
 crossbeam-channel = "0.5"
+ftail = "0.2.1"
+log4rs = "1.3.0"
 
 # [profile.release]
 # lto = true           # Link-Time Optimization

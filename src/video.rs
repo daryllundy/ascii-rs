@@ -35,7 +35,7 @@ impl VideoInfo {
             .to_string();
 
         let temp_frames_dir = Builder::new()
-            .prefix(&format!("ascii_frames_{}", base_name))
+            .prefix(&format!("ascii_frames_{}", base_name.replace(" ", "_")))
             .tempdir()
             .map_err(|e| AppError::Io(e))?;
         let frames_dir_path = temp_frames_dir.path().to_path_buf();

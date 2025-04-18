@@ -2,6 +2,7 @@
 *.wav
 *.exe
 data/
+videos/
 
 Cargo.lock
 

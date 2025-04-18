@@ -128,7 +128,7 @@ pub fn process_frames_parallel(
     let pb = ProgressBar::new(pb_len);
 
     pb.set_style(ProgressStyle::default_bar()
-        .template("{spinner:.green} Processing Frames [{elapsed_precise}] [{bar:40.cyan/blue}] {pos}/{len} ({eta})")
+        .template("Processing frames [{elapsed_precise}] [{bar:40.cyan/blue}] {pos}/{len} ({eta})")
         .map_err(|e| AppError::Io(std::io::Error::new(std::io::ErrorKind::Other, format!("Progress bar template error: {}", e))))?
         .progress_chars("#>-"));
 

@@ -1,0 +1,1501 @@
+INFO - Starting ASCII Video Player v0.1.0
+INFO - By: minhcrafters
+INFO - Video file selected: .\videos\valorant_1.mp4
+INFO - Terminal size: 314x82
+INFO - Running ffprobe for metadata...
+DEBUG - ffprobe output: ["854", "480", "30000/1001", "482"]
+INFO - Video Info: 854x480 @ 29.97fps, 482 frames, 16.08s
+INFO - Extracting audio to data\valorant_1\valorant_1.wav...
+INFO - Audio extracted successfully in 0.10s
+INFO - Found existing cache file: data\valorant_1\ascii_frames_314-82.acsv
+INFO - Loading ASCII frames from data\valorant_1\ascii_frames_314-82.acsv...
+INFO - Loaded 482 frames from data\valorant_1\ascii_frames_314-82.acsv successfully in 0.44s
+INFO - Successfully loaded 482 frames from cache.
+INFO - Prepared 482 ASCII frames for playback.
+DEBUG - Got audio duration 16.085351s for data\valorant_1\valorant_1.wav
+INFO - Using audio duration (16.085351s) for sync. Calculated frame delay: 33.372098ms
+DEBUG - Player initialized with 482 frames. Sync frame delay: 33.372098ms (0.033372s). Total sync duration: 16.085351s
+INFO - Audio loaded from data\valorant_1\valorant_1.wav
+INFO - Starting playback for 482 frames...
+DEBUG - Audio sink playing.
+DEBUG - Playback loop starting at: Instant { t: 655141.3035709s }
+DEBUG - Metrics thread started.
+DEBUG - Lag detected: 36.452804ms. Skipping 1 frame(s). (Current: 2, Next target: 4)
+DEBUG - Lag detected: 45.39551ms. Skipping 1 frame(s). (Current: 5, Next target: 7)
+DEBUG - Lag detected: 45.439316ms. Skipping 1 frame(s). (Current: 8, Next target: 10)
+DEBUG - Lag detected: 34.14112ms. Skipping 1 frame(s). (Current: 10, Next target: 12)
+DEBUG - Lag detected: 50.711826ms. Skipping 1 frame(s). (Current: 13, Next target: 15)
+DEBUG - Lag detected: 42.32693ms. Skipping 1 frame(s). (Current: 15, Next target: 17)
+DEBUG - Lag detected: 35.365334ms. Skipping 1 frame(s). (Current: 17, Next target: 19)
+DEBUG - Lag detected: 53.56214ms. Skipping 1 frame(s). (Current: 20, Next target: 22)
+DEBUG - Lag detected: 40.180144ms. Skipping 1 frame(s). (Current: 22, Next target: 24)
+DEBUG - Lag detected: 41.76145ms. Skipping 1 frame(s). (Current: 25, Next target: 27)
+DEBUG - Lag detected: 40.046956ms. Skipping 1 frame(s). (Current: 28, Next target: 30)
+DEBUG - Lag detected: 46.671162ms. Skipping 1 frame(s). (Current: 31, Next target: 33)
+DEBUG - Lag detected: 36.893266ms. Skipping 1 frame(s). (Current: 33, Next target: 35)
+DEBUG - Lag detected: 51.403472ms. Skipping 1 frame(s). (Current: 36, Next target: 38)
+DEBUG - Lag detected: 44.354476ms. Skipping 1 frame(s). (Current: 38, Next target: 40)
+DEBUG - Lag detected: 42.78128ms. Skipping 1 frame(s). (Current: 40, Next target: 42)
+DEBUG - Lag detected: 51.694186ms. Skipping 1 frame(s). (Current: 43, Next target: 45)
+DEBUG - Lag detected: 38.47299ms. Skipping 1 frame(s). (Current: 45, Next target: 47)
+DEBUG - Lag detected: 33.555394ms. Skipping 1 frame(s). (Current: 47, Next target: 49)
+DEBUG - Lag detected: 56.4168ms. Skipping 1 frame(s). (Current: 50, Next target: 52)
+DEBUG - Lag detected: 47.160204ms. Skipping 1 frame(s). (Current: 52, Next target: 54)
+DEBUG - Lag detected: 39.781408ms. Skipping 1 frame(s). (Current: 54, Next target: 56)
+DEBUG - Lag detected: 46.552816ms. Skipping 1 frame(s). (Current: 58, Next target: 60)
+DEBUG - Lag detected: 48.624322ms. Skipping 1 frame(s). (Current: 61, Next target: 63)
+DEBUG - Lag detected: 48.036528ms. Skipping 1 frame(s). (Current: 64, Next target: 66)
+DEBUG - Lag detected: 54.594134ms. Skipping 1 frame(s). (Current: 67, Next target: 69)
+DEBUG - Lag detected: 39.921638ms. Skipping 1 frame(s). (Current: 69, Next target: 71)
+DEBUG - Lag detected: 38.812144ms. Skipping 1 frame(s). (Current: 72, Next target: 74)
+DEBUG - Lag detected: 37.16235ms. Skipping 1 frame(s). (Current: 75, Next target: 77)
+DEBUG - Lag detected: 54.025758ms. Skipping 1 frame(s). (Current: 79, Next target: 81)
+DEBUG - Lag detected: 39.218462ms. Skipping 1 frame(s). (Current: 81, Next target: 83)
+INFO - Playback interrupted by user.
+INFO - Playback finished.
+DEBUG - Metrics stop signal sent.
+INFO - Playback finished successfully.
+DEBUG - Metrics thread finished.
+INFO - Starting ASCII Video Player v0.1.0
+INFO - By: minhcrafters
+INFO - Video file selected: .\videos\valorant_1.mp4
+INFO - Terminal size: 314x82
+INFO - Running ffprobe for metadata...
+DEBUG - ffprobe output: ["854", "480", "30000/1001", "482"]
+INFO - Video Info: 854x480 @ 29.97fps, 482 frames, 16.08s
+INFO - Extracting audio to data\valorant_1\valorant_1.wav...
+INFO - Audio extracted successfully in 0.10s
+INFO - Found existing cache file: data\valorant_1\ascii_frames_314-82.acsv
+INFO - Loading ASCII frames from data\valorant_1\ascii_frames_314-82.acsv...
+INFO - Loaded 482 frames from data\valorant_1\ascii_frames_314-82.acsv successfully in 0.43s
+INFO - Successfully loaded 482 frames from cache.
+INFO - Prepared 482 ASCII frames for playback.
+DEBUG - Got audio duration 16.085351s for data\valorant_1\valorant_1.wav
+INFO - Using audio duration (16.085351s) for sync. Calculated frame delay: 33.372098ms
+DEBUG - Player initialized with 482 frames. Sync frame delay: 33.372098ms (0.033372s). Total sync duration: 16.085351s
+INFO - Audio loaded from data\valorant_1\valorant_1.wav
+INFO - Starting playback for 482 frames...
+DEBUG - Audio sink playing.
+DEBUG - Playback loop starting at: Instant { t: 655247.9253341s }
+DEBUG - Metrics thread started.
+DEBUG - Lag detected: 51.635304ms. Skipping 1 frame(s). (Current: 2, Next target: 4)
+DEBUG - Lag detected: 44.254908ms. Skipping 1 frame(s). (Current: 4, Next target: 6)
+DEBUG - Lag detected: 34.684212ms. Skipping 1 frame(s). (Current: 6, Next target: 8)
+DEBUG - Lag detected: 51.115318ms. Skipping 1 frame(s). (Current: 9, Next target: 11)
+DEBUG - Lag detected: 41.855322ms. Skipping 1 frame(s). (Current: 11, Next target: 13)
+DEBUG - Lag detected: 45.521128ms. Skipping 1 frame(s). (Current: 14, Next target: 16)
+DEBUG - Lag detected: 33.666832ms. Skipping 1 frame(s). (Current: 16, Next target: 18)
+DEBUG - Lag detected: 46.23604ms. Skipping 1 frame(s). (Current: 20, Next target: 22)
+DEBUG - Lag detected: 56.743346ms. Skipping 1 frame(s). (Current: 23, Next target: 25)
+DEBUG - Lag detected: 41.27375ms. Skipping 1 frame(s). (Current: 25, Next target: 27)
+DEBUG - Lag detected: 42.560756ms. Skipping 1 frame(s). (Current: 28, Next target: 30)
+DEBUG - Lag detected: 48.327162ms. Skipping 1 frame(s). (Current: 31, Next target: 33)
+DEBUG - Lag detected: 38.480666ms. Skipping 1 frame(s). (Current: 33, Next target: 35)
+DEBUG - Lag detected: 51.013072ms. Skipping 1 frame(s). (Current: 36, Next target: 38)
+DEBUG - Lag detected: 35.133676ms. Skipping 1 frame(s). (Current: 38, Next target: 40)
+DEBUG - Lag detected: 47.912684ms. Skipping 1 frame(s). (Current: 42, Next target: 44)
+DEBUG - Lag detected: 41.147588ms. Skipping 1 frame(s). (Current: 44, Next target: 46)
+DEBUG - Lag detected: 46.817594ms. Skipping 1 frame(s). (Current: 47, Next target: 49)
+DEBUG - Lag detected: 49.8069ms. Skipping 1 frame(s). (Current: 50, Next target: 52)
+DEBUG - Lag detected: 43.921904ms. Skipping 1 frame(s). (Current: 52, Next target: 54)
+DEBUG - Lag detected: 34.644008ms. Skipping 1 frame(s). (Current: 54, Next target: 56)
+DEBUG - Lag detected: 34.436714ms. Skipping 1 frame(s). (Current: 57, Next target: 59)
+DEBUG - Lag detected: 39.493222ms. Skipping 1 frame(s). (Current: 61, Next target: 63)
+DEBUG - Lag detected: 51.521228ms. Skipping 1 frame(s). (Current: 64, Next target: 66)
+DEBUG - Lag detected: 47.023734ms. Skipping 1 frame(s). (Current: 67, Next target: 69)
+DEBUG - Lag detected: 37.31934ms. Skipping 1 frame(s). (Current: 70, Next target: 72)
+DEBUG - Lag detected: 39.223348ms. Skipping 1 frame(s). (Current: 74, Next target: 76)
+DEBUG - Lag detected: 39.794754ms. Skipping 1 frame(s). (Current: 77, Next target: 79)
+DEBUG - Lag detected: 38.800762ms. Skipping 1 frame(s). (Current: 81, Next target: 83)
+DEBUG - Lag detected: 33.96277ms. Skipping 1 frame(s). (Current: 85, Next target: 87)
+DEBUG - Lag detected: 38.771478ms. Skipping 1 frame(s). (Current: 89, Next target: 91)
+DEBUG - Lag detected: 41.838184ms. Skipping 1 frame(s). (Current: 92, Next target: 94)
+DEBUG - Lag detected: 60.52699ms. Skipping 1 frame(s). (Current: 95, Next target: 97)
+DEBUG - Lag detected: 46.583294ms. Skipping 1 frame(s). (Current: 97, Next target: 99)
+DEBUG - Lag detected: 34.497398ms. Skipping 1 frame(s). (Current: 99, Next target: 101)
+DEBUG - Lag detected: 46.835904ms. Skipping 1 frame(s). (Current: 102, Next target: 104)
+DEBUG - Lag detected: 38.665308ms. Skipping 1 frame(s). (Current: 104, Next target: 106)
+DEBUG - Lag detected: 37.394912ms. Skipping 1 frame(s). (Current: 106, Next target: 108)
+DEBUG - Lag detected: 42.197916ms. Skipping 1 frame(s). (Current: 108, Next target: 110)
+DEBUG - Lag detected: 51.51312ms. Skipping 1 frame(s). (Current: 110, Next target: 112)
+DEBUG - Lag detected: 54.742024ms. Skipping 1 frame(s). (Current: 112, Next target: 114)
+DEBUG - Lag detected: 62.221028ms. Skipping 1 frame(s). (Current: 114, Next target: 116)
+DEBUG - Lag detected: 59.665932ms. Skipping 1 frame(s). (Current: 116, Next target: 118)
+DEBUG - Lag detected: 61.056136ms. Skipping 1 frame(s). (Current: 118, Next target: 120)
+DEBUG - Lag detected: 56.57634ms. Skipping 1 frame(s). (Current: 120, Next target: 122)
+DEBUG - Lag detected: 56.198344ms. Skipping 1 frame(s). (Current: 122, Next target: 124)
+DEBUG - Lag detected: 60.021748ms. Skipping 1 frame(s). (Current: 124, Next target: 126)
+DEBUG - Lag detected: 61.723152ms. Skipping 1 frame(s). (Current: 126, Next target: 128)
+DEBUG - Lag detected: 65.735556ms. Skipping 1 frame(s). (Current: 128, Next target: 130)
+INFO - Playback interrupted by user.
+INFO - Playback finished.
+DEBUG - Metrics stop signal sent.
+INFO - Playback finished successfully.
+DEBUG - Metrics thread finished.
+INFO - Starting ASCII Video Player v0.1.0
+INFO - By: minhcrafters
+INFO - Video file selected: .\videos\valorant_1.mp4
+INFO - Terminal size: 314x82
+INFO - Running ffprobe for metadata...
+DEBUG - ffprobe output: ["854", "480", "30000/1001", "482"]
+INFO - Video Info: 854x480 @ 29.97fps, 482 frames, 16.08s
+INFO - Extracting audio to data\valorant_1\valorant_1.wav...
+INFO - Audio extracted successfully in 0.09s
+INFO - Found existing cache file: data\valorant_1\ascii_frames_314-82.acsv
+INFO - Loading ASCII frames from data\valorant_1\ascii_frames_314-82.acsv...
+INFO - Loaded 482 frames from data\valorant_1\ascii_frames_314-82.acsv successfully in 0.42s
+INFO - Successfully loaded 482 frames from cache.
+INFO - Prepared 482 ASCII frames for playback.
+DEBUG - Got audio duration 16.085351s for data\valorant_1\valorant_1.wav
+INFO - Using audio duration (16.085351s) for sync. Calculated frame delay: 33.372098ms
+DEBUG - Player initialized with 482 frames. Sync frame delay: 33.372098ms (0.033372s). Total sync duration: 16.085351s
+INFO - Audio loaded from data\valorant_1\valorant_1.wav
+INFO - Starting playback for 482 frames...
+DEBUG - Audio sink playing.
+DEBUG - Playback loop starting at: Instant { t: 655465.1439115s }
+DEBUG - Metrics thread started.
+DEBUG - Lag detected: 39.960708ms. Skipping 1 frame(s). (Current: 3, Next target frame index: 5)
+DEBUG - Lag detected: 35.070914ms. Skipping 1 frame(s). (Current: 6, Next target frame index: 8)
+DEBUG - Lag detected: 38.668622ms. Skipping 1 frame(s). (Current: 10, Next target frame index: 12)
+DEBUG - Lag detected: 33.809628ms. Skipping 1 frame(s). (Current: 13, Next target frame index: 15)
+DEBUG - Lag detected: 36.530836ms. Skipping 1 frame(s). (Current: 17, Next target frame index: 19)
+DEBUG - Lag detected: 43.272544ms. Skipping 1 frame(s). (Current: 21, Next target frame index: 23)
+DEBUG - Lag detected: 38.87705ms. Skipping 1 frame(s). (Current: 24, Next target frame index: 26)
+DEBUG - Lag detected: 43.036258ms. Skipping 1 frame(s). (Current: 28, Next target frame index: 30)
+DEBUG - Lag detected: 35.674764ms. Skipping 1 frame(s). (Current: 31, Next target frame index: 33)
+DEBUG - Lag detected: 43.302774ms. Skipping 1 frame(s). (Current: 36, Next target frame index: 38)
+DEBUG - Lag detected: 43.01618ms. Skipping 1 frame(s). (Current: 39, Next target frame index: 41)
+DEBUG - Lag detected: 62.298086ms. Skipping 1 frame(s). (Current: 42, Next target frame index: 44)
+DEBUG - Lag detected: 51.19879ms. Skipping 1 frame(s). (Current: 44, Next target frame index: 46)
+DEBUG - Lag detected: 39.247194ms. Skipping 1 frame(s). (Current: 46, Next target frame index: 48)
+DEBUG - Lag detected: 60.4649ms. Skipping 1 frame(s). (Current: 49, Next target frame index: 51)
+DEBUG - Lag detected: 67.362204ms. Skipping 2 frame(s). (Current: 51, Next target frame index: 54)
+DEBUG - Lag detected: 47.180512ms. Skipping 1 frame(s). (Current: 55, Next target frame index: 57)
+DEBUG - Lag detected: 34.328616ms. Skipping 1 frame(s). (Current: 57, Next target frame index: 59)
+DEBUG - Lag detected: 34.024522ms. Skipping 1 frame(s). (Current: 60, Next target frame index: 62)
+DEBUG - Lag detected: 52.21953ms. Skipping 1 frame(s). (Current: 64, Next target frame index: 66)
+DEBUG - Lag detected: 42.146434ms. Skipping 1 frame(s). (Current: 66, Next target frame index: 68)
+DEBUG - Lag detected: 34.198538ms. Skipping 1 frame(s). (Current: 68, Next target frame index: 70)
+DEBUG - Lag detected: 53.435944ms. Skipping 1 frame(s). (Current: 71, Next target frame index: 73)
+DEBUG - Lag detected: 46.469648ms. Skipping 1 frame(s). (Current: 73, Next target frame index: 75)
+DEBUG - Lag detected: 37.177752ms. Skipping 1 frame(s). (Current: 75, Next target frame index: 77)
+DEBUG - Lag detected: 47.52116ms. Skipping 1 frame(s). (Current: 79, Next target frame index: 81)
+DEBUG - Lag detected: 39.639966ms. Skipping 1 frame(s). (Current: 82, Next target frame index: 84)
+DEBUG - Lag detected: 42.458174ms. Skipping 1 frame(s). (Current: 86, Next target frame index: 88)
+DEBUG - Lag detected: 41.58088ms. Skipping 1 frame(s). (Current: 89, Next target frame index: 91)
+DEBUG - Lag detected: 35.720084ms. Skipping 1 frame(s). (Current: 91, Next target frame index: 93)
+DEBUG - Lag detected: 58.89699ms. Skipping 1 frame(s). (Current: 94, Next target frame index: 96)
+DEBUG - Lag detected: 48.703994ms. Skipping 1 frame(s). (Current: 96, Next target frame index: 98)
+DEBUG - Lag detected: 50.382098ms. Skipping 1 frame(s). (Current: 98, Next target frame index: 100)
+DEBUG - Lag detected: 51.270602ms. Skipping 1 frame(s). (Current: 100, Next target frame index: 102)
+DEBUG - Lag detected: 50.164406ms. Skipping 1 frame(s). (Current: 102, Next target frame index: 104)
+DEBUG - Lag detected: 52.64201ms. Skipping 1 frame(s). (Current: 104, Next target frame index: 106)
+DEBUG - Lag detected: 55.838914ms. Skipping 1 frame(s). (Current: 106, Next target frame index: 108)
+DEBUG - Lag detected: 61.596518ms. Skipping 1 frame(s). (Current: 108, Next target frame index: 110)
+DEBUG - Lag detected: 70.026022ms. Skipping 2 frame(s). (Current: 110, Next target frame index: 113)
+DEBUG - Lag detected: 34.360628ms. Skipping 1 frame(s). (Current: 113, Next target frame index: 115)
+DEBUG - Lag detected: 58.489134ms. Skipping 1 frame(s). (Current: 116, Next target frame index: 118)
+DEBUG - Lag detected: 52.528538ms. Skipping 1 frame(s). (Current: 118, Next target frame index: 120)
+DEBUG - Lag detected: 45.361042ms. Skipping 1 frame(s). (Current: 120, Next target frame index: 122)
+DEBUG - Lag detected: 36.262246ms. Skipping 1 frame(s). (Current: 122, Next target frame index: 124)
+DEBUG - Lag detected: 33.80675ms. Skipping 1 frame(s). (Current: 124, Next target frame index: 126)
+DEBUG - Lag detected: 59.917056ms. Skipping 1 frame(s). (Current: 127, Next target frame index: 129)
+DEBUG - Lag detected: 50.70476ms. Skipping 1 frame(s). (Current: 129, Next target frame index: 131)
+DEBUG - Lag detected: 47.839664ms. Skipping 1 frame(s). (Current: 131, Next target frame index: 133)
+DEBUG - Lag detected: 49.957368ms. Skipping 1 frame(s). (Current: 133, Next target frame index: 135)
+DEBUG - Lag detected: 44.463672ms. Skipping 1 frame(s). (Current: 135, Next target frame index: 137)
+DEBUG - Lag detected: 41.795576ms. Skipping 1 frame(s). (Current: 137, Next target frame index: 139)
+DEBUG - Lag detected: 37.36398ms. Skipping 1 frame(s). (Current: 139, Next target frame index: 141)
+DEBUG - Lag detected: 34.403984ms. Skipping 1 frame(s). (Current: 141, Next target frame index: 143)
+DEBUG - Lag detected: 58.23389ms. Skipping 1 frame(s). (Current: 144, Next target frame index: 146)
+DEBUG - Lag detected: 60.603694ms. Skipping 1 frame(s). (Current: 146, Next target frame index: 148)
+DEBUG - Lag detected: 63.448298ms. Skipping 1 frame(s). (Current: 148, Next target frame index: 150)
+DEBUG - Lag detected: 67.720202ms. Skipping 2 frame(s). (Current: 150, Next target frame index: 153)
+DEBUG - Lag detected: 35.695208ms. Skipping 1 frame(s). (Current: 153, Next target frame index: 155)
+DEBUG - Lag detected: 62.052714ms. Skipping 1 frame(s). (Current: 156, Next target frame index: 158)
+DEBUG - Lag detected: 57.399518ms. Skipping 1 frame(s). (Current: 158, Next target frame index: 160)
+DEBUG - Lag detected: 57.912322ms. Skipping 1 frame(s). (Current: 160, Next target frame index: 162)
+DEBUG - Lag detected: 56.092926ms. Skipping 1 frame(s). (Current: 162, Next target frame index: 164)
+DEBUG - Lag detected: 59.67653ms. Skipping 1 frame(s). (Current: 164, Next target frame index: 166)
+DEBUG - Lag detected: 57.089134ms. Skipping 1 frame(s). (Current: 166, Next target frame index: 168)
+DEBUG - Lag detected: 54.739338ms. Skipping 1 frame(s). (Current: 168, Next target frame index: 170)
+DEBUG - Lag detected: 44.486842ms. Skipping 1 frame(s). (Current: 170, Next target frame index: 172)
+DEBUG - Lag detected: 41.632646ms. Skipping 1 frame(s). (Current: 172, Next target frame index: 174)
+DEBUG - Lag detected: 45.59515ms. Skipping 1 frame(s). (Current: 174, Next target frame index: 176)
+DEBUG - Lag detected: 51.128954ms. Skipping 1 frame(s). (Current: 176, Next target frame index: 178)
+DEBUG - Lag detected: 52.474158ms. Skipping 1 frame(s). (Current: 178, Next target frame index: 180)
+DEBUG - Lag detected: 51.677262ms. Skipping 1 frame(s). (Current: 180, Next target frame index: 182)
+DEBUG - Lag detected: 36.364866ms. Skipping 1 frame(s). (Current: 182, Next target frame index: 184)
+DEBUG - Lag detected: 33.44047ms. Skipping 1 frame(s). (Current: 184, Next target frame index: 186)
+DEBUG - Lag detected: 57.245776ms. Skipping 1 frame(s). (Current: 187, Next target frame index: 189)
+DEBUG - Lag detected: 51.75008ms. Skipping 1 frame(s). (Current: 189, Next target frame index: 191)
+DEBUG - Lag detected: 46.433484ms. Skipping 1 frame(s). (Current: 191, Next target frame index: 193)
+DEBUG - Lag detected: 50.184188ms. Skipping 1 frame(s). (Current: 193, Next target frame index: 195)
+DEBUG - Lag detected: 52.806892ms. Skipping 1 frame(s). (Current: 195, Next target frame index: 197)
+DEBUG - Lag detected: 53.721896ms. Skipping 1 frame(s). (Current: 197, Next target frame index: 199)
+DEBUG - Lag detected: 49.8388ms. Skipping 1 frame(s). (Current: 199, Next target frame index: 201)
+DEBUG - Lag detected: 44.887304ms. Skipping 1 frame(s). (Current: 201, Next target frame index: 203)
+DEBUG - Lag detected: 41.777608ms. Skipping 1 frame(s). (Current: 203, Next target frame index: 205)
+DEBUG - Lag detected: 39.470212ms. Skipping 1 frame(s). (Current: 205, Next target frame index: 207)
+DEBUG - Lag detected: 35.214116ms. Skipping 1 frame(s). (Current: 207, Next target frame index: 209)
+DEBUG - Lag detected: 61.619922ms. Skipping 1 frame(s). (Current: 210, Next target frame index: 212)
+DEBUG - Lag detected: 57.610926ms. Skipping 1 frame(s). (Current: 212, Next target frame index: 214)
+DEBUG - Lag detected: 55.75803ms. Skipping 1 frame(s). (Current: 214, Next target frame index: 216)
+DEBUG - Lag detected: 48.795234ms. Skipping 1 frame(s). (Current: 216, Next target frame index: 218)
+DEBUG - Lag detected: 41.662638ms. Skipping 1 frame(s). (Current: 218, Next target frame index: 220)
+DEBUG - Lag detected: 54.300744ms. Skipping 1 frame(s). (Current: 221, Next target frame index: 223)
+DEBUG - Lag detected: 52.074348ms. Skipping 1 frame(s). (Current: 223, Next target frame index: 225)
+DEBUG - Lag detected: 45.418152ms. Skipping 1 frame(s). (Current: 225, Next target frame index: 227)
+DEBUG - Lag detected: 33.611356ms. Skipping 1 frame(s). (Current: 227, Next target frame index: 229)
+DEBUG - Lag detected: 50.568562ms. Skipping 1 frame(s). (Current: 230, Next target frame index: 232)
+DEBUG - Lag detected: 47.205266ms. Skipping 1 frame(s). (Current: 232, Next target frame index: 234)
+DEBUG - Lag detected: 41.22017ms. Skipping 1 frame(s). (Current: 234, Next target frame index: 236)
+DEBUG - Lag detected: 38.923874ms. Skipping 1 frame(s). (Current: 236, Next target frame index: 238)
+DEBUG - Lag detected: 59.94188ms. Skipping 1 frame(s). (Current: 239, Next target frame index: 241)
+DEBUG - Lag detected: 48.724384ms. Skipping 1 frame(s). (Current: 241, Next target frame index: 243)
+DEBUG - Lag detected: 49.240088ms. Skipping 1 frame(s). (Current: 243, Next target frame index: 245)
+DEBUG - Lag detected: 51.649892ms. Skipping 1 frame(s). (Current: 245, Next target frame index: 247)
+DEBUG - Lag detected: 52.365196ms. Skipping 1 frame(s). (Current: 247, Next target frame index: 249)
+DEBUG - Lag detected: 47.5068ms. Skipping 1 frame(s). (Current: 249, Next target frame index: 251)
+DEBUG - Lag detected: 40.223004ms. Skipping 1 frame(s). (Current: 251, Next target frame index: 253)
+DEBUG - Lag detected: 41.923408ms. Skipping 1 frame(s). (Current: 253, Next target frame index: 255)
+DEBUG - Lag detected: 40.394512ms. Skipping 1 frame(s). (Current: 255, Next target frame index: 257)
+DEBUG - Lag detected: 41.739316ms. Skipping 1 frame(s). (Current: 257, Next target frame index: 259)
+DEBUG - Lag detected: 39.39072ms. Skipping 1 frame(s). (Current: 259, Next target frame index: 261)
+DEBUG - Lag detected: 40.801724ms. Skipping 1 frame(s). (Current: 261, Next target frame index: 263)
+DEBUG - Lag detected: 41.691228ms. Skipping 1 frame(s). (Current: 263, Next target frame index: 265)
+DEBUG - Lag detected: 43.546032ms. Skipping 1 frame(s). (Current: 265, Next target frame index: 267)
+DEBUG - Lag detected: 47.210436ms. Skipping 1 frame(s). (Current: 267, Next target frame index: 269)
+DEBUG - Lag detected: 48.03274ms. Skipping 1 frame(s). (Current: 269, Next target frame index: 271)
+DEBUG - Lag detected: 45.616144ms. Skipping 1 frame(s). (Current: 271, Next target frame index: 273)
+DEBUG - Lag detected: 45.683448ms. Skipping 1 frame(s). (Current: 273, Next target frame index: 275)
+DEBUG - Lag detected: 48.699452ms. Skipping 1 frame(s). (Current: 275, Next target frame index: 277)
+DEBUG - Lag detected: 46.009456ms. Skipping 1 frame(s). (Current: 277, Next target frame index: 279)
+DEBUG - Lag detected: 42.15036ms. Skipping 1 frame(s). (Current: 279, Next target frame index: 281)
+DEBUG - Lag detected: 36.857064ms. Skipping 1 frame(s). (Current: 281, Next target frame index: 283)
+DEBUG - Lag detected: 40.573868ms. Skipping 1 frame(s). (Current: 283, Next target frame index: 285)
+DEBUG - Lag detected: 54.526172ms. Skipping 1 frame(s). (Current: 285, Next target frame index: 287)
+DEBUG - Lag detected: 57.549776ms. Skipping 1 frame(s). (Current: 287, Next target frame index: 289)
+DEBUG - Lag detected: 68.21298ms. Skipping 2 frame(s). (Current: 289, Next target frame index: 292)
+DEBUG - Lag detected: 34.690486ms. Skipping 1 frame(s). (Current: 292, Next target frame index: 294)
+DEBUG - Lag detected: 35.23579ms. Skipping 1 frame(s). (Current: 294, Next target frame index: 296)
+DEBUG - Lag detected: 37.342394ms. Skipping 1 frame(s). (Current: 296, Next target frame index: 298)
+DEBUG - Lag detected: 41.288298ms. Skipping 1 frame(s). (Current: 298, Next target frame index: 300)
+DEBUG - Lag detected: 42.922202ms. Skipping 1 frame(s). (Current: 300, Next target frame index: 302)
+DEBUG - Lag detected: 37.694206ms. Skipping 1 frame(s). (Current: 302, Next target frame index: 304)
+DEBUG - Lag detected: 39.19621ms. Skipping 1 frame(s). (Current: 304, Next target frame index: 306)
+DEBUG - Lag detected: 40.514514ms. Skipping 1 frame(s). (Current: 306, Next target frame index: 308)
+DEBUG - Lag detected: 41.956018ms. Skipping 1 frame(s). (Current: 308, Next target frame index: 310)
+DEBUG - Lag detected: 39.826222ms. Skipping 1 frame(s). (Current: 310, Next target frame index: 312)
+DEBUG - Lag detected: 40.755226ms. Skipping 1 frame(s). (Current: 312, Next target frame index: 314)
+DEBUG - Lag detected: 40.30283ms. Skipping 1 frame(s). (Current: 314, Next target frame index: 316)
+DEBUG - Lag detected: 41.660134ms. Skipping 1 frame(s). (Current: 316, Next target frame index: 318)
+DEBUG - Lag detected: 41.315638ms. Skipping 1 frame(s). (Current: 318, Next target frame index: 320)
+DEBUG - Lag detected: 39.256342ms. Skipping 1 frame(s). (Current: 320, Next target frame index: 322)
+DEBUG - Lag detected: 35.228846ms. Skipping 1 frame(s). (Current: 322, Next target frame index: 324)
+DEBUG - Lag detected: 35.48805ms. Skipping 1 frame(s). (Current: 324, Next target frame index: 326)
+DEBUG - Lag detected: 33.951354ms. Skipping 1 frame(s). (Current: 326, Next target frame index: 328)
+DEBUG - Lag detected: 63.71836ms. Skipping 1 frame(s). (Current: 329, Next target frame index: 331)
+DEBUG - Lag detected: 53.649364ms. Skipping 1 frame(s). (Current: 331, Next target frame index: 333)
+DEBUG - Lag detected: 51.458368ms. Skipping 1 frame(s). (Current: 333, Next target frame index: 335)
+DEBUG - Lag detected: 52.518672ms. Skipping 1 frame(s). (Current: 335, Next target frame index: 337)
+DEBUG - Lag detected: 44.617476ms. Skipping 1 frame(s). (Current: 337, Next target frame index: 339)
+DEBUG - Lag detected: 41.99158ms. Skipping 1 frame(s). (Current: 339, Next target frame index: 341)
+DEBUG - Lag detected: 38.031084ms. Skipping 1 frame(s). (Current: 341, Next target frame index: 343)
+DEBUG - Lag detected: 41.945688ms. Skipping 1 frame(s). (Current: 343, Next target frame index: 345)
+DEBUG - Lag detected: 43.229492ms. Skipping 1 frame(s). (Current: 345, Next target frame index: 347)
+DEBUG - Lag detected: 41.142996ms. Skipping 1 frame(s). (Current: 347, Next target frame index: 349)
+DEBUG - Lag detected: 40.6267ms. Skipping 1 frame(s). (Current: 349, Next target frame index: 351)
+DEBUG - Lag detected: 39.432304ms. Skipping 1 frame(s). (Current: 351, Next target frame index: 353)
+INFO - Playback interrupted by user.
+INFO - Playback finished.
+DEBUG - Metrics stop signal sent.
+INFO - Playback finished successfully.
+DEBUG - Metrics thread finished.
+INFO - Starting ASCII Video Player v0.1.0
+INFO - By: minhcrafters
+INFO - Video file selected: .\videos\valorant_1.mp4
+INFO - Terminal size: 314x82
+INFO - Running ffprobe for metadata...
+DEBUG - ffprobe output: ["854", "480", "30000/1001", "482"]
+INFO - Video Info: 854x480 @ 29.97fps, 482 frames, 16.08s
+INFO - Extracting audio to data\valorant_1\valorant_1.wav...
+INFO - Audio extracted successfully in 0.15s
+INFO - Found existing cache file: data\valorant_1\ascii_frames_314-82.acsv
+INFO - Loading ASCII frames from data\valorant_1\ascii_frames_314-82.acsv...
+INFO - Loaded 482 frames from data\valorant_1\ascii_frames_314-82.acsv successfully in 0.42s
+INFO - Successfully loaded 482 frames from cache.
+INFO - Prepared 482 ASCII frames for playback.
+DEBUG - Got audio duration 16.085351s for data\valorant_1\valorant_1.wav
+INFO - Using audio duration (16.085351s) for sync. Calculated frame delay: 33.372098ms
+DEBUG - Player initialized with 482 frames. Sync frame delay: 33.372098ms (0.033372s). Total sync duration: 16.085351s
+INFO - Audio loaded from data\valorant_1\valorant_1.wav
+INFO - Starting playback for 482 frames...
+DEBUG - Audio sink playing.
+DEBUG - Playback loop starting at: Instant { t: 1427.7368759s }
+DEBUG - Metrics thread started.
+DEBUG - Lag detected: 48.241052ms. Skipping 1 frame(s). (Current: 25, Next target frame index: 27)
+DEBUG - Lag detected: 38.617058ms. Skipping 1 frame(s). (Current: 28, Next target frame index: 30)
+DEBUG - Lag detected: 43.565966ms. Skipping 1 frame(s). (Current: 32, Next target frame index: 34)
+DEBUG - Lag detected: 44.196672ms. Skipping 1 frame(s). (Current: 35, Next target frame index: 37)
+DEBUG - Lag detected: 52.323978ms. Skipping 1 frame(s). (Current: 38, Next target frame index: 40)
+DEBUG - Lag detected: 38.672982ms. Skipping 1 frame(s). (Current: 40, Next target frame index: 42)
+DEBUG - Lag detected: 46.045588ms. Skipping 1 frame(s). (Current: 43, Next target frame index: 45)
+DEBUG - Lag detected: 36.585192ms. Skipping 1 frame(s). (Current: 45, Next target frame index: 47)
+DEBUG - Lag detected: 48.346298ms. Skipping 1 frame(s). (Current: 48, Next target frame index: 50)
+DEBUG - Lag detected: 36.448102ms. Skipping 1 frame(s). (Current: 50, Next target frame index: 52)
+DEBUG - Lag detected: 53.769108ms. Skipping 1 frame(s). (Current: 53, Next target frame index: 55)
+DEBUG - Lag detected: 41.386512ms. Skipping 1 frame(s). (Current: 55, Next target frame index: 57)
+DEBUG - Lag detected: 44.311118ms. Skipping 1 frame(s). (Current: 58, Next target frame index: 60)
+DEBUG - Lag detected: 47.069524ms. Skipping 1 frame(s). (Current: 61, Next target frame index: 63)
+DEBUG - Lag detected: 50.26073ms. Skipping 1 frame(s). (Current: 64, Next target frame index: 66)
+DEBUG - Lag detected: 35.422734ms. Skipping 1 frame(s). (Current: 66, Next target frame index: 68)
+DEBUG - Lag detected: 51.436342ms. Skipping 1 frame(s). (Current: 70, Next target frame index: 72)
+DEBUG - Lag detected: 35.656746ms. Skipping 1 frame(s). (Current: 72, Next target frame index: 74)
+DEBUG - Lag detected: 39.777352ms. Skipping 1 frame(s). (Current: 75, Next target frame index: 77)
+DEBUG - Lag detected: 39.211158ms. Skipping 1 frame(s). (Current: 78, Next target frame index: 80)
+DEBUG - Lag detected: 39.329366ms. Skipping 1 frame(s). (Current: 82, Next target frame index: 84)
+DEBUG - Lag detected: 46.545574ms. Skipping 1 frame(s). (Current: 86, Next target frame index: 88)
+DEBUG - Lag detected: 45.36528ms. Skipping 1 frame(s). (Current: 89, Next target frame index: 91)
+DEBUG - Lag detected: 53.262186ms. Skipping 1 frame(s). (Current: 92, Next target frame index: 94)
+DEBUG - Lag detected: 46.37679ms. Skipping 1 frame(s). (Current: 94, Next target frame index: 96)
+DEBUG - Lag detected: 35.894194ms. Skipping 1 frame(s). (Current: 96, Next target frame index: 98)
+DEBUG - Lag detected: 46.8432ms. Skipping 1 frame(s). (Current: 99, Next target frame index: 101)
+DEBUG - Lag detected: 35.165604ms. Skipping 1 frame(s). (Current: 101, Next target frame index: 103)
+DEBUG - Lag detected: 57.50411ms. Skipping 1 frame(s). (Current: 104, Next target frame index: 106)
+DEBUG - Lag detected: 47.621314ms. Skipping 1 frame(s). (Current: 106, Next target frame index: 108)
+DEBUG - Lag detected: 42.033418ms. Skipping 1 frame(s). (Current: 108, Next target frame index: 110)
+DEBUG - Lag detected: 38.408722ms. Skipping 1 frame(s). (Current: 110, Next target frame index: 112)
+DEBUG - Lag detected: 35.038426ms. Skipping 1 frame(s). (Current: 112, Next target frame index: 114)
+DEBUG - Lag detected: 63.638532ms. Skipping 1 frame(s). (Current: 115, Next target frame index: 117)
+DEBUG - Lag detected: 61.239936ms. Skipping 1 frame(s). (Current: 117, Next target frame index: 119)
+DEBUG - Lag detected: 60.60644ms. Skipping 1 frame(s). (Current: 119, Next target frame index: 121)
+DEBUG - Lag detected: 61.952444ms. Skipping 1 frame(s). (Current: 121, Next target frame index: 123)
+DEBUG - Lag detected: 60.185648ms. Skipping 1 frame(s). (Current: 123, Next target frame index: 125)
+DEBUG - Lag detected: 60.728752ms. Skipping 1 frame(s). (Current: 125, Next target frame index: 127)
+DEBUG - Lag detected: 59.252556ms. Skipping 1 frame(s). (Current: 127, Next target frame index: 129)
+DEBUG - Lag detected: 56.09646ms. Skipping 1 frame(s). (Current: 129, Next target frame index: 131)
+DEBUG - Lag detected: 57.003364ms. Skipping 1 frame(s). (Current: 131, Next target frame index: 133)
+DEBUG - Lag detected: 58.207868ms. Skipping 1 frame(s). (Current: 133, Next target frame index: 135)
+DEBUG - Lag detected: 61.702072ms. Skipping 1 frame(s). (Current: 135, Next target frame index: 137)
+DEBUG - Lag detected: 66.676176ms. Skipping 1 frame(s). (Current: 137, Next target frame index: 139)
+DEBUG - Lag detected: 77.28558ms. Skipping 2 frame(s). (Current: 139, Next target frame index: 142)
+DEBUG - Lag detected: 51.163886ms. Skipping 1 frame(s). (Current: 142, Next target frame index: 144)
+DEBUG - Lag detected: 53.90839ms. Skipping 1 frame(s). (Current: 144, Next target frame index: 146)
+DEBUG - Lag detected: 59.608594ms. Skipping 1 frame(s). (Current: 146, Next target frame index: 148)
+DEBUG - Lag detected: 65.112798ms. Skipping 1 frame(s). (Current: 148, Next target frame index: 150)
+DEBUG - Lag detected: 66.364302ms. Skipping 1 frame(s). (Current: 150, Next target frame index: 152)
+DEBUG - Lag detected: 68.439806ms. Skipping 2 frame(s). (Current: 152, Next target frame index: 155)
+DEBUG - Lag detected: 40.161512ms. Skipping 1 frame(s). (Current: 155, Next target frame index: 157)
+DEBUG - Lag detected: 44.712016ms. Skipping 1 frame(s). (Current: 157, Next target frame index: 159)
+DEBUG - Lag detected: 47.21802ms. Skipping 1 frame(s). (Current: 159, Next target frame index: 161)
+DEBUG - Lag detected: 44.079124ms. Skipping 1 frame(s). (Current: 161, Next target frame index: 163)
+DEBUG - Lag detected: 38.681428ms. Skipping 1 frame(s). (Current: 163, Next target frame index: 165)
+DEBUG - Lag detected: 34.807932ms. Skipping 1 frame(s). (Current: 165, Next target frame index: 167)
+DEBUG - Lag detected: 66.262738ms. Skipping 1 frame(s). (Current: 168, Next target frame index: 170)
+DEBUG - Lag detected: 62.854542ms. Skipping 1 frame(s). (Current: 170, Next target frame index: 172)
+DEBUG - Lag detected: 61.127746ms. Skipping 1 frame(s). (Current: 172, Next target frame index: 174)
+DEBUG - Lag detected: 57.46115ms. Skipping 1 frame(s). (Current: 174, Next target frame index: 176)
+DEBUG - Lag detected: 59.211154ms. Skipping 1 frame(s). (Current: 176, Next target frame index: 178)
+DEBUG - Lag detected: 59.752858ms. Skipping 1 frame(s). (Current: 178, Next target frame index: 180)
+DEBUG - Lag detected: 59.211762ms. Skipping 1 frame(s). (Current: 180, Next target frame index: 182)
+DEBUG - Lag detected: 60.897566ms. Skipping 1 frame(s). (Current: 182, Next target frame index: 184)
+DEBUG - Lag detected: 61.48377ms. Skipping 1 frame(s). (Current: 184, Next target frame index: 186)
+DEBUG - Lag detected: 64.721274ms. Skipping 1 frame(s). (Current: 186, Next target frame index: 188)
+DEBUG - Lag detected: 64.483678ms. Skipping 1 frame(s). (Current: 188, Next target frame index: 190)
+DEBUG - Lag detected: 56.373182ms. Skipping 1 frame(s). (Current: 190, Next target frame index: 192)
+DEBUG - Lag detected: 48.316686ms. Skipping 1 frame(s). (Current: 192, Next target frame index: 194)
+DEBUG - Lag detected: 44.79479ms. Skipping 1 frame(s). (Current: 194, Next target frame index: 196)
+DEBUG - Lag detected: 49.451194ms. Skipping 1 frame(s). (Current: 196, Next target frame index: 198)
+DEBUG - Lag detected: 54.245598ms. Skipping 1 frame(s). (Current: 198, Next target frame index: 200)
+DEBUG - Lag detected: 55.340702ms. Skipping 1 frame(s). (Current: 200, Next target frame index: 202)
+DEBUG - Lag detected: 54.212906ms. Skipping 1 frame(s). (Current: 202, Next target frame index: 204)
+DEBUG - Lag detected: 54.27011ms. Skipping 1 frame(s). (Current: 204, Next target frame index: 206)
+DEBUG - Lag detected: 53.007214ms. Skipping 1 frame(s). (Current: 206, Next target frame index: 208)
+DEBUG - Lag detected: 52.404118ms. Skipping 1 frame(s). (Current: 208, Next target frame index: 210)
+DEBUG - Lag detected: 52.014022ms. Skipping 1 frame(s). (Current: 210, Next target frame index: 212)
+DEBUG - Lag detected: 54.330626ms. Skipping 1 frame(s). (Current: 212, Next target frame index: 214)
+DEBUG - Lag detected: 51.44813ms. Skipping 1 frame(s). (Current: 214, Next target frame index: 216)
+DEBUG - Lag detected: 48.705134ms. Skipping 1 frame(s). (Current: 216, Next target frame index: 218)
+DEBUG - Lag detected: 45.947938ms. Skipping 1 frame(s). (Current: 218, Next target frame index: 220)
+DEBUG - Lag detected: 35.693342ms. Skipping 1 frame(s). (Current: 220, Next target frame index: 222)
+DEBUG - Lag detected: 50.553948ms. Skipping 1 frame(s). (Current: 223, Next target frame index: 225)
+DEBUG - Lag detected: 46.732352ms. Skipping 1 frame(s). (Current: 225, Next target frame index: 227)
+DEBUG - Lag detected: 40.022056ms. Skipping 1 frame(s). (Current: 227, Next target frame index: 229)
+DEBUG - Lag detected: 35.33846ms. Skipping 1 frame(s). (Current: 229, Next target frame index: 231)
+DEBUG - Lag detected: 63.814966ms. Skipping 1 frame(s). (Current: 232, Next target frame index: 234)
+DEBUG - Lag detected: 57.08837ms. Skipping 1 frame(s). (Current: 234, Next target frame index: 236)
+DEBUG - Lag detected: 56.144674ms. Skipping 1 frame(s). (Current: 236, Next target frame index: 238)
+DEBUG - Lag detected: 57.845078ms. Skipping 1 frame(s). (Current: 238, Next target frame index: 240)
+DEBUG - Lag detected: 54.297482ms. Skipping 1 frame(s). (Current: 240, Next target frame index: 242)
+DEBUG - Lag detected: 51.989986ms. Skipping 1 frame(s). (Current: 242, Next target frame index: 244)
+DEBUG - Lag detected: 55.10199ms. Skipping 1 frame(s). (Current: 244, Next target frame index: 246)
+DEBUG - Lag detected: 54.644494ms. Skipping 1 frame(s). (Current: 246, Next target frame index: 248)
+DEBUG - Lag detected: 56.473898ms. Skipping 1 frame(s). (Current: 248, Next target frame index: 250)
+DEBUG - Lag detected: 48.098902ms. Skipping 1 frame(s). (Current: 250, Next target frame index: 252)
+DEBUG - Lag detected: 49.970606ms. Skipping 1 frame(s). (Current: 252, Next target frame index: 254)
+DEBUG - Lag detected: 51.95091ms. Skipping 1 frame(s). (Current: 254, Next target frame index: 256)
+DEBUG - Lag detected: 55.906414ms. Skipping 1 frame(s). (Current: 256, Next target frame index: 258)
+DEBUG - Lag detected: 59.703618ms. Skipping 1 frame(s). (Current: 258, Next target frame index: 260)
+DEBUG - Lag detected: 62.375822ms. Skipping 1 frame(s). (Current: 260, Next target frame index: 262)
+DEBUG - Lag detected: 67.969726ms. Skipping 2 frame(s). (Current: 262, Next target frame index: 265)
+DEBUG - Lag detected: 37.534132ms. Skipping 1 frame(s). (Current: 265, Next target frame index: 267)
+DEBUG - Lag detected: 36.496036ms. Skipping 1 frame(s). (Current: 267, Next target frame index: 269)
+DEBUG - Lag detected: 35.27414ms. Skipping 1 frame(s). (Current: 269, Next target frame index: 271)
+DEBUG - Lag detected: 35.923044ms. Skipping 1 frame(s). (Current: 271, Next target frame index: 273)
+DEBUG - Lag detected: 36.389948ms. Skipping 1 frame(s). (Current: 273, Next target frame index: 275)
+DEBUG - Lag detected: 37.131452ms. Skipping 1 frame(s). (Current: 275, Next target frame index: 277)
+DEBUG - Lag detected: 37.639956ms. Skipping 1 frame(s). (Current: 277, Next target frame index: 279)
+DEBUG - Lag detected: 36.61046ms. Skipping 1 frame(s). (Current: 279, Next target frame index: 281)
+DEBUG - Lag detected: 38.382364ms. Skipping 1 frame(s). (Current: 281, Next target frame index: 283)
+DEBUG - Lag detected: 36.395068ms. Skipping 1 frame(s). (Current: 283, Next target frame index: 285)
+DEBUG - Lag detected: 66.898874ms. Skipping 2 frame(s). (Current: 286, Next target frame index: 289)
+DEBUG - Lag detected: 37.75808ms. Skipping 1 frame(s). (Current: 289, Next target frame index: 291)
+DEBUG - Lag detected: 47.190384ms. Skipping 1 frame(s). (Current: 291, Next target frame index: 293)
+DEBUG - Lag detected: 45.976388ms. Skipping 1 frame(s). (Current: 293, Next target frame index: 295)
+DEBUG - Lag detected: 49.598792ms. Skipping 1 frame(s). (Current: 295, Next target frame index: 297)
+DEBUG - Lag detected: 51.777396ms. Skipping 1 frame(s). (Current: 297, Next target frame index: 299)
+DEBUG - Lag detected: 54.9931ms. Skipping 1 frame(s). (Current: 299, Next target frame index: 301)
+DEBUG - Lag detected: 55.535304ms. Skipping 1 frame(s). (Current: 301, Next target frame index: 303)
+DEBUG - Lag detected: 52.312008ms. Skipping 1 frame(s). (Current: 303, Next target frame index: 305)
+DEBUG - Lag detected: 52.772412ms. Skipping 1 frame(s). (Current: 305, Next target frame index: 307)
+DEBUG - Lag detected: 49.047116ms. Skipping 1 frame(s). (Current: 307, Next target frame index: 309)
+DEBUG - Lag detected: 41.11072ms. Skipping 1 frame(s). (Current: 309, Next target frame index: 311)
+DEBUG - Lag detected: 39.460324ms. Skipping 1 frame(s). (Current: 311, Next target frame index: 313)
+DEBUG - Lag detected: 39.612228ms. Skipping 1 frame(s). (Current: 313, Next target frame index: 315)
+DEBUG - Lag detected: 35.184932ms. Skipping 1 frame(s). (Current: 315, Next target frame index: 317)
+DEBUG - Lag detected: 35.924836ms. Skipping 1 frame(s). (Current: 317, Next target frame index: 319)
+DEBUG - Lag detected: 35.71274ms. Skipping 1 frame(s). (Current: 319, Next target frame index: 321)
+DEBUG - Lag detected: 39.275344ms. Skipping 1 frame(s). (Current: 321, Next target frame index: 323)
+DEBUG - Lag detected: 40.147448ms. Skipping 1 frame(s). (Current: 323, Next target frame index: 325)
+DEBUG - Lag detected: 50.630252ms. Skipping 1 frame(s). (Current: 325, Next target frame index: 327)
+DEBUG - Lag detected: 57.288056ms. Skipping 1 frame(s). (Current: 327, Next target frame index: 329)
+DEBUG - Lag detected: 57.39876ms. Skipping 1 frame(s). (Current: 329, Next target frame index: 331)
+DEBUG - Lag detected: 54.869064ms. Skipping 1 frame(s). (Current: 331, Next target frame index: 333)
+DEBUG - Lag detected: 57.658368ms. Skipping 1 frame(s). (Current: 333, Next target frame index: 335)
+DEBUG - Lag detected: 60.585972ms. Skipping 1 frame(s). (Current: 335, Next target frame index: 337)
+DEBUG - Lag detected: 62.003076ms. Skipping 1 frame(s). (Current: 337, Next target frame index: 339)
+DEBUG - Lag detected: 62.43368ms. Skipping 1 frame(s). (Current: 339, Next target frame index: 341)
+DEBUG - Lag detected: 62.869184ms. Skipping 1 frame(s). (Current: 341, Next target frame index: 343)
+DEBUG - Lag detected: 62.060588ms. Skipping 1 frame(s). (Current: 343, Next target frame index: 345)
+DEBUG - Lag detected: 60.745792ms. Skipping 1 frame(s). (Current: 345, Next target frame index: 347)
+DEBUG - Lag detected: 61.814596ms. Skipping 1 frame(s). (Current: 347, Next target frame index: 349)
+DEBUG - Lag detected: 62.9444ms. Skipping 1 frame(s). (Current: 349, Next target frame index: 351)
+DEBUG - Lag detected: 67.775504ms. Skipping 2 frame(s). (Current: 351, Next target frame index: 354)
+DEBUG - Lag detected: 38.78061ms. Skipping 1 frame(s). (Current: 354, Next target frame index: 356)
+DEBUG - Lag detected: 42.014814ms. Skipping 1 frame(s). (Current: 356, Next target frame index: 358)
+DEBUG - Lag detected: 47.685418ms. Skipping 1 frame(s). (Current: 358, Next target frame index: 360)
+DEBUG - Lag detected: 52.432122ms. Skipping 1 frame(s). (Current: 360, Next target frame index: 362)
+DEBUG - Lag detected: 52.221726ms. Skipping 1 frame(s). (Current: 362, Next target frame index: 364)
+DEBUG - Lag detected: 59.00313ms. Skipping 1 frame(s). (Current: 364, Next target frame index: 366)
+DEBUG - Lag detected: 62.745134ms. Skipping 1 frame(s). (Current: 366, Next target frame index: 368)
+DEBUG - Lag detected: 62.448238ms. Skipping 1 frame(s). (Current: 368, Next target frame index: 370)
+DEBUG - Lag detected: 66.518842ms. Skipping 1 frame(s). (Current: 370, Next target frame index: 372)
+DEBUG - Lag detected: 74.175646ms. Skipping 2 frame(s). (Current: 372, Next target frame index: 375)
+DEBUG - Lag detected: 42.267152ms. Skipping 1 frame(s). (Current: 375, Next target frame index: 377)
+DEBUG - Lag detected: 47.747056ms. Skipping 1 frame(s). (Current: 377, Next target frame index: 379)
+DEBUG - Lag detected: 55.98616ms. Skipping 1 frame(s). (Current: 379, Next target frame index: 381)
+DEBUG - Lag detected: 64.933864ms. Skipping 1 frame(s). (Current: 381, Next target frame index: 383)
+DEBUG - Lag detected: 68.930868ms. Skipping 2 frame(s). (Current: 383, Next target frame index: 386)
+DEBUG - Lag detected: 43.054874ms. Skipping 1 frame(s). (Current: 386, Next target frame index: 388)
+DEBUG - Lag detected: 50.340478ms. Skipping 1 frame(s). (Current: 388, Next target frame index: 390)
+DEBUG - Lag detected: 56.712082ms. Skipping 1 frame(s). (Current: 390, Next target frame index: 392)
+DEBUG - Lag detected: 62.122586ms. Skipping 1 frame(s). (Current: 392, Next target frame index: 394)
+DEBUG - Lag detected: 65.09069ms. Skipping 1 frame(s). (Current: 394, Next target frame index: 396)
+DEBUG - Lag detected: 62.643794ms. Skipping 1 frame(s). (Current: 396, Next target frame index: 398)
+DEBUG - Lag detected: 63.441298ms. Skipping 1 frame(s). (Current: 398, Next target frame index: 400)
+DEBUG - Lag detected: 57.897902ms. Skipping 1 frame(s). (Current: 400, Next target frame index: 402)
+DEBUG - Lag detected: 57.049806ms. Skipping 1 frame(s). (Current: 402, Next target frame index: 404)
+DEBUG - Lag detected: 56.98431ms. Skipping 1 frame(s). (Current: 404, Next target frame index: 406)
+DEBUG - Lag detected: 55.323514ms. Skipping 1 frame(s). (Current: 406, Next target frame index: 408)
+DEBUG - Lag detected: 60.049018ms. Skipping 1 frame(s). (Current: 408, Next target frame index: 410)
+DEBUG - Lag detected: 65.888222ms. Skipping 1 frame(s). (Current: 410, Next target frame index: 412)
+DEBUG - Lag detected: 71.757826ms. Skipping 2 frame(s). (Current: 412, Next target frame index: 415)
+DEBUG - Lag detected: 43.971032ms. Skipping 1 frame(s). (Current: 415, Next target frame index: 417)
+DEBUG - Lag detected: 41.602636ms. Skipping 1 frame(s). (Current: 417, Next target frame index: 419)
+DEBUG - Lag detected: 37.95884ms. Skipping 1 frame(s). (Current: 419, Next target frame index: 421)
+DEBUG - Lag detected: 36.143644ms. Skipping 1 frame(s). (Current: 421, Next target frame index: 423)
+DEBUG - Lag detected: 38.180948ms. Skipping 1 frame(s). (Current: 423, Next target frame index: 425)
+DEBUG - Lag detected: 38.257152ms. Skipping 1 frame(s). (Current: 425, Next target frame index: 427)
+DEBUG - Lag detected: 37.216056ms. Skipping 1 frame(s). (Current: 427, Next target frame index: 429)
+DEBUG - Lag detected: 41.48326ms. Skipping 1 frame(s). (Current: 429, Next target frame index: 431)
+DEBUG - Lag detected: 45.120464ms. Skipping 1 frame(s). (Current: 431, Next target frame index: 433)
+DEBUG - Lag detected: 52.243568ms. Skipping 1 frame(s). (Current: 433, Next target frame index: 435)
+DEBUG - Lag detected: 56.046172ms. Skipping 1 frame(s). (Current: 435, Next target frame index: 437)
+DEBUG - Lag detected: 60.884776ms. Skipping 1 frame(s). (Current: 437, Next target frame index: 439)
+DEBUG - Lag detected: 62.01918ms. Skipping 1 frame(s). (Current: 439, Next target frame index: 441)
+DEBUG - Lag detected: 64.870884ms. Skipping 1 frame(s). (Current: 441, Next target frame index: 443)
+DEBUG - Lag detected: 68.775088ms. Skipping 2 frame(s). (Current: 443, Next target frame index: 446)
+DEBUG - Lag detected: 39.222994ms. Skipping 1 frame(s). (Current: 446, Next target frame index: 448)
+DEBUG - Lag detected: 40.398198ms. Skipping 1 frame(s). (Current: 448, Next target frame index: 450)
+DEBUG - Lag detected: 40.140802ms. Skipping 1 frame(s). (Current: 450, Next target frame index: 452)
+DEBUG - Lag detected: 41.749606ms. Skipping 1 frame(s). (Current: 452, Next target frame index: 454)
+DEBUG - Lag detected: 42.33851ms. Skipping 1 frame(s). (Current: 454, Next target frame index: 456)
+DEBUG - Lag detected: 41.524814ms. Skipping 1 frame(s). (Current: 456, Next target frame index: 458)
+DEBUG - Lag detected: 36.006518ms. Skipping 1 frame(s). (Current: 458, Next target frame index: 460)
+DEBUG - Lag detected: 35.493522ms. Skipping 1 frame(s). (Current: 460, Next target frame index: 462)
+DEBUG - Lag detected: 39.495626ms. Skipping 1 frame(s). (Current: 462, Next target frame index: 464)
+DEBUG - Lag detected: 39.45713ms. Skipping 1 frame(s). (Current: 464, Next target frame index: 466)
+DEBUG - Lag detected: 56.883536ms. Skipping 1 frame(s). (Current: 467, Next target frame index: 469)
+DEBUG - Lag detected: 51.31734ms. Skipping 1 frame(s). (Current: 469, Next target frame index: 471)
+DEBUG - Lag detected: 42.902944ms. Skipping 1 frame(s). (Current: 471, Next target frame index: 473)
+DEBUG - Lag detected: 37.77315ms. Skipping 1 frame(s). (Current: 474, Next target frame index: 476)
+INFO - Playback finished.
+DEBUG - Metrics stop signal sent.
+DEBUG - Metrics thread finished.
+INFO - Playback finished successfully.
+INFO - Starting ASCII Video Player v0.1.0
+INFO - By: minhcrafters
+INFO - Video file selected: .\videos\valorant_1.mp4
+INFO - Terminal size: 314x82
+INFO - Running ffprobe for metadata...
+DEBUG - ffprobe output: ["854", "480", "30000/1001", "482"]
+INFO - Video Info: 854x480 @ 29.97fps, 482 frames, 16.08s
+INFO - Extracting audio to data\valorant_1\valorant_1.wav...
+INFO - Audio extracted successfully in 0.09s
+INFO - Found existing cache file: data\valorant_1\ascii_frames_314-82.acsv
+INFO - Loading ASCII frames from data\valorant_1\ascii_frames_314-82.acsv...
+INFO - Loaded 482 frames from data\valorant_1\ascii_frames_314-82.acsv successfully in 0.41s
+INFO - Successfully loaded 482 frames from cache.
+INFO - Prepared 482 ASCII frames for playback.
+DEBUG - Got audio duration 16.085351s for data\valorant_1\valorant_1.wav
+INFO - Using audio duration (16.085351s) for sync. Calculated frame delay: 33.372098ms
+DEBUG - Player initialized with 482 frames. Sync frame delay: 33.372098ms (0.033372s). Total sync duration: 16.085351s
+INFO - Audio loaded from data\valorant_1\valorant_1.wav
+INFO - Starting playback for 482 frames...
+DEBUG - Audio sink playing.
+DEBUG - Playback loop starting at: Instant { t: 1748.8741955s }
+DEBUG - Metrics thread started.
+DEBUG - Lag detected: 39.231204ms. Skipping 1 frame(s). (Current: 1, Next target frame index: 3)
+DEBUG - Lag detected: 41.247008ms. Skipping 1 frame(s). (Current: 3, Next target frame index: 5)
+DEBUG - Lag detected: 34.793916ms. Skipping 1 frame(s). (Current: 7, Next target frame index: 9)
+DEBUG - Lag detected: 38.253924ms. Skipping 1 frame(s). (Current: 11, Next target frame index: 13)
+DEBUG - Lag detected: 39.30623ms. Skipping 1 frame(s). (Current: 14, Next target frame index: 16)
+DEBUG - Lag detected: 34.050836ms. Skipping 1 frame(s). (Current: 17, Next target frame index: 19)
+DEBUG - Lag detected: 35.416144ms. Skipping 1 frame(s). (Current: 21, Next target frame index: 23)
+DEBUG - Lag detected: 35.347354ms. Skipping 1 frame(s). (Current: 26, Next target frame index: 28)
+DEBUG - Lag detected: 37.567862ms. Skipping 1 frame(s). (Current: 30, Next target frame index: 32)
+DEBUG - Lag detected: 43.493368ms. Skipping 1 frame(s). (Current: 33, Next target frame index: 35)
+DEBUG - Lag detected: 47.419674ms. Skipping 1 frame(s). (Current: 36, Next target frame index: 38)
+DEBUG - Lag detected: 38.95368ms. Skipping 1 frame(s). (Current: 39, Next target frame index: 41)
+DEBUG - Lag detected: 45.905886ms. Skipping 1 frame(s). (Current: 42, Next target frame index: 44)
+DEBUG - Lag detected: 42.279892ms. Skipping 1 frame(s). (Current: 45, Next target frame index: 47)
+DEBUG - Lag detected: 51.599398ms. Skipping 1 frame(s). (Current: 48, Next target frame index: 50)
+DEBUG - Lag detected: 40.323202ms. Skipping 1 frame(s). (Current: 50, Next target frame index: 52)
+DEBUG - Lag detected: 51.398708ms. Skipping 1 frame(s). (Current: 53, Next target frame index: 55)
+DEBUG - Lag detected: 34.659912ms. Skipping 1 frame(s). (Current: 55, Next target frame index: 57)
+DEBUG - Lag detected: 35.877618ms. Skipping 1 frame(s). (Current: 58, Next target frame index: 60)
+DEBUG - Lag detected: 40.326724ms. Skipping 1 frame(s). (Current: 61, Next target frame index: 63)
+DEBUG - Lag detected: 50.81923ms. Skipping 1 frame(s). (Current: 64, Next target frame index: 66)
+DEBUG - Lag detected: 37.082334ms. Skipping 1 frame(s). (Current: 66, Next target frame index: 68)
+DEBUG - Lag detected: 46.077142ms. Skipping 1 frame(s). (Current: 70, Next target frame index: 72)
+DEBUG - Lag detected: 46.779048ms. Skipping 1 frame(s). (Current: 73, Next target frame index: 75)
+DEBUG - Lag detected: 49.532254ms. Skipping 1 frame(s). (Current: 76, Next target frame index: 78)
+DEBUG - Lag detected: 49.94606ms. Skipping 1 frame(s). (Current: 79, Next target frame index: 81)
+DEBUG - Lag detected: 44.751366ms. Skipping 1 frame(s). (Current: 82, Next target frame index: 84)
+DEBUG - Lag detected: 34.317872ms. Skipping 1 frame(s). (Current: 85, Next target frame index: 87)
+DEBUG - Lag detected: 48.27118ms. Skipping 1 frame(s). (Current: 89, Next target frame index: 91)
+DEBUG - Lag detected: 35.049184ms. Skipping 1 frame(s). (Current: 91, Next target frame index: 93)
+DEBUG - Lag detected: 60.06169ms. Skipping 1 frame(s). (Current: 94, Next target frame index: 96)
+DEBUG - Lag detected: 53.796094ms. Skipping 1 frame(s). (Current: 96, Next target frame index: 98)
+DEBUG - Lag detected: 48.427598ms. Skipping 1 frame(s). (Current: 98, Next target frame index: 100)
+DEBUG - Lag detected: 42.771602ms. Skipping 1 frame(s). (Current: 100, Next target frame index: 102)
+DEBUG - Lag detected: 35.319006ms. Skipping 1 frame(s). (Current: 102, Next target frame index: 104)
+DEBUG - Lag detected: 53.194712ms. Skipping 1 frame(s). (Current: 105, Next target frame index: 107)
+DEBUG - Lag detected: 46.234816ms. Skipping 1 frame(s). (Current: 107, Next target frame index: 109)
+DEBUG - Lag detected: 49.08012ms. Skipping 1 frame(s). (Current: 109, Next target frame index: 111)
+DEBUG - Lag detected: 47.040724ms. Skipping 1 frame(s). (Current: 111, Next target frame index: 113)
+DEBUG - Lag detected: 40.791228ms. Skipping 1 frame(s). (Current: 113, Next target frame index: 115)
+DEBUG - Lag detected: 41.439232ms. Skipping 1 frame(s). (Current: 115, Next target frame index: 117)
+DEBUG - Lag detected: 39.688836ms. Skipping 1 frame(s). (Current: 117, Next target frame index: 119)
+DEBUG - Lag detected: 35.87714ms. Skipping 1 frame(s). (Current: 119, Next target frame index: 121)
+DEBUG - Lag detected: 61.895846ms. Skipping 1 frame(s). (Current: 122, Next target frame index: 124)
+DEBUG - Lag detected: 61.90495ms. Skipping 1 frame(s). (Current: 124, Next target frame index: 126)
+DEBUG - Lag detected: 55.835754ms. Skipping 1 frame(s). (Current: 126, Next target frame index: 128)
+DEBUG - Lag detected: 51.720058ms. Skipping 1 frame(s). (Current: 128, Next target frame index: 130)
+DEBUG - Lag detected: 55.607262ms. Skipping 1 frame(s). (Current: 130, Next target frame index: 132)
+DEBUG - Lag detected: 60.998066ms. Skipping 1 frame(s). (Current: 132, Next target frame index: 134)
+DEBUG - Lag detected: 67.51447ms. Skipping 2 frame(s). (Current: 134, Next target frame index: 137)
+DEBUG - Lag detected: 37.071076ms. Skipping 1 frame(s). (Current: 137, Next target frame index: 139)
+DEBUG - Lag detected: 64.957582ms. Skipping 1 frame(s). (Current: 140, Next target frame index: 142)
+DEBUG - Lag detected: 71.119986ms. Skipping 2 frame(s). (Current: 142, Next target frame index: 145)
+DEBUG - Lag detected: 43.386292ms. Skipping 1 frame(s). (Current: 145, Next target frame index: 147)
+DEBUG - Lag detected: 45.321296ms. Skipping 1 frame(s). (Current: 147, Next target frame index: 149)
+DEBUG - Lag detected: 46.9217ms. Skipping 1 frame(s). (Current: 149, Next target frame index: 151)
+DEBUG - Lag detected: 47.114604ms. Skipping 1 frame(s). (Current: 151, Next target frame index: 153)
+DEBUG - Lag detected: 51.343908ms. Skipping 1 frame(s). (Current: 153, Next target frame index: 155)
+DEBUG - Lag detected: 50.876412ms. Skipping 1 frame(s). (Current: 155, Next target frame index: 157)
+DEBUG - Lag detected: 51.886116ms. Skipping 1 frame(s). (Current: 157, Next target frame index: 159)
+DEBUG - Lag detected: 54.49722ms. Skipping 1 frame(s). (Current: 159, Next target frame index: 161)
+DEBUG - Lag detected: 53.350924ms. Skipping 1 frame(s). (Current: 161, Next target frame index: 163)
+DEBUG - Lag detected: 51.772628ms. Skipping 1 frame(s). (Current: 163, Next target frame index: 165)
+DEBUG - Lag detected: 49.268132ms. Skipping 1 frame(s). (Current: 165, Next target frame index: 167)
+DEBUG - Lag detected: 42.973336ms. Skipping 1 frame(s). (Current: 167, Next target frame index: 169)
+DEBUG - Lag detected: 34.50344ms. Skipping 1 frame(s). (Current: 169, Next target frame index: 171)
+DEBUG - Lag detected: 62.234846ms. Skipping 1 frame(s). (Current: 172, Next target frame index: 174)
+DEBUG - Lag detected: 62.86955ms. Skipping 1 frame(s). (Current: 174, Next target frame index: 176)
+DEBUG - Lag detected: 65.454054ms. Skipping 1 frame(s). (Current: 176, Next target frame index: 178)
+DEBUG - Lag detected: 69.891358ms. Skipping 2 frame(s). (Current: 178, Next target frame index: 181)
+DEBUG - Lag detected: 36.766564ms. Skipping 1 frame(s). (Current: 181, Next target frame index: 183)
+INFO - Playback interrupted by user.
+INFO - Playback finished.
+DEBUG - Metrics stop signal sent.
+INFO - Playback finished successfully.
+DEBUG - Metrics thread finished.
+INFO - Starting ASCII Video Player v0.1.0
+INFO - By: minhcrafters
+INFO - Video file selected: .\videos\valorant_1.mp4
+INFO - Terminal size: 314x82
+INFO - Running ffprobe for metadata...
+DEBUG - ffprobe output: ["854", "480", "30000/1001", "482"]
+INFO - Video Info: 854x480 @ 29.97fps, 482 frames, 16.08s
+INFO - Extracting audio to data\valorant_1\valorant_1.wav...
+INFO - Audio extracted successfully in 0.09s
+INFO - Found existing cache file: data\valorant_1\ascii_frames_314-82.acsv
+INFO - Loading ASCII frames from data\valorant_1\ascii_frames_314-82.acsv...
+INFO - Loaded 482 frames from data\valorant_1\ascii_frames_314-82.acsv successfully in 0.42s
+INFO - Successfully loaded 482 frames from cache.
+INFO - Prepared 482 ASCII frames for playback.
+DEBUG - Got audio duration 16.085351s for data\valorant_1\valorant_1.wav
+INFO - Using audio duration (16.085351s) for sync. Calculated frame delay: 33.372098ms
+DEBUG - Player initialized with 482 frames. Sync frame delay: 33.372098ms (0.033372s). Total sync duration: 16.085351s
+INFO - Audio loaded from data\valorant_1\valorant_1.wav
+INFO - Starting playback for 482 frames...
+DEBUG - Audio sink playing.
+DEBUG - Playback loop starting at: Instant { t: 1837.4235927s }
+DEBUG - Metrics thread started.
+DEBUG - Lag detected: 36.325204ms. Skipping 1 frame(s). (Current: 1, Next target frame index: 3)
+DEBUG - Lag detected: 51.55671ms. Skipping 1 frame(s). (Current: 4, Next target frame index: 6)
+DEBUG - Lag detected: 38.629016ms. Skipping 1 frame(s). (Current: 7, Next target frame index: 9)
+DEBUG - Lag detected: 38.117824ms. Skipping 1 frame(s). (Current: 11, Next target frame index: 13)
+DEBUG - Lag detected: 38.75653ms. Skipping 1 frame(s). (Current: 14, Next target frame index: 16)
+DEBUG - Lag detected: 34.212338ms. Skipping 1 frame(s). (Current: 18, Next target frame index: 20)
+DEBUG - Lag detected: 38.622746ms. Skipping 1 frame(s). (Current: 22, Next target frame index: 24)
+DEBUG - Lag detected: 41.274954ms. Skipping 1 frame(s). (Current: 26, Next target frame index: 28)
+DEBUG - Lag detected: 33.97306ms. Skipping 1 frame(s). (Current: 29, Next target frame index: 31)
+DEBUG - Lag detected: 34.825468ms. Skipping 1 frame(s). (Current: 33, Next target frame index: 35)
+DEBUG - Lag detected: 45.409674ms. Skipping 1 frame(s). (Current: 36, Next target frame index: 38)
+DEBUG - Lag detected: 33.591178ms. Skipping 1 frame(s). (Current: 38, Next target frame index: 40)
+DEBUG - Lag detected: 34.646784ms. Skipping 1 frame(s). (Current: 41, Next target frame index: 43)
+DEBUG - Lag detected: 36.56299ms. Skipping 1 frame(s). (Current: 44, Next target frame index: 46)
+DEBUG - Lag detected: 42.487196ms. Skipping 1 frame(s). (Current: 47, Next target frame index: 49)
+DEBUG - Lag detected: 51.509902ms. Skipping 1 frame(s). (Current: 50, Next target frame index: 52)
+DEBUG - Lag detected: 44.740506ms. Skipping 1 frame(s). (Current: 52, Next target frame index: 54)
+DEBUG - Lag detected: 39.226912ms. Skipping 1 frame(s). (Current: 55, Next target frame index: 57)
+DEBUG - Lag detected: 39.208618ms. Skipping 1 frame(s). (Current: 58, Next target frame index: 60)
+DEBUG - Lag detected: 40.406224ms. Skipping 1 frame(s). (Current: 61, Next target frame index: 63)
+DEBUG - Lag detected: 50.318532ms. Skipping 1 frame(s). (Current: 65, Next target frame index: 67)
+DEBUG - Lag detected: 47.094938ms. Skipping 1 frame(s). (Current: 68, Next target frame index: 70)
+DEBUG - Lag detected: 49.562844ms. Skipping 1 frame(s). (Current: 71, Next target frame index: 73)
+DEBUG - Lag detected: 46.99345ms. Skipping 1 frame(s). (Current: 74, Next target frame index: 76)
+DEBUG - Lag detected: 39.167356ms. Skipping 1 frame(s). (Current: 77, Next target frame index: 79)
+DEBUG - Lag detected: 43.901464ms. Skipping 1 frame(s). (Current: 81, Next target frame index: 83)
+DEBUG - Lag detected: 34.04177ms. Skipping 1 frame(s). (Current: 84, Next target frame index: 86)
+DEBUG - Lag detected: 43.550976ms. Skipping 1 frame(s). (Current: 87, Next target frame index: 89)
+DEBUG - Lag detected: 34.685082ms. Skipping 1 frame(s). (Current: 90, Next target frame index: 92)
+DEBUG - Lag detected: 39.958288ms. Skipping 1 frame(s). (Current: 93, Next target frame index: 95)
+DEBUG - Lag detected: 51.235994ms. Skipping 1 frame(s). (Current: 96, Next target frame index: 98)
+DEBUG - Lag detected: 41.344498ms. Skipping 1 frame(s). (Current: 98, Next target frame index: 100)
+DEBUG - Lag detected: 33.505002ms. Skipping 1 frame(s). (Current: 100, Next target frame index: 102)
+DEBUG - Lag detected: 49.351408ms. Skipping 1 frame(s). (Current: 103, Next target frame index: 105)
+DEBUG - Lag detected: 40.429712ms. Skipping 1 frame(s). (Current: 105, Next target frame index: 107)
+DEBUG - Lag detected: 34.873816ms. Skipping 1 frame(s). (Current: 107, Next target frame index: 109)
+DEBUG - Lag detected: 66.653622ms. Skipping 1 frame(s). (Current: 110, Next target frame index: 112)
+DEBUG - Lag detected: 66.156026ms. Skipping 1 frame(s). (Current: 112, Next target frame index: 114)
+DEBUG - Lag detected: 64.95373ms. Skipping 1 frame(s). (Current: 114, Next target frame index: 116)
+DEBUG - Lag detected: 67.212934ms. Skipping 2 frame(s). (Current: 116, Next target frame index: 119)
+DEBUG - Lag detected: 36.11934ms. Skipping 1 frame(s). (Current: 119, Next target frame index: 121)
+DEBUG - Lag detected: 36.418144ms. Skipping 1 frame(s). (Current: 121, Next target frame index: 123)
+DEBUG - Lag detected: 38.487048ms. Skipping 1 frame(s). (Current: 123, Next target frame index: 125)
+DEBUG - Lag detected: 62.619454ms. Skipping 1 frame(s). (Current: 126, Next target frame index: 128)
+DEBUG - Lag detected: 60.222858ms. Skipping 1 frame(s). (Current: 128, Next target frame index: 130)
+DEBUG - Lag detected: 57.318762ms. Skipping 1 frame(s). (Current: 130, Next target frame index: 132)
+DEBUG - Lag detected: 55.997866ms. Skipping 1 frame(s). (Current: 132, Next target frame index: 134)
+DEBUG - Lag detected: 53.62037ms. Skipping 1 frame(s). (Current: 134, Next target frame index: 136)
+DEBUG - Lag detected: 52.540374ms. Skipping 1 frame(s). (Current: 136, Next target frame index: 138)
+DEBUG - Lag detected: 49.504778ms. Skipping 1 frame(s). (Current: 138, Next target frame index: 140)
+DEBUG - Lag detected: 43.268882ms. Skipping 1 frame(s). (Current: 140, Next target frame index: 142)
+DEBUG - Lag detected: 41.633486ms. Skipping 1 frame(s). (Current: 142, Next target frame index: 144)
+DEBUG - Lag detected: 36.15109ms. Skipping 1 frame(s). (Current: 144, Next target frame index: 146)
+DEBUG - Lag detected: 39.805694ms. Skipping 1 frame(s). (Current: 146, Next target frame index: 148)
+DEBUG - Lag detected: 42.460298ms. Skipping 1 frame(s). (Current: 148, Next target frame index: 150)
+DEBUG - Lag detected: 44.787102ms. Skipping 1 frame(s). (Current: 150, Next target frame index: 152)
+DEBUG - Lag detected: 62.844608ms. Skipping 1 frame(s). (Current: 153, Next target frame index: 155)
+DEBUG - Lag detected: 62.322412ms. Skipping 1 frame(s). (Current: 155, Next target frame index: 157)
+DEBUG - Lag detected: 62.400416ms. Skipping 1 frame(s). (Current: 157, Next target frame index: 159)
+DEBUG - Lag detected: 62.77952ms. Skipping 1 frame(s). (Current: 159, Next target frame index: 161)
+DEBUG - Lag detected: 60.335224ms. Skipping 1 frame(s). (Current: 161, Next target frame index: 163)
+DEBUG - Lag detected: 59.978828ms. Skipping 1 frame(s). (Current: 163, Next target frame index: 165)
+DEBUG - Lag detected: 54.166832ms. Skipping 1 frame(s). (Current: 165, Next target frame index: 167)
+DEBUG - Lag detected: 47.954536ms. Skipping 1 frame(s). (Current: 167, Next target frame index: 169)
+DEBUG - Lag detected: 43.95954ms. Skipping 1 frame(s). (Current: 169, Next target frame index: 171)
+DEBUG - Lag detected: 37.045644ms. Skipping 1 frame(s). (Current: 171, Next target frame index: 173)
+DEBUG - Lag detected: 33.623248ms. Skipping 1 frame(s). (Current: 173, Next target frame index: 175)
+DEBUG - Lag detected: 59.482754ms. Skipping 1 frame(s). (Current: 176, Next target frame index: 178)
+DEBUG - Lag detected: 60.024058ms. Skipping 1 frame(s). (Current: 178, Next target frame index: 180)
+DEBUG - Lag detected: 57.384562ms. Skipping 1 frame(s). (Current: 180, Next target frame index: 182)
+DEBUG - Lag detected: 46.409166ms. Skipping 1 frame(s). (Current: 182, Next target frame index: 184)
+DEBUG - Lag detected: 44.55587ms. Skipping 1 frame(s). (Current: 184, Next target frame index: 186)
+DEBUG - Lag detected: 44.567274ms. Skipping 1 frame(s). (Current: 186, Next target frame index: 188)
+DEBUG - Lag detected: 45.300378ms. Skipping 1 frame(s). (Current: 188, Next target frame index: 190)
+DEBUG - Lag detected: 44.895182ms. Skipping 1 frame(s). (Current: 190, Next target frame index: 192)
+DEBUG - Lag detected: 44.044486ms. Skipping 1 frame(s). (Current: 192, Next target frame index: 194)
+DEBUG - Lag detected: 41.25859ms. Skipping 1 frame(s). (Current: 194, Next target frame index: 196)
+DEBUG - Lag detected: 47.866594ms. Skipping 1 frame(s). (Current: 196, Next target frame index: 198)
+DEBUG - Lag detected: 49.952798ms. Skipping 1 frame(s). (Current: 198, Next target frame index: 200)
+DEBUG - Lag detected: 52.117802ms. Skipping 1 frame(s). (Current: 200, Next target frame index: 202)
+DEBUG - Lag detected: 52.296506ms. Skipping 1 frame(s). (Current: 202, Next target frame index: 204)
+DEBUG - Lag detected: 47.72151ms. Skipping 1 frame(s). (Current: 204, Next target frame index: 206)
+DEBUG - Lag detected: 50.462914ms. Skipping 1 frame(s). (Current: 206, Next target frame index: 208)
+DEBUG - Lag detected: 53.089718ms. Skipping 1 frame(s). (Current: 208, Next target frame index: 210)
+DEBUG - Lag detected: 56.605222ms. Skipping 1 frame(s). (Current: 210, Next target frame index: 212)
+DEBUG - Lag detected: 59.213826ms. Skipping 1 frame(s). (Current: 212, Next target frame index: 214)
+DEBUG - Lag detected: 60.31773ms. Skipping 1 frame(s). (Current: 214, Next target frame index: 216)
+DEBUG - Lag detected: 59.349434ms. Skipping 1 frame(s). (Current: 216, Next target frame index: 218)
+DEBUG - Lag detected: 56.029838ms. Skipping 1 frame(s). (Current: 218, Next target frame index: 220)
+DEBUG - Lag detected: 51.829642ms. Skipping 1 frame(s). (Current: 220, Next target frame index: 222)
+DEBUG - Lag detected: 46.771346ms. Skipping 1 frame(s). (Current: 222, Next target frame index: 224)
+DEBUG - Lag detected: 44.16505ms. Skipping 1 frame(s). (Current: 224, Next target frame index: 226)
+DEBUG - Lag detected: 38.512254ms. Skipping 1 frame(s). (Current: 226, Next target frame index: 228)
+DEBUG - Lag detected: 35.091958ms. Skipping 1 frame(s). (Current: 228, Next target frame index: 230)
+DEBUG - Lag detected: 57.173364ms. Skipping 1 frame(s). (Current: 231, Next target frame index: 233)
+DEBUG - Lag detected: 59.281868ms. Skipping 1 frame(s). (Current: 233, Next target frame index: 235)
+DEBUG - Lag detected: 47.012072ms. Skipping 1 frame(s). (Current: 235, Next target frame index: 237)
+DEBUG - Lag detected: 50.195676ms. Skipping 1 frame(s). (Current: 237, Next target frame index: 239)
+DEBUG - Lag detected: 46.76108ms. Skipping 1 frame(s). (Current: 239, Next target frame index: 241)
+DEBUG - Lag detected: 42.298584ms. Skipping 1 frame(s). (Current: 241, Next target frame index: 243)
+DEBUG - Lag detected: 41.941588ms. Skipping 1 frame(s). (Current: 243, Next target frame index: 245)
+DEBUG - Lag detected: 46.996092ms. Skipping 1 frame(s). (Current: 245, Next target frame index: 247)
+DEBUG - Lag detected: 51.579896ms. Skipping 1 frame(s). (Current: 247, Next target frame index: 249)
+DEBUG - Lag detected: 49.8737ms. Skipping 1 frame(s). (Current: 249, Next target frame index: 251)
+DEBUG - Lag detected: 49.958504ms. Skipping 1 frame(s). (Current: 251, Next target frame index: 253)
+DEBUG - Lag detected: 50.720108ms. Skipping 1 frame(s). (Current: 253, Next target frame index: 255)
+DEBUG - Lag detected: 52.127312ms. Skipping 1 frame(s). (Current: 255, Next target frame index: 257)
+DEBUG - Lag detected: 57.362916ms. Skipping 1 frame(s). (Current: 257, Next target frame index: 259)
+DEBUG - Lag detected: 59.60712ms. Skipping 1 frame(s). (Current: 259, Next target frame index: 261)
+DEBUG - Lag detected: 61.401124ms. Skipping 1 frame(s). (Current: 261, Next target frame index: 263)
+DEBUG - Lag detected: 62.166228ms. Skipping 1 frame(s). (Current: 263, Next target frame index: 265)
+DEBUG - Lag detected: 62.204632ms. Skipping 1 frame(s). (Current: 265, Next target frame index: 267)
+DEBUG - Lag detected: 62.941736ms. Skipping 1 frame(s). (Current: 267, Next target frame index: 269)
+DEBUG - Lag detected: 67.77264ms. Skipping 2 frame(s). (Current: 269, Next target frame index: 272)
+DEBUG - Lag detected: 62.330848ms. Skipping 1 frame(s). (Current: 273, Next target frame index: 275)
+DEBUG - Lag detected: 63.712852ms. Skipping 1 frame(s). (Current: 275, Next target frame index: 277)
+DEBUG - Lag detected: 71.077156ms. Skipping 2 frame(s). (Current: 277, Next target frame index: 280)
+DEBUG - Lag detected: 36.731562ms. Skipping 1 frame(s). (Current: 280, Next target frame index: 282)
+DEBUG - Lag detected: 36.151866ms. Skipping 1 frame(s). (Current: 282, Next target frame index: 284)
+DEBUG - Lag detected: 37.73527ms. Skipping 1 frame(s). (Current: 284, Next target frame index: 286)
+DEBUG - Lag detected: 38.714674ms. Skipping 1 frame(s). (Current: 286, Next target frame index: 288)
+DEBUG - Lag detected: 40.196778ms. Skipping 1 frame(s). (Current: 288, Next target frame index: 290)
+DEBUG - Lag detected: 40.997682ms. Skipping 1 frame(s). (Current: 290, Next target frame index: 292)
+DEBUG - Lag detected: 42.292686ms. Skipping 1 frame(s). (Current: 292, Next target frame index: 294)
+DEBUG - Lag detected: 46.88699ms. Skipping 1 frame(s). (Current: 294, Next target frame index: 296)
+DEBUG - Lag detected: 43.156694ms. Skipping 1 frame(s). (Current: 296, Next target frame index: 298)
+DEBUG - Lag detected: 43.291198ms. Skipping 1 frame(s). (Current: 298, Next target frame index: 300)
+DEBUG - Lag detected: 50.681402ms. Skipping 1 frame(s). (Current: 300, Next target frame index: 302)
+DEBUG - Lag detected: 52.232806ms. Skipping 1 frame(s). (Current: 302, Next target frame index: 304)
+DEBUG - Lag detected: 49.81901ms. Skipping 1 frame(s). (Current: 304, Next target frame index: 306)
+DEBUG - Lag detected: 52.358814ms. Skipping 1 frame(s). (Current: 306, Next target frame index: 308)
+DEBUG - Lag detected: 53.034518ms. Skipping 1 frame(s). (Current: 308, Next target frame index: 310)
+DEBUG - Lag detected: 53.282522ms. Skipping 1 frame(s). (Current: 310, Next target frame index: 312)
+DEBUG - Lag detected: 49.910326ms. Skipping 1 frame(s). (Current: 312, Next target frame index: 314)
+DEBUG - Lag detected: 53.76423ms. Skipping 1 frame(s). (Current: 314, Next target frame index: 316)
+DEBUG - Lag detected: 52.887634ms. Skipping 1 frame(s). (Current: 316, Next target frame index: 318)
+DEBUG - Lag detected: 57.003938ms. Skipping 1 frame(s). (Current: 318, Next target frame index: 320)
+DEBUG - Lag detected: 57.057942ms. Skipping 1 frame(s). (Current: 320, Next target frame index: 322)
+DEBUG - Lag detected: 53.577946ms. Skipping 1 frame(s). (Current: 322, Next target frame index: 324)
+DEBUG - Lag detected: 52.14655ms. Skipping 1 frame(s). (Current: 324, Next target frame index: 326)
+DEBUG - Lag detected: 48.967554ms. Skipping 1 frame(s). (Current: 326, Next target frame index: 328)
+DEBUG - Lag detected: 49.213758ms. Skipping 1 frame(s). (Current: 328, Next target frame index: 330)
+DEBUG - Lag detected: 48.300762ms. Skipping 1 frame(s). (Current: 330, Next target frame index: 332)
+DEBUG - Lag detected: 49.399866ms. Skipping 1 frame(s). (Current: 332, Next target frame index: 334)
+DEBUG - Lag detected: 50.60277ms. Skipping 1 frame(s). (Current: 334, Next target frame index: 336)
+DEBUG - Lag detected: 51.855174ms. Skipping 1 frame(s). (Current: 336, Next target frame index: 338)
+DEBUG - Lag detected: 52.075478ms. Skipping 1 frame(s). (Current: 338, Next target frame index: 340)
+DEBUG - Lag detected: 47.171782ms. Skipping 1 frame(s). (Current: 340, Next target frame index: 342)
+DEBUG - Lag detected: 47.890086ms. Skipping 1 frame(s). (Current: 342, Next target frame index: 344)
+DEBUG - Lag detected: 48.49149ms. Skipping 1 frame(s). (Current: 344, Next target frame index: 346)
+DEBUG - Lag detected: 48.474594ms. Skipping 1 frame(s). (Current: 346, Next target frame index: 348)
+DEBUG - Lag detected: 45.310498ms. Skipping 1 frame(s). (Current: 348, Next target frame index: 350)
+DEBUG - Lag detected: 44.688202ms. Skipping 1 frame(s). (Current: 350, Next target frame index: 352)
+DEBUG - Lag detected: 47.855706ms. Skipping 1 frame(s). (Current: 352, Next target frame index: 354)
+DEBUG - Lag detected: 49.58901ms. Skipping 1 frame(s). (Current: 354, Next target frame index: 356)
+DEBUG - Lag detected: 57.441614ms. Skipping 1 frame(s). (Current: 356, Next target frame index: 358)
+DEBUG - Lag detected: 72.775518ms. Skipping 2 frame(s). (Current: 358, Next target frame index: 361)
+DEBUG - Lag detected: 48.331924ms. Skipping 1 frame(s). (Current: 361, Next target frame index: 363)
+DEBUG - Lag detected: 57.643828ms. Skipping 1 frame(s). (Current: 363, Next target frame index: 365)
+DEBUG - Lag detected: 66.729832ms. Skipping 1 frame(s). (Current: 365, Next target frame index: 367)
+DEBUG - Lag detected: 78.792736ms. Skipping 2 frame(s). (Current: 367, Next target frame index: 370)
+DEBUG - Lag detected: 55.997042ms. Skipping 1 frame(s). (Current: 370, Next target frame index: 372)
+DEBUG - Lag detected: 59.615446ms. Skipping 1 frame(s). (Current: 372, Next target frame index: 374)
+DEBUG - Lag detected: 69.74205ms. Skipping 2 frame(s). (Current: 374, Next target frame index: 377)
+DEBUG - Lag detected: 45.414356ms. Skipping 1 frame(s). (Current: 377, Next target frame index: 379)
+DEBUG - Lag detected: 52.84556ms. Skipping 1 frame(s). (Current: 379, Next target frame index: 381)
+DEBUG - Lag detected: 55.618364ms. Skipping 1 frame(s). (Current: 381, Next target frame index: 383)
+DEBUG - Lag detected: 61.320968ms. Skipping 1 frame(s). (Current: 383, Next target frame index: 385)
+DEBUG - Lag detected: 69.804672ms. Skipping 2 frame(s). (Current: 385, Next target frame index: 388)
+DEBUG - Lag detected: 45.404878ms. Skipping 1 frame(s). (Current: 388, Next target frame index: 390)
+DEBUG - Lag detected: 56.623082ms. Skipping 1 frame(s). (Current: 390, Next target frame index: 392)
+DEBUG - Lag detected: 59.713786ms. Skipping 1 frame(s). (Current: 392, Next target frame index: 394)
+DEBUG - Lag detected: 60.65769ms. Skipping 1 frame(s). (Current: 394, Next target frame index: 396)
+DEBUG - Lag detected: 59.391794ms. Skipping 1 frame(s). (Current: 396, Next target frame index: 398)
+DEBUG - Lag detected: 56.527498ms. Skipping 1 frame(s). (Current: 398, Next target frame index: 400)
+DEBUG - Lag detected: 56.473402ms. Skipping 1 frame(s). (Current: 400, Next target frame index: 402)
+DEBUG - Lag detected: 56.576406ms. Skipping 1 frame(s). (Current: 402, Next target frame index: 404)
+DEBUG - Lag detected: 54.47721ms. Skipping 1 frame(s). (Current: 404, Next target frame index: 406)
+DEBUG - Lag detected: 53.255714ms. Skipping 1 frame(s). (Current: 406, Next target frame index: 408)
+DEBUG - Lag detected: 50.132918ms. Skipping 1 frame(s). (Current: 408, Next target frame index: 410)
+DEBUG - Lag detected: 50.651822ms. Skipping 1 frame(s). (Current: 410, Next target frame index: 412)
+DEBUG - Lag detected: 50.669126ms. Skipping 1 frame(s). (Current: 412, Next target frame index: 414)
+DEBUG - Lag detected: 50.38803ms. Skipping 1 frame(s). (Current: 414, Next target frame index: 416)
+DEBUG - Lag detected: 49.816034ms. Skipping 1 frame(s). (Current: 416, Next target frame index: 418)
+DEBUG - Lag detected: 51.229838ms. Skipping 1 frame(s). (Current: 418, Next target frame index: 420)
+DEBUG - Lag detected: 55.092542ms. Skipping 1 frame(s). (Current: 420, Next target frame index: 422)
+DEBUG - Lag detected: 60.458246ms. Skipping 1 frame(s). (Current: 422, Next target frame index: 424)
+DEBUG - Lag detected: 70.32245ms. Skipping 2 frame(s). (Current: 424, Next target frame index: 427)
+DEBUG - Lag detected: 38.635556ms. Skipping 1 frame(s). (Current: 427, Next target frame index: 429)
+DEBUG - Lag detected: 47.19506ms. Skipping 1 frame(s). (Current: 429, Next target frame index: 431)
+DEBUG - Lag detected: 52.055564ms. Skipping 1 frame(s). (Current: 431, Next target frame index: 433)
+DEBUG - Lag detected: 54.270768ms. Skipping 1 frame(s). (Current: 433, Next target frame index: 435)
+DEBUG - Lag detected: 55.375172ms. Skipping 1 frame(s). (Current: 435, Next target frame index: 437)
+DEBUG - Lag detected: 56.983076ms. Skipping 1 frame(s). (Current: 437, Next target frame index: 439)
+DEBUG - Lag detected: 55.45198ms. Skipping 1 frame(s). (Current: 439, Next target frame index: 441)
+DEBUG - Lag detected: 56.670284ms. Skipping 1 frame(s). (Current: 441, Next target frame index: 443)
+DEBUG - Lag detected: 54.784188ms. Skipping 1 frame(s). (Current: 443, Next target frame index: 445)
+DEBUG - Lag detected: 56.636292ms. Skipping 1 frame(s). (Current: 445, Next target frame index: 447)
+DEBUG - Lag detected: 52.860996ms. Skipping 1 frame(s). (Current: 447, Next target frame index: 449)
+DEBUG - Lag detected: 56.016ms. Skipping 1 frame(s). (Current: 449, Next target frame index: 451)
+DEBUG - Lag detected: 59.260404ms. Skipping 1 frame(s). (Current: 451, Next target frame index: 453)
+DEBUG - Lag detected: 65.372308ms. Skipping 1 frame(s). (Current: 453, Next target frame index: 455)
+DEBUG - Lag detected: 72.319012ms. Skipping 2 frame(s). (Current: 455, Next target frame index: 458)
+DEBUG - Lag detected: 36.436218ms. Skipping 1 frame(s). (Current: 458, Next target frame index: 460)
+DEBUG - Lag detected: 36.484122ms. Skipping 1 frame(s). (Current: 460, Next target frame index: 462)
+DEBUG - Lag detected: 38.173626ms. Skipping 1 frame(s). (Current: 462, Next target frame index: 464)
+DEBUG - Lag detected: 40.64323ms. Skipping 1 frame(s). (Current: 464, Next target frame index: 466)
+DEBUG - Lag detected: 35.429834ms. Skipping 1 frame(s). (Current: 466, Next target frame index: 468)
+DEBUG - Lag detected: 62.04254ms. Skipping 1 frame(s). (Current: 469, Next target frame index: 471)
+DEBUG - Lag detected: 52.067544ms. Skipping 1 frame(s). (Current: 471, Next target frame index: 473)
+DEBUG - Lag detected: 38.090648ms. Skipping 1 frame(s). (Current: 473, Next target frame index: 475)
+DEBUG - Lag detected: 41.651554ms. Skipping 1 frame(s). (Current: 476, Next target frame index: 478)
+INFO - Playback finished.
+DEBUG - Metrics stop signal sent.
+DEBUG - Metrics thread finished.
+INFO - Playback finished successfully.
+INFO - Starting ASCII Video Player v0.1.0
+INFO - By: minhcrafters
+INFO - Video file selected: .\videos\valorant_1.mp4
+INFO - Terminal size: 236x65
+INFO - Running ffprobe for metadata...
+DEBUG - ffprobe output: ["854", "480", "30000/1001", "482"]
+INFO - Video Info: 854x480 @ 29.97fps, 482 frames, 16.08s
+INFO - Extracting audio to data\valorant_1\valorant_1.wav...
+INFO - Audio extracted successfully in 0.09s
+INFO - No valid cache file found at data\valorant_1\ascii_frames_236-65.acsv, processing frames...
+INFO - Extracting frames to C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY...
+DEBUG - FFmpeg frame extraction finished with status: exit code: 0
+INFO - Frames extracted successfully in 1.84s
+INFO - Processing 482 frames in parallel...
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000001.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000242.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000362.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000422.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000392.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000377.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000121.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000369.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000181.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000384.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000373.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000302.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000365.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000061.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000452.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000375.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000002.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000423.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000062.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000243.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000363.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000393.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000303.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000378.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000182.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000385.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000122.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000370.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000453.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000374.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000376.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000366.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000003.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000063.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000244.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000424.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000304.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000364.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000123.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000386.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000394.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000183.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000379.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000454.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000031.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000371.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000046.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000367.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000064.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000004.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000245.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000032.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000184.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000305.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000425.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000124.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000455.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000380.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000211.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000395.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000387.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000047.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000372.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000065.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000005.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000368.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000033.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000185.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000246.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000306.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000426.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000125.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000212.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000456.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000396.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000048.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000066.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000388.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000381.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000006.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000467.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000226.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000034.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000247.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000186.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000427.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000067.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000213.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000397.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000389.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000126.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000457.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000007.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000049.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000468.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000382.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000307.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000035.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000227.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000068.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000187.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000248.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000008.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000214.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000127.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000469.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000398.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000458.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000428.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000036.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000050.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000383.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000308.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000390.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000228.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000069.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000009.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000470.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000188.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000249.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000128.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000399.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000215.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000459.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000037.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000229.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000429.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000463.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000309.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000051.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000391.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000070.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000010.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000471.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000189.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000129.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000038.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000250.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000400.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000460.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000216.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000230.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000052.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000430.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000464.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000071.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000310.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000332.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000011.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000190.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000472.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000039.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000231.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000130.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000053.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000251.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000461.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000217.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000465.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000072.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000401.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000311.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000431.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000333.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000012.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000473.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000191.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000040.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000131.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000232.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000218.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000462.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000073.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000054.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000252.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000402.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000312.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000466.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000432.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000334.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000013.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000474.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000041.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000192.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000132.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000219.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000055.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000074.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000233.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000253.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000403.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000313.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000407.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000475.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000014.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000433.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000335.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000016.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000042.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000193.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000133.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000056.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000234.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000075.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000404.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000476.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000254.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000220.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000408.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000314.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000434.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000043.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000017.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000336.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000194.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000134.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000015.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000235.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000057.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000076.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000477.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000405.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000221.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000255.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000409.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000315.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000018.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000044.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000435.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000337.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000077.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000023.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000478.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000195.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000135.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000406.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000236.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000222.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000256.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000316.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000045.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000058.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000410.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000019.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000436.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000338.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000479.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000078.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000024.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000196.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000136.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000151.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000237.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000059.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000480.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000257.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000317.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000020.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000224.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000223.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000411.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000339.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000079.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000025.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000481.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000197.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000060.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000238.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000137.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000152.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000021.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000437.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000318.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000258.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000225.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000412.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000482.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000080.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000143.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000340.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000198.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000026.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000138.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000239.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000022.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000153.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000272.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000081.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000347.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000438.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000354.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000319.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000413.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000259.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000144.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000341.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000027.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000199.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000139.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000166.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000240.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000082.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000348.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000273.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000355.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000320.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000414.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000154.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000260.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000028.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000145.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000200.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000342.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000083.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000167.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000241.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000349.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000356.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000321.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000439.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000274.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000415.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000155.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000140.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000029.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000261.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000201.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000084.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000146.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000343.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000168.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000358.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000350.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000357.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000440.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000322.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000275.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000030.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000141.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000085.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000262.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000156.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000202.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000344.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000147.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000169.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000416.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000359.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000351.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000323.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000352.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000441.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000276.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000086.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000142.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000263.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000203.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000157.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000345.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000158.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000170.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000148.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000353.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000360.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000417.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000324.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000087.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000442.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000346.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000287.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000264.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000277.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000204.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000171.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000149.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000328.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000159.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000361.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000326.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000162.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000088.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000418.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000325.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000164.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000288.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000265.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000443.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000278.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000329.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000172.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000150.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000160.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000327.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000268.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000089.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000419.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000163.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000420.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000165.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000289.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000205.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000266.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000444.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000173.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000279.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000330.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000090.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000207.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000421.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000161.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000331.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000269.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000209.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000448.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000290.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000206.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000445.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000267.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000174.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000091.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000280.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000270.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000446.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000208.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000271.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000179.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000177.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000283.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000210.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000449.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000294.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000291.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000180.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000092.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000447.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000175.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000281.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000298.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000296.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000300.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000284.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000292.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000178.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000293.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000450.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000301.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000295.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000093.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000451.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000299.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000297.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000176.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000282.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000106.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000098.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000102.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000285.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000100.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000099.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000113.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000286.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000117.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000094.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000119.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000101.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000118.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000107.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000115.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000116.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000114.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000109.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000103.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000111.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000112.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000110.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000108.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000120.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000095.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000104.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000105.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000096.png
+TRACE - Processing frame: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY\frame_000097.png
+INFO - Frames processed in 0.40s
+INFO - Saved ASCII frames to data\valorant_1\ascii_frames_236-65.acsv successfully in 7.21s
+INFO - Cleaning up temporary frame directory: C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY
+INFO - Successfully cleaned up C:\Users\MICHAE~1\AppData\Local\Temp\ascii_frames_valorant_1NJ6PKY
+INFO - Prepared 482 ASCII frames for playback.
+DEBUG - Got audio duration 16.085351s for data\valorant_1\valorant_1.wav
+INFO - Using audio duration (16.085351s) for sync. Calculated frame delay: 33.372098ms
+DEBUG - Player initialized with 482 frames. Sync frame delay: 33.372098ms (0.033372s). Total sync duration: 16.085351s
+INFO - Audio loaded from data\valorant_1\valorant_1.wav
+INFO - Starting playback for 482 frames...
+DEBUG - Audio sink playing.
+DEBUG - Playback loop starting at: Instant { t: 1910.8564996s }
+DEBUG - Metrics thread started.
+DEBUG - Lag detected: 36.881806ms. Skipping 1 frame(s). (Current: 102, Next target frame index: 104)
+DEBUG - Lag detected: 40.430522ms. Skipping 1 frame(s). (Current: 110, Next target frame index: 112)
+DEBUG - Lag detected: 33.745134ms. Skipping 1 frame(s). (Current: 116, Next target frame index: 118)
+DEBUG - Lag detected: 42.335246ms. Skipping 1 frame(s). (Current: 122, Next target frame index: 124)
+DEBUG - Lag detected: 34.476254ms. Skipping 1 frame(s). (Current: 126, Next target frame index: 128)
+DEBUG - Lag detected: 36.594664ms. Skipping 1 frame(s). (Current: 131, Next target frame index: 133)
+DEBUG - Lag detected: 42.311974ms. Skipping 1 frame(s). (Current: 136, Next target frame index: 138)
+DEBUG - Lag detected: 44.319882ms. Skipping 1 frame(s). (Current: 140, Next target frame index: 142)
+DEBUG - Lag detected: 34.057588ms. Skipping 1 frame(s). (Current: 143, Next target frame index: 145)
+DEBUG - Lag detected: 34.942496ms. Skipping 1 frame(s). (Current: 147, Next target frame index: 149)
+DEBUG - Lag detected: 44.287306ms. Skipping 1 frame(s). (Current: 152, Next target frame index: 154)
+DEBUG - Lag detected: 34.992812ms. Skipping 1 frame(s). (Current: 155, Next target frame index: 157)
+DEBUG - Lag detected: 34.502722ms. Skipping 1 frame(s). (Current: 160, Next target frame index: 162)
+DEBUG - Lag detected: 34.843334ms. Skipping 1 frame(s). (Current: 166, Next target frame index: 168)
+DEBUG - Lag detected: 33.492646ms. Skipping 1 frame(s). (Current: 172, Next target frame index: 174)
+DEBUG - Lag detected: 33.738658ms. Skipping 1 frame(s). (Current: 178, Next target frame index: 180)
+DEBUG - Lag detected: 35.45687ms. Skipping 1 frame(s). (Current: 184, Next target frame index: 186)
+DEBUG - Lag detected: 41.826782ms. Skipping 1 frame(s). (Current: 190, Next target frame index: 192)
+DEBUG - Lag detected: 42.506092ms. Skipping 1 frame(s). (Current: 195, Next target frame index: 197)
+DEBUG - Lag detected: 40.723302ms. Skipping 1 frame(s). (Current: 200, Next target frame index: 202)
+DEBUG - Lag detected: 37.083412ms. Skipping 1 frame(s). (Current: 205, Next target frame index: 207)
+DEBUG - Lag detected: 36.481822ms. Skipping 1 frame(s). (Current: 210, Next target frame index: 212)
+DEBUG - Lag detected: 36.800932ms. Skipping 1 frame(s). (Current: 215, Next target frame index: 217)
+DEBUG - Lag detected: 34.64835ms. Skipping 1 frame(s). (Current: 224, Next target frame index: 226)
+DEBUG - Lag detected: 39.331264ms. Skipping 1 frame(s). (Current: 231, Next target frame index: 233)
+DEBUG - Lag detected: 35.241574ms. Skipping 1 frame(s). (Current: 236, Next target frame index: 238)
+DEBUG - Lag detected: 43.740184ms. Skipping 1 frame(s). (Current: 241, Next target frame index: 243)
+DEBUG - Lag detected: 42.210392ms. Skipping 1 frame(s). (Current: 245, Next target frame index: 247)
+DEBUG - Lag detected: 36.0137ms. Skipping 1 frame(s). (Current: 249, Next target frame index: 251)
+DEBUG - Lag detected: 38.767508ms. Skipping 1 frame(s). (Current: 253, Next target frame index: 255)
+DEBUG - Lag detected: 40.265616ms. Skipping 1 frame(s). (Current: 257, Next target frame index: 259)
+DEBUG - Lag detected: 43.033524ms. Skipping 1 frame(s). (Current: 261, Next target frame index: 263)
+DEBUG - Lag detected: 37.032634ms. Skipping 1 frame(s). (Current: 266, Next target frame index: 268)
+DEBUG - Lag detected: 40.223044ms. Skipping 1 frame(s). (Current: 271, Next target frame index: 273)
+DEBUG - Lag detected: 35.673952ms. Skipping 1 frame(s). (Current: 275, Next target frame index: 277)
+DEBUG - Lag detected: 36.520262ms. Skipping 1 frame(s). (Current: 280, Next target frame index: 282)
+DEBUG - Lag detected: 36.710972ms. Skipping 1 frame(s). (Current: 285, Next target frame index: 287)
+DEBUG - Lag detected: 38.256282ms. Skipping 1 frame(s). (Current: 290, Next target frame index: 292)
+DEBUG - Lag detected: 34.765692ms. Skipping 1 frame(s). (Current: 295, Next target frame index: 297)
+DEBUG - Lag detected: 33.7988ms. Skipping 1 frame(s). (Current: 299, Next target frame index: 301)
+DEBUG - Lag detected: 43.57311ms. Skipping 1 frame(s). (Current: 304, Next target frame index: 306)
+DEBUG - Lag detected: 42.280018ms. Skipping 1 frame(s). (Current: 308, Next target frame index: 310)
+DEBUG - Lag detected: 40.423024ms. Skipping 1 frame(s). (Current: 311, Next target frame index: 313)
+DEBUG - Lag detected: 43.768032ms. Skipping 1 frame(s). (Current: 315, Next target frame index: 317)
+DEBUG - Lag detected: 39.178438ms. Skipping 1 frame(s). (Current: 318, Next target frame index: 320)
+DEBUG - Lag detected: 37.195944ms. Skipping 1 frame(s). (Current: 321, Next target frame index: 323)
+DEBUG - Lag detected: 38.812452ms. Skipping 1 frame(s). (Current: 325, Next target frame index: 327)
+DEBUG - Lag detected: 40.52416ms. Skipping 1 frame(s). (Current: 329, Next target frame index: 331)
+DEBUG - Lag detected: 40.983368ms. Skipping 1 frame(s). (Current: 333, Next target frame index: 335)
+DEBUG - Lag detected: 39.432276ms. Skipping 1 frame(s). (Current: 337, Next target frame index: 339)
+DEBUG - Lag detected: 36.739186ms. Skipping 1 frame(s). (Current: 342, Next target frame index: 344)
+DEBUG - Lag detected: 33.733394ms. Skipping 1 frame(s). (Current: 346, Next target frame index: 348)
+DEBUG - Lag detected: 35.395004ms. Skipping 1 frame(s). (Current: 351, Next target frame index: 353)
+DEBUG - Lag detected: 44.058314ms. Skipping 1 frame(s). (Current: 356, Next target frame index: 358)
+DEBUG - Lag detected: 43.195622ms. Skipping 1 frame(s). (Current: 360, Next target frame index: 362)
+DEBUG - Lag detected: 40.49193ms. Skipping 1 frame(s). (Current: 364, Next target frame index: 366)
+DEBUG - Lag detected: 43.862638ms. Skipping 1 frame(s). (Current: 368, Next target frame index: 370)
+DEBUG - Lag detected: 37.915444ms. Skipping 1 frame(s). (Current: 371, Next target frame index: 373)
+DEBUG - Lag detected: 33.99605ms. Skipping 1 frame(s). (Current: 374, Next target frame index: 376)
+DEBUG - Lag detected: 34.640358ms. Skipping 1 frame(s). (Current: 378, Next target frame index: 380)
+DEBUG - Lag detected: 33.64557ms. Skipping 1 frame(s). (Current: 384, Next target frame index: 386)
+DEBUG - Lag detected: 39.85028ms. Skipping 1 frame(s). (Current: 389, Next target frame index: 391)
+DEBUG - Lag detected: 37.709488ms. Skipping 1 frame(s). (Current: 393, Next target frame index: 395)
+DEBUG - Lag detected: 41.916498ms. Skipping 1 frame(s). (Current: 398, Next target frame index: 400)
+DEBUG - Lag detected: 40.248906ms. Skipping 1 frame(s). (Current: 402, Next target frame index: 404)
+DEBUG - Lag detected: 38.701914ms. Skipping 1 frame(s). (Current: 406, Next target frame index: 408)
+DEBUG - Lag detected: 38.569522ms. Skipping 1 frame(s). (Current: 410, Next target frame index: 412)
+DEBUG - Lag detected: 34.828834ms. Skipping 1 frame(s). (Current: 416, Next target frame index: 418)
+DEBUG - Lag detected: 37.272046ms. Skipping 1 frame(s). (Current: 422, Next target frame index: 424)
+DEBUG - Lag detected: 39.151354ms. Skipping 1 frame(s). (Current: 426, Next target frame index: 428)
+DEBUG - Lag detected: 41.399362ms. Skipping 1 frame(s). (Current: 430, Next target frame index: 432)
+DEBUG - Lag detected: 48.71377ms. Skipping 1 frame(s). (Current: 434, Next target frame index: 436)
+DEBUG - Lag detected: 39.353876ms. Skipping 1 frame(s). (Current: 437, Next target frame index: 439)
+DEBUG - Lag detected: 33.656582ms. Skipping 1 frame(s). (Current: 440, Next target frame index: 442)
+DEBUG - Lag detected: 41.855694ms. Skipping 1 frame(s). (Current: 446, Next target frame index: 448)
+DEBUG - Lag detected: 36.217104ms. Skipping 1 frame(s). (Current: 451, Next target frame index: 453)
+DEBUG - Lag detected: 33.759414ms. Skipping 1 frame(s). (Current: 456, Next target frame index: 458)
+DEBUG - Lag detected: 40.074426ms. Skipping 1 frame(s). (Current: 462, Next target frame index: 464)
+DEBUG - Lag detected: 39.711836ms. Skipping 1 frame(s). (Current: 467, Next target frame index: 469)
+INFO - Playback finished.
+DEBUG - Metrics stop signal sent.
+DEBUG - Metrics thread finished.
+INFO - Playback finished successfully.
+INFO - Starting ASCII Video Player v0.1.0
+INFO - By: minhcrafters
+INFO - Video file selected: .\videos\Sync-Footage-V1-H264.mp4
+INFO - Terminal size: 236x65
+INFO - Running ffprobe for metadata...
+DEBUG - ffprobe output: ["1920", "1080", "60/1", "7201"]
+INFO - Video Info: 1920x1080 @ 60.00fps, 7201 frames, 120.02s
+INFO - Extracting audio to data\Sync-Footage-V1-H264\Sync-Footage-V1-H264.wav...
+INFO - Audio extracted successfully in 0.15s
+INFO - Found existing cache file: data\Sync-Footage-V1-H264\ascii_frames_236-65.acsv
+INFO - Loading ASCII frames from data\Sync-Footage-V1-H264\ascii_frames_236-65.acsv...
+INFO - Loaded 7201 frames from data\Sync-Footage-V1-H264\ascii_frames_236-65.acsv successfully in 0.77s
+INFO - Successfully loaded 7201 frames from cache.
+INFO - Prepared 7201 ASCII frames for playback.
+DEBUG - Got audio duration 120.021337s for data\Sync-Footage-V1-H264\Sync-Footage-V1-H264.wav
+INFO - Using audio duration (120.021337s) for sync. Calculated frame delay: 16.667315ms
+DEBUG - Player initialized with 7201 frames. Sync frame delay: 16.667315ms (0.016667s). Total sync duration: 120.021337s
+INFO - Audio loaded from data\Sync-Footage-V1-H264\Sync-Footage-V1-H264.wav
+INFO - Starting playback for 7201 frames...
+DEBUG - Audio sink playing.
+DEBUG - Playback loop starting at: Instant { t: 1945.2305612s }
+DEBUG - Metrics thread started.
+INFO - Playback interrupted by user.
+INFO - Playback finished.
+DEBUG - Metrics stop signal sent.
+INFO - Playback finished successfully.
+DEBUG - Metrics thread finished.

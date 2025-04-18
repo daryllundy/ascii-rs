@@ -11,6 +11,16 @@ mod video;
 use crate::error::AppError;
 use crate::terminal::TerminalManager;
 use crate::video::VideoInfo;
+use log::LevelFilter;
+use log4rs::{
+    append::{
+        console::{ConsoleAppender, Target},
+        file::FileAppender,
+    },
+    config::{Appender, Config, Root},
+    encode::pattern::PatternEncoder,
+    filter::threshold::ThresholdFilter,
+};
 use std::io::{self, Write};
 use std::path::PathBuf;
 use std::process::exit;
@@ -18,7 +28,32 @@ use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering};
 
 fn run_app() -> Result<(), AppError> {
-    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init();
+    let level = log::LevelFilter::Info;
+    let file_path = "latest.log";
+
+    let stderr = ConsoleAppender::builder().target(Target::Stdout).build();
+
+    let logfile = FileAppender::builder()
+        .encoder(Box::new(PatternEncoder::new("{l} - {m}\n")))
+        .build(file_path)
+        .unwrap();
+
+    let config = Config::builder()
+        .appender(Appender::builder().build("logfile", Box::new(logfile)))
+        .appender(
+            Appender::builder()
+                .filter(Box::new(ThresholdFilter::new(level)))
+                .build("stderr", Box::new(stderr)),
+        )
+        .build(
+            Root::builder()
+                .appender("logfile")
+                .appender("stderr")
+                .build(LevelFilter::Trace),
+        )
+        .unwrap();
+
+    log4rs::init_config(config).unwrap();
 
     log::info!("Starting ASCII Video Player v{}", env!("CARGO_PKG_VERSION"));
     log::info!("By: {}", config::AUTHOR);
