@@ -179,13 +179,13 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<RleFrame>, AppError> {
 
 pub fn cleanup_frame_directory(frames_dir: &Path) -> Result<(), AppError> {
     if frames_dir.exists() && frames_dir.is_dir() {
-        log::info!(
+        log::debug!(
             "Cleaning up temporary frame directory: {}",
             frames_dir.display()
         );
         fs::remove_dir_all(frames_dir)
             .map_err(|e| AppError::CleanupFrames(frames_dir.to_path_buf(), e))?;
-        log::info!("Successfully cleaned up {}", frames_dir.display());
+        log::debug!("Successfully cleaned up {}", frames_dir.display());
     } else {
         log::debug!(
             "Temporary frame directory not found or not a directory, skipping cleanup: {}",

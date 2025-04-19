@@ -22,14 +22,11 @@ use log4rs::{
     encode::pattern::PatternEncoder,
     filter::threshold::ThresholdFilter,
 };
+use std::io::{self, Write};
 use std::path::PathBuf;
 use std::process::exit;
 use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering};
-use std::{
-    io::{self, Write},
-    path::Path,
-};
 
 fn run_app() -> Result<(), AppError> {
     let level = log::LevelFilter::Info;
@@ -82,17 +79,15 @@ fn run_app() -> Result<(), AppError> {
         ))
     })?;
 
-    log::info!("Starting ASCII Video Player v{}", env!("CARGO_PKG_VERSION"));
-    log::info!("By: {}", config::AUTHOR);
-    log::info!(
-        "Log file: {}",
-        Path::new(file_path).canonicalize()?.display()
-    );
+    log::info!("ascii-rs v{}", env!("CARGO_PKG_VERSION"));
+    log::info!("by: {}", config::AUTHOR);
+    log::info!("Made with sausage rolls");
 
     let terminal_manager = TerminalManager::new();
 
     let global_stop_signal = Arc::new(AtomicBool::new(false));
     let signal_clone = Arc::clone(&global_stop_signal);
+
     ctrlc::set_handler(move || {
         log::debug!("Ctrl+C detected, setting stop signal.");
         signal_clone.store(true, Ordering::Relaxed);
@@ -196,10 +191,10 @@ fn run_app() -> Result<(), AppError> {
         }
     } else {
         if args.regenerate {
-            log::info!("Regenerate flag set, processing frames into RLE format...");
+            log::info!("Regenerate flag set, regenerating frames...");
         } else {
             log::info!(
-                "No valid cache file found at {}, processing frames into RLE format...",
+                "No valid cache file found at {}, regenerating frames...",
                 video_info.ascii_cache_path.display()
             );
         }
@@ -217,7 +212,7 @@ fn run_app() -> Result<(), AppError> {
     }
 
     if cleanup_frames_dir {
-        storage::cleanup_frame_directory(&video_info.frames_dir)?;
+        storage::cleanup_frame_directory(video_info.frames_dir.path())?;
     }
     if global_stop_signal.load(Ordering::Relaxed) {
         return Err(AppError::Interrupted);
