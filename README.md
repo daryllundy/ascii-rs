@@ -30,4 +30,4 @@ And everyone's favourite:
 
 ## Dependencies
 
-Check ![Cargo.toml](./Cargo.toml) for a full list of dependencies.
+Check [Cargo.toml](./Cargo.toml) for a full list of dependencies.
