@@ -138,7 +138,7 @@ pub fn process_frames_parallel(
                 ProgressStyle::default_bar()
                     .template("{spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] {pos}/{len} ({eta})")
                     .unwrap()
-                    .progress_chars("##-")
+                    .progress_chars("=> ")
             )
             .with_message("Processing frames"),
     );
