@@ -1,6 +1,6 @@
 ﻿# ascii-rs
 
-A small Rust command line tool that plays videos as _coloured_ ASCII art directly in your terminal with minimal performance overhead.
+A Rust command line tool that plays videos as _coloured_ ASCII art directly in your terminal with minimal performance overhead.
 
 ## Steps to run
 
