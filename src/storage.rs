@@ -2,7 +2,7 @@ use crate::ascii::RleFrame;
 use crate::config::{ACSV_MAGIC, ACSV_VERSION, ZSTD_COMPRESSION_LEVEL};
 use crate::error::AppError;
 use indicatif::{ProgressBar, ProgressStyle};
-use serde_cbor;
+use bincode;
 use sha2::{Digest, Sha256};
 use std::fs::{self, File};
 use std::io::{Read, Write};
@@ -29,7 +29,7 @@ pub fn save_ascii_frames(file_path: &Path, rle_frames: &[RleFrame]) -> Result<()
     );
     pb_encode.enable_steady_tick(Duration::from_millis(100));
 
-    let serialized_frames_data = serde_cbor::to_vec(&rle_frames)
+    let serialized_frames_data = bincode::serialize(&rle_frames)
         .map_err(|e| AppError::CacheWrite(format!("Frames serialization failed: {}", e)))?;
 
     pb_encode.finish_and_clear();
@@ -199,7 +199,7 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<RleFrame>, AppError> {
     );
     pb_decode.enable_steady_tick(Duration::from_millis(100));
 
-    let rle_frames: Vec<RleFrame> = serde_cbor::from_slice(serialized_frames_data)
+    let rle_frames: Vec<RleFrame> = bincode::deserialize(serialized_frames_data)
         .map_err(|e| AppError::CacheRead(format!("Frames deserialization failed: {}", e)))?;
 
     pb_decode.set_position(frame_count as u64);

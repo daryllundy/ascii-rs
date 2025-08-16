@@ -61,13 +61,13 @@ fn run_app() -> Result<(), AppError> {
 
     let terminal_size = TerminalManager::get_size()?;
     log::info!("Terminal size: {}x{}", terminal_size.0, terminal_size.1);
-    if terminal_size.0 < 100 || terminal_size.1 < 80 {
+    if terminal_size.0 < 30 || terminal_size.1 < 20 {
         log::warn!(
-            "Terminal size ({},{}) is smaller than recommended ({},{}). Playback might be suboptimal.",
+            "Terminal size ({}x{}) is smaller than recommended ({}x{}). Playback might be suboptimal.",
             terminal_size.0,
             terminal_size.1,
-            100,
-            80
+            30,
+            20
         );
     }
 
