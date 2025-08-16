@@ -24,6 +24,6 @@ And everyone's favourite:
 ## Notes
 
 -   Tested on Windows Terminal (Powershell), not sure about other terminals.
--   Larger terminals look better; a minimum of ~100x80 is recommended.
+-   Larger terminals look better; a minimum of 100 columns x 80 rows is recommended.
 -   A cache file is created to speed up subsequent runs of the same video.
 -   Add --regenerate to force rebuilding the ASCII cache for that video.
