@@ -23,7 +23,7 @@ And everyone's favourite:
 
 ## Notes
 
--   Tested on Windows Terminal (Powershell), not sure about other terminals.
 -   Larger terminals look better; a minimum of 100 columns x 80 rows is recommended.
+-   Tested on Windows Terminal (Powershell): 305x109 @ ~30fps (on a 1080p/30fps video) running on a 3.6GHz CPU.
 -   A cache file is created to speed up subsequent runs of the same video.
 -   Add --regenerate to force rebuilding the ASCII cache for that video.
