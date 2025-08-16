@@ -67,7 +67,7 @@ pub fn save_ascii_frames(file_path: &Path, rle_frames: &[RleFrame]) -> Result<()
     let checksum = Sha256::digest(&data_to_hash);
     log::debug!("Computed checksum: {:x?}", checksum.as_slice());
 
-    // don't know why i =need zstd for compressing, there has to be a more efficient way
+    // don't know why i need zstd for compressing, there has to be a more efficient way
     let file = File::create(file_path).map_err(|e| AppError::Io {
         source: e,
         context: Some(file_path.display().to_string()),
