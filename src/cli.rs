@@ -4,10 +4,10 @@ use std::path::PathBuf;
 #[derive(Parser, Debug)]
 #[command(author, version, about = "Plays videos in the terminal using ASCII characters", long_about = None)]
 pub struct CliArgs {
-    #[arg(short, long)]
-    pub video: Option<PathBuf>,
+    #[arg(required = true)]
+    pub video: PathBuf,
 
-    #[arg(short, long, action = clap::ArgAction::SetTrue)]
+    #[arg(action = clap::ArgAction::SetTrue)]
     pub regenerate: bool,
 }
 

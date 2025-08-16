@@ -7,20 +7,35 @@ use thiserror::Error;
 
 #[derive(Error, Debug)]
 pub enum AppError {
-    #[error("I/O error: {0}")]
-    Io(#[from] std::io::Error),
+    #[error("I/O error: {source}")]
+    Io {
+        source: std::io::Error,
+        context: Option<String>,
+    },
 
-    #[error("Image processing error: {0}")]
-    Image(#[from] ImageError),
+    #[error("Image processing error: {source}")]
+    Image {
+        source: ImageError,
+        context: Option<String>,
+    },
 
-    #[error("Audio playback error: {0}")]
-    AudioPlayback(#[from] PlayError),
+    #[error("Audio playback error: {source}")]
+    AudioPlayback {
+        source: PlayError,
+        context: Option<String>,
+    },
 
-    #[error("Audio decoding error: {0}")]
-    AudioDecode(#[from] DecoderError),
+    #[error("Audio decoding error: {source}")]
+    AudioDecode {
+        source: DecoderError,
+        context: Option<String>,
+    },
 
-    #[error("Terminal error: {0}")]
-    Terminal(std::io::Error),
+    #[error("Terminal error: {source}")]
+    Terminal {
+        source: std::io::Error,
+        context: Option<String>,
+    },
 
     #[error("FFmpeg command failed: {0}")]
     FFmpeg(String),
@@ -49,20 +64,36 @@ pub enum AppError {
     #[error("Unsupported ACSV version: {0}")]
     UnsupportedAcsvVersion(u8),
 
-    #[error("Failed to parse integer: {0}")]
-    ParseInt(#[from] ParseIntError),
+    #[error("Failed to parse integer: {source}")]
+    ParseInt {
+        source: ParseIntError,
+        context: Option<String>,
+    },
 
-    #[error("Failed to parse float: {0}")]
-    ParseFloat(#[from] ParseFloatError),
+    #[error("Failed to parse float: {source}")]
+    #[allow(dead_code)]
+    ParseFloat {
+        source: ParseFloatError,
+        context: Option<String>,
+    },
 
-    #[error("Failed to decode UTF-8: {0}")]
-    Utf8(#[from] FromUtf8Error),
+    #[error("Failed to decode UTF-8: {source}")]
+    Utf8 {
+        source: FromUtf8Error,
+        context: Option<String>,
+    },
 
-    #[error("Compression error: {0}")]
-    Compression(std::io::Error),
+    #[error("Compression error: {source}")]
+    Compression {
+        source: std::io::Error,
+        context: Option<String>,
+    },
 
-    #[error("Decompression error: {0}")]
-    Decompression(std::io::Error),
+    #[error("Decompression error: {source}")]
+    Decompression {
+        source: std::io::Error,
+        context: Option<String>,
+    },
 
     #[error("Frame processing failed")]
     FrameProcessing,
@@ -81,8 +112,4 @@ pub enum AppError {
 
     #[error("Could not get system information: {0}")]
     SystemInfo(String),
-}
-
-pub fn map_terminal_error(e: std::io::Error) -> AppError {
-    AppError::Terminal(e)
 }

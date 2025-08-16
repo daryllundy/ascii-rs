@@ -39,17 +39,45 @@ pub fn save_ascii_frames(file_path: &Path, rle_frames: &[RleFrame]) -> Result<()
     );
 
     let mut data_to_hash: Vec<u8> = Vec::new();
-    data_to_hash.write_all(ACSV_MAGIC)?;
-    data_to_hash.write_all(&[ACSV_VERSION])?;
-    data_to_hash.write_all(&(rle_frames.len() as u32).to_le_bytes())?;
-    data_to_hash.write_all(&serialized_frames_data)?;
+    data_to_hash
+        .write_all(ACSV_MAGIC)
+        .map_err(|e| AppError::Io {
+            source: e,
+            context: Some("Writing ACSV_MAGIC".to_string()),
+        })?;
+    data_to_hash
+        .write_all(&[ACSV_VERSION])
+        .map_err(|e| AppError::Io {
+            source: e,
+            context: Some("Writing ACSV_VERSION".to_string()),
+        })?;
+    data_to_hash
+        .write_all(&(rle_frames.len() as u32).to_le_bytes())
+        .map_err(|e| AppError::Io {
+            source: e,
+            context: Some("Writing frame count".to_string()),
+        })?;
+    data_to_hash
+        .write_all(&serialized_frames_data)
+        .map_err(|e| AppError::Io {
+            source: e,
+            context: Some("Writing serialized frames".to_string()),
+        })?;
 
     let checksum = Sha256::digest(&data_to_hash);
     log::debug!("Computed checksum: {:x?}", checksum.as_slice());
 
-    let file = File::create(file_path)?;
+    // don't know why i =need zstd for compressing, there has to be a more efficient way
+    let file = File::create(file_path).map_err(|e| AppError::Io {
+        source: e,
+        context: Some(file_path.display().to_string()),
+    })?;
+
     let mut encoder =
-        zstd::Encoder::new(file, ZSTD_COMPRESSION_LEVEL).map_err(AppError::Compression)?;
+        zstd::Encoder::new(file, ZSTD_COMPRESSION_LEVEL).map_err(|e| AppError::Compression {
+            source: e,
+            context: Some(file_path.display().to_string()),
+        })?;
 
     let pb_write = ProgressBar::new_spinner();
     pb_write.set_style(
@@ -62,9 +90,20 @@ pub fn save_ascii_frames(file_path: &Path, rle_frames: &[RleFrame]) -> Result<()
     );
     pb_write.enable_steady_tick(Duration::from_millis(100));
 
-    encoder.write_all(&data_to_hash)?;
-    encoder.write_all(checksum.as_slice())?;
-    encoder.finish().map_err(AppError::Compression)?;
+    encoder.write_all(&data_to_hash).map_err(|e| AppError::Io {
+        source: e,
+        context: Some("Writing data to encoder".to_string()),
+    })?;
+    encoder
+        .write_all(checksum.as_slice())
+        .map_err(|e| AppError::Io {
+            source: e,
+            context: Some("Writing checksum to encoder".to_string()),
+        })?;
+    encoder.finish().map_err(|e| AppError::Compression {
+        source: e,
+        context: Some(file_path.display().to_string()),
+    })?;
     pb_write.finish_and_clear();
 
     log::info!(
@@ -79,8 +118,14 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<RleFrame>, AppError> {
     log::info!("Loading frames from {}...", file_path.display());
     let start_time = std::time::Instant::now();
 
-    let file = File::open(file_path)?;
-    let mut decoder = zstd::Decoder::new(file).map_err(AppError::Decompression)?;
+    let file = File::open(file_path).map_err(|e| AppError::Io {
+        source: e,
+        context: Some(file_path.display().to_string()),
+    })?;
+    let mut decoder = zstd::Decoder::new(file).map_err(|e| AppError::Decompression {
+        source: e,
+        context: Some(file_path.display().to_string()),
+    })?;
     let mut full_data = Vec::new();
 
     let pb_read = ProgressBar::new_spinner();
@@ -90,7 +135,12 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<RleFrame>, AppError> {
             .unwrap(),
     );
     pb_read.enable_steady_tick(Duration::from_millis(100));
-    decoder.read_to_end(&mut full_data)?;
+    decoder
+        .read_to_end(&mut full_data)
+        .map_err(|e| AppError::Io {
+            source: e,
+            context: Some("Reading decompressed data".to_string()),
+        })?;
     pb_read.finish_and_clear();
 
     let checksum_len = 32;
@@ -114,7 +164,7 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<RleFrame>, AppError> {
         );
         return Err(AppError::AcsvIntegrity);
     }
-    log::debug!("Checksum verified successfully.");
+    log::debug!("Checksum verified successfully");
 
     let mut offset = 0;
     if &data_without_hash[offset..offset + 4] != ACSV_MAGIC {
@@ -124,14 +174,9 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<RleFrame>, AppError> {
     let version = data_without_hash[offset];
     offset += 1;
     if version != ACSV_VERSION {
-        // log::warn!(
-        //     "Loaded cache version {} differs from current version {}",
-        //     version,
-        //     ACSV_VERSION
-        // );
         return Err(AppError::UnsupportedAcsvVersion(version));
     } else {
-        log::debug!("Cache version {} matches current version.", version);
+        log::debug!("Cache version {} matches current version", version);
     }
     let frame_count_bytes: [u8; 4] = data_without_hash[offset..offset + 4]
         .try_into()
@@ -141,7 +186,7 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<RleFrame>, AppError> {
 
     let serialized_frames_data = &data_without_hash[offset..];
     log::debug!(
-        "Attempting to deserialize {} bytes of data for {} frames.",
+        "Attempting to deserialize {} bytes of data for {} frames",
         serialized_frames_data.len(),
         frame_count
     );
@@ -162,7 +207,7 @@ pub fn load_ascii_frames(file_path: &Path) -> Result<Vec<RleFrame>, AppError> {
 
     if rle_frames.len() != frame_count as usize {
         log::warn!(
-            "Header expected {} frames, but deserialized {} frames.",
+            "Header expected {} frames, but deserialized {} frames",
             frame_count,
             rle_frames.len()
         );

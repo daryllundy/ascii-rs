@@ -2,86 +2,33 @@ mod ascii;
 mod cli;
 mod config;
 mod error;
+mod logging;
 mod metrics;
 mod playback;
 mod storage;
 mod terminal;
+mod utils;
 mod video;
 
-use crate::ascii::RleFrame;
-use crate::error::AppError;
-use crate::terminal::TerminalManager;
-use crate::video::VideoInfo;
+use crate::{ascii::RleFrame, error::AppError, terminal::TerminalManager, video::VideoInfo};
 use log::LevelFilter;
-use log4rs::{
-    append::{
-        console::{ConsoleAppender, Target},
-        file::FileAppender,
+use std::{
+    io,
+    process::exit,
+    sync::{
+        Arc,
+        atomic::{AtomicBool, Ordering},
     },
-    config::{Appender, Config, Root},
-    encode::pattern::PatternEncoder,
-    filter::threshold::ThresholdFilter,
 };
-use std::io::{self, Write};
-use std::path::PathBuf;
-use std::process::exit;
-use std::sync::Arc;
-use std::sync::atomic::{AtomicBool, Ordering};
 
 fn run_app() -> Result<(), AppError> {
-    let level = log::LevelFilter::Info;
-    let file_path = "latest.log";
-
-    let stderr = ConsoleAppender::builder()
-        .target(Target::Stderr)
-        .encoder(Box::new(PatternEncoder::new(
-            "[{d(%Y-%m-%d %H:%M:%S)} {h({l})}] {m}\n",
-        )))
-        .build();
-
-    let logfile = FileAppender::builder()
-        .encoder(Box::new(PatternEncoder::new(
-            "[{d(%Y-%m-%d %H:%M:%S)} {l}] {m}\n",
-        )))
-        .append(false)
-        .build(file_path)
-        .map_err(|e| {
-            AppError::Io(io::Error::new(
-                io::ErrorKind::Other,
-                format!("Failed to create log file: {}", e),
-            ))
-        })?;
-
-    let log_config = Config::builder()
-        .appender(Appender::builder().build("logfile", Box::new(logfile)))
-        .appender(
-            Appender::builder()
-                .filter(Box::new(ThresholdFilter::new(level)))
-                .build("stderr", Box::new(stderr)),
-        )
-        .build(
-            Root::builder()
-                .appender("logfile")
-                .appender("stderr")
-                .build(LevelFilter::Debug),
-        )
-        .map_err(|e| {
-            AppError::Io(io::Error::new(
-                io::ErrorKind::Other,
-                format!("Failed to build log config: {}", e),
-            ))
-        })?;
-
-    log4rs::init_config(log_config).map_err(|e| {
-        AppError::Io(io::Error::new(
-            io::ErrorKind::Other,
-            format!("Failed to init log config: {}", e),
-        ))
+    // Setup logging
+    logging::setup_logging(LevelFilter::Info, "latest.log").map_err(|e| AppError::Io {
+        source: e,
+        context: Some("Failed to initialize logging".to_string()),
     })?;
 
-    log::info!("ascii-rs v{}", env!("CARGO_PKG_VERSION"));
-    log::info!("by: {}", config::AUTHOR);
-    log::info!("Made with sausage rolls");
+    log_app_startup!();
 
     let terminal_manager = TerminalManager::new();
 
@@ -94,41 +41,18 @@ fn run_app() -> Result<(), AppError> {
     })
     .map_err(|e| {
         log::error!("Failed to set Ctrl-C handler: {}", e);
-        AppError::Io(io::Error::new(
-            io::ErrorKind::Other,
-            format!("Ctrl-C handler setup failed: {}", e),
-        ))
+        AppError::Io {
+            source: io::Error::new(
+                io::ErrorKind::Other,
+                format!("Ctrl-C handler setup failed: {}", e),
+            ),
+            context: None,
+        }
     })?;
 
     let args = cli::parse_args();
 
-    let video_path = match args.video {
-        Some(path) => path,
-        None => {
-            let mut stdout_handle = io::stdout();
-            let _ = crossterm::execute!(stdout_handle, crossterm::cursor::Show);
-            let _ = crossterm::terminal::disable_raw_mode();
-
-            print!("Enter path to video file: ");
-            stdout_handle.flush()?;
-
-            let mut input_line = String::new();
-            io::stdin().read_line(&mut input_line)?;
-
-            let file_path_str = input_line.trim();
-            if file_path_str.is_empty() {
-                log::error!("No video path provided.");
-                return Err(AppError::VideoNotFound("Video path cannot be empty".into()));
-            }
-            let file_path = PathBuf::from(file_path_str);
-
-            if !file_path.exists() || !file_path.is_file() {
-                log::error!("Video file not found at '{}'", file_path.display());
-                return Err(AppError::VideoNotFound(file_path));
-            }
-            file_path
-        }
-    };
+    let video_path = args.video;
 
     log::info!("Video file selected: {}", video_path.display());
     if global_stop_signal.load(Ordering::Relaxed) {
@@ -253,12 +177,12 @@ fn main() {
 
     match main_result {
         Ok(Ok(_)) => {
-            log::info!("Playback finished successfully.");
+            log::info!("Playback finished successfully");
             exit(0);
         }
         Ok(Err(AppError::Interrupted)) => {
-            eprintln!("\nPlayback interrupted by user.");
-            log::warn!("Playback interrupted by user.");
+            eprintln!("\nPlayback interrupted by user");
+            log::warn!("Playback interrupted by user");
             exit(130);
         }
         Ok(Err(e)) => {
@@ -276,7 +200,7 @@ fn main() {
                 eprintln!("Panic message: {}", s);
                 log::error!("Panic message: {}", s);
             } else {
-                eprintln!("Panic occurred with unknown payload type.");
+                eprintln!("Panic occurred with unknown payload type");
             }
             exit(101);
         }

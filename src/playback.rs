@@ -3,7 +3,7 @@ use crate::config::ASCII_CHARS;
 use crate::error::AppError;
 use crate::metrics::MetricsMonitor;
 use crate::terminal::TerminalManager;
-use rodio::{Decoder, OutputStream, Sink, Source};
+use rodio::{Decoder, OutputStream, PlayError, Sink, Source};
 use std::collections::VecDeque;
 use std::fs::File;
 use std::io::BufReader;
@@ -83,7 +83,21 @@ impl Player {
         }
 
         let num_frames = rle_frames.len();
-        let audio_duration = get_audio_duration(&audio_path).ok();
+        let audio_duration = get_audio_duration(&audio_path)
+            .map_err(|e| {
+                log::error!("Failed to get audio duration: {}", e);
+                AppError::AudioDecode {
+                    source: rodio::decoder::DecoderError::IoError(
+                        std::io::Error::new(
+                            std::io::ErrorKind::Other,
+                            format!("Failed to get audio duration: {}", e),
+                        )
+                        .to_string(),
+                    ),
+                    context: Some(audio_path.display().to_string()),
+                }
+            })
+            .ok();
 
         let (sync_frame_delay, total_audio_duration) = if original_frame_rate > 0.0 {
             let d = Duration::from_secs_f32(1.0 / original_frame_rate);
@@ -116,10 +130,15 @@ impl Player {
             return Ok(());
         }
 
-        let (_stream, handle) = OutputStream::try_default()
-            .map_err(|_| AppError::AudioPlayback(rodio::PlayError::NoDevice))?;
-        let sink = Sink::try_new(&handle)
-            .map_err(|_| AppError::AudioPlayback(rodio::PlayError::NoDevice))?;
+        let (_stream, handle) =
+            OutputStream::try_default().map_err(|e| AppError::AudioPlayback {
+                source: PlayError::NoDevice,
+                context: Some(format!("OutputStream error: {}", e)),
+            })?;
+        let sink = Sink::try_new(&handle).map_err(|e| AppError::AudioPlayback {
+            source: PlayError::NoDevice,
+            context: Some(format!("Sink error: {}", e)),
+        })?;
         if let Ok(file) = File::open(&self.audio_path) {
             if let Ok(src) = Decoder::new(BufReader::new(file)) {
                 sink.append(src);
@@ -129,20 +148,26 @@ impl Player {
         thread::sleep(Duration::from_millis(2000));
         self.terminal_manager.setup()?;
         self.terminal_manager.clear()?;
-        sink.play();
         self.metrics_monitor.start();
+
+        sink.play();
+
         let start = Instant::now();
         let mut idx = 0;
         let mut times = VecDeque::with_capacity(128);
+
         while idx < self.rle_frames.len() && !self.stop_signal.load(Ordering::Relaxed) {
             if TerminalManager::check_for_exit()? {
                 break;
             }
+
             let target = start + self.sync_frame_delay * (idx as u32);
             let now = Instant::now();
+
             if now < target {
                 thread::sleep(target - now);
             }
+
             let frame_str = reconstruct_frame_string(&self.rle_frames[idx]);
             let elapsed = Instant::now().saturating_duration_since(start);
             let fps = times
@@ -150,7 +175,7 @@ impl Player {
                 .filter(|&&t| elapsed - t < Duration::from_secs(1))
                 .count() as f32;
             let status = format!(
-                "Time: {} / {} | Frame: {}/{} | FPS: {:.1} | {}",
+                "[Time: {} / {} | Frame: {} / {} | FPS: {:.1} | {}]",
                 format_duration(elapsed),
                 format_duration(self.total_audio_duration),
                 idx + 1,
@@ -169,13 +194,42 @@ impl Player {
                 status,
                 "=".repeat(padding_right as usize)
             );
+
             self.terminal_manager
                 .draw(&format!("{}{}", frame_str, centered))?;
+
             times.push_back(Instant::now().saturating_duration_since(start));
             if times.len() > 128 {
                 times.pop_front();
             }
-            idx += 1;
+
+            let now = Instant::now();
+
+            if now > target {
+                let lag = now.saturating_duration_since(target);
+                let skip = if self.sync_frame_delay.as_secs_f64() > 0.0 {
+                    lag.as_secs_f64() / self.sync_frame_delay.as_secs_f64()
+                } else {
+                    0.0
+                };
+
+                let skip = skip.floor() as usize;
+
+                if skip > 0 {
+                    log::debug!(
+                        "Lag detected: {:?}. Skipping {} frame(s). (Current: {}, Next target: {})",
+                        lag,
+                        skip,
+                        idx + 1,
+                        idx + (skip + 1) + 1
+                    );
+                    idx += skip + 1;
+                } else {
+                    idx += 1;
+                }
+            } else {
+                idx += 1;
+            }
         }
         self.stop_signal.store(true, Ordering::Relaxed);
         self.metrics_monitor.stop();
@@ -197,7 +251,13 @@ fn format_duration(d: Duration) -> String {
 }
 
 fn get_audio_duration(path: &PathBuf) -> Result<Duration, AppError> {
-    let file = File::open(path)?;
-    let dec = Decoder::new(BufReader::new(file)).map_err(AppError::AudioDecode)?;
+    let file = File::open(path).map_err(|e| AppError::Io {
+        source: e,
+        context: Some(path.display().to_string()),
+    })?;
+    let dec = Decoder::new(BufReader::new(file)).map_err(|e| AppError::AudioDecode {
+        source: e,
+        context: Some(path.display().to_string()),
+    })?;
     Ok(dec.total_duration().unwrap_or(Duration::ZERO))
 }

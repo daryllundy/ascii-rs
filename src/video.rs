@@ -1,5 +1,6 @@
-use crate::error::AppError;
+use crate::{error::AppError, utils::get_file_stem};
 use indicatif::{ProgressBar, ProgressStyle};
+use log::{debug, error, info};
 use std::{
     fs,
     path::{Path, PathBuf},
@@ -30,19 +31,32 @@ impl VideoInfo {
             return Err(AppError::VideoNotFound(video_path.to_path_buf()));
         }
 
-        let base_name = video_path
-            .file_stem()
-            .and_then(|s| s.to_str())
-            .unwrap_or("video")
-            .to_string();
+        let base_name = get_file_stem(video_path);
+        info!("Analyzing video: {}", video_path.display());
 
         let frames_dir = tempfile::Builder::new()
             .prefix(&format!("frames_{}", base_name))
             .tempdir()
-            .map_err(|e| AppError::Io(e))?;
+            .map_err(|e| {
+                error!("Failed to create temp directory for frames: {}", e);
+                AppError::Io {
+                    source: e,
+                    context: Some("tempdir creation".to_string()),
+                }
+            })?;
+
+        debug!("Created temporary directory at: {:?}", frames_dir.path());
 
         let data_dir = PathBuf::from("data").join(&base_name);
-        fs::create_dir_all(&data_dir)?;
+        fs::create_dir_all(&data_dir).map_err(|e| {
+            error!("Failed to create data directory: {}", e);
+            AppError::Io {
+                source: e,
+                context: Some(data_dir.display().to_string()),
+            }
+        })?;
+
+        debug!("Created data directory at: {}", data_dir.display());
 
         let audio_path = data_dir.join("audio.wav");
         let ascii_cache_path = data_dir.join(format!(
@@ -73,16 +87,28 @@ impl VideoInfo {
             ));
         }
 
-        let binding = String::from_utf8(output.stdout)?;
+        let binding = String::from_utf8(output.stdout).map_err(|e| AppError::Utf8 {
+            source: e,
+            context: Some("ffprobe output".to_string()),
+        })?;
         let parts: Vec<&str> = binding.trim().split(',').collect();
         if parts.len() != 4 {
             return Err(AppError::VideoMetadata(video_path.to_path_buf()));
         }
 
-        let width: u32 = parts[0].parse()?;
-        let height: u32 = parts[1].parse()?;
+        let width: u32 = parts[0].parse().map_err(|e| AppError::ParseInt {
+            source: e,
+            context: Some("width parse".to_string()),
+        })?;
+        let height: u32 = parts[1].parse().map_err(|e| AppError::ParseInt {
+            source: e,
+            context: Some("height parse".to_string()),
+        })?;
         let frame_rate = parse_fps(parts[2]);
-        let total_frames: u64 = parts[3].parse()?;
+        let total_frames: u64 = parts[3].parse().map_err(|e| AppError::ParseInt {
+            source: e,
+            context: Some("total_frames parse".to_string()),
+        })?;
         let duration = Duration::from_secs_f32(total_frames as f32 / frame_rate);
 
         Ok(VideoInfo {
@@ -115,19 +141,27 @@ impl VideoInfo {
                 "quiet",
                 self.audio_path.to_str().unwrap(),
             ])
-            .status()?;
+            .status()
+            .map_err(|e| AppError::FFmpeg(format!("Failed to run ffmpeg: {}", e)))?;
         if status.success() {
             Ok(())
         } else {
-            Err(AppError::FFmpeg(format!(
-                "Audio extraction failed with code {:?}",
-                status.code()
-            )))
+            if status.code().unwrap() == -22 {
+                Ok(())
+            } else {
+                Err(AppError::FFmpeg(format!(
+                    "Audio extraction failed with code {:?}",
+                    status.code()
+                )))
+            }
         }
     }
 
     pub fn extract_frames(&self) -> Result<Vec<PathBuf>, AppError> {
-        fs::create_dir_all(self.frames_dir.path())?;
+        fs::create_dir_all(self.frames_dir.path()).map_err(|e| AppError::Io {
+            source: e,
+            context: Some(self.frames_dir.path().display().to_string()),
+        })?;
         let pattern = self.frames_dir.path().join("frame_%06d.png");
 
         let pb = ProgressBar::new(self.total_frames);
@@ -194,7 +228,11 @@ impl VideoInfo {
             )));
         }
 
-        let mut paths: Vec<_> = fs::read_dir(self.frames_dir.path())?
+        let mut paths: Vec<_> = fs::read_dir(self.frames_dir.path())
+            .map_err(|e| AppError::Io {
+                source: e,
+                context: Some(self.frames_dir.path().display().to_string()),
+            })?
             .filter_map(|e| e.ok().map(|e| e.path()))
             .filter(|p| p.extension().map_or(false, |ext| ext == "png"))
             .collect();

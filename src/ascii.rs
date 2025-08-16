@@ -1,12 +1,16 @@
-use crate::config::{ASCII_CHARS, CHAR_ASPECT_RATIO};
-use crate::error::AppError;
-use image::imageops::FilterType;
-use image::{DynamicImage, GenericImageView, ImageBuffer, Rgb};
+use crate::{
+    config::{ASCII_CHARS, CHAR_ASPECT_RATIO},
+    error::AppError,
+};
+use image::{DynamicImage, GenericImageView, ImageBuffer, Rgb, RgbImage, imageops::FilterType};
 use indicatif::{ProgressBar, ProgressStyle};
+use log::{debug, error, info};
 use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
-use std::path::{Path, PathBuf};
-use std::sync::Mutex;
+use std::{
+    path::{Path, PathBuf},
+    sync::Mutex,
+};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct RleRun {
@@ -21,7 +25,9 @@ pub struct RleFrame {
     pub runs: Vec<RleRun>,
 }
 
-fn resize_and_center(img: &DynamicImage, cols: u16, lines: u16) -> ImageBuffer<Rgb<u8>, Vec<u8>> {
+pub fn resize_and_center(img: &DynamicImage, cols: u16, lines: u16) -> RgbImage {
+    debug!("Resizing image to fit terminal: {}x{}", cols, lines);
+
     let term_w = cols as u32;
     let term_h = lines.saturating_sub(1) as u32;
     if term_w == 0 || term_h == 0 {
@@ -53,7 +59,7 @@ fn resize_and_center(img: &DynamicImage, cols: u16, lines: u16) -> ImageBuffer<R
     canvas
 }
 
-fn convert_image_to_ascii(img: &ImageBuffer<Rgb<u8>, Vec<u8>>) -> RleFrame {
+pub fn convert_image_to_ascii(img: &RgbImage) -> RleFrame {
     let (w, h) = img.dimensions();
     if w == 0 || h == 0 {
         return RleFrame {
@@ -105,43 +111,52 @@ fn convert_image_to_ascii(img: &ImageBuffer<Rgb<u8>, Vec<u8>>) -> RleFrame {
     }
 }
 
-fn process_single_frame(path: &Path, size: (u16, u16)) -> Result<RleFrame, AppError> {
-    let img = image::open(path)?;
-    let buf = resize_and_center(&img, size.0, size.1);
-    Ok(convert_image_to_ascii(&buf))
+pub fn process_single_frame(path: &Path, size: (u16, u16)) -> Result<RleFrame, AppError> {
+    debug!("Processing frame: {}", path.display());
+
+    let img = image::open(path).map_err(|e| {
+        error!("Failed to open image at {}: {}", path.display(), e);
+        AppError::Image {
+            source: e,
+            context: Some(path.display().to_string()),
+        }
+    })?;
+
+    let img = resize_and_center(&img, size.0, size.1);
+    Ok(convert_image_to_ascii(&img))
 }
 
 pub fn process_frames_parallel(
     paths: &[PathBuf],
     size: (u16, u16),
 ) -> Result<Vec<RleFrame>, AppError> {
-    if paths.is_empty() {
-        return Ok(Vec::new());
-    }
-    let pb = ProgressBar::new(paths.len() as u64);
-    pb.set_style(
-        ProgressStyle::default_bar()
-            .template("Generating ASCII frames:  [{elapsed_precise}] [{bar:40.cyan/blue}] {pos}/{len} ({eta})")
-            .unwrap()
-            .progress_chars("=> "),
+    info!("Processing {} frames", paths.len());
+
+    let pb = Mutex::new(
+        ProgressBar::new(paths.len() as u64)
+            .with_style(
+                ProgressStyle::default_bar()
+                    .template("{spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] {pos}/{len} ({eta})")
+                    .unwrap()
+                    .progress_chars("##-")
+            )
+            .with_message("Processing frames"),
     );
-    let m = Mutex::new(pb);
-    let mut frames = Vec::with_capacity(paths.len());
-    let results: Vec<_> = paths
+
+    let results: Result<Vec<_>, _> = paths
         .par_iter()
-        .map(|p| {
-            let f = process_single_frame(p, size);
-            if let Ok(ref pb) = m.lock() {
-                pb.inc(1);
+        .map(|path| {
+            let result = process_single_frame(path, size);
+            if let Ok(pb_lock) = pb.lock() {
+                pb_lock.inc(1);
             }
-            f
+            result
         })
         .collect();
-    for res in results {
-        frames.push(res?);
+
+    if let Ok(pb_lock) = pb.lock() {
+        pb_lock.finish_with_message("Frame processing complete");
     }
-    if let Ok(pb) = m.lock() {
-        pb.finish_and_clear();
-    }
-    Ok(frames)
+
+    results
 }
