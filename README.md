@@ -19,7 +19,7 @@ A Rust command line tool that plays videos as _coloured_ ASCII art directly in y
 
 And everyone's favourite:
 
-![bad_apple.png](img\bad_apple.png)
+![bad_apple.png](img/bad_apple.png)
 
 ## Notes
 
