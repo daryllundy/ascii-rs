@@ -22,35 +22,46 @@ jobs:
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
+      - name: Install ALSA development libraries (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev
+
       - name: Build
         run: cargo build --release --locked
 
-      - name: Prepare artifacts for Windows
-        if: matrix.os == 'windows-latest'
-        run: | 
-          mv target/release/ascii-rs.exe target/release/ascii-rs-windows-${{ github.ref }}.exe
+      - name: Prepare release assets
+        id: prep
         shell: bash
+        run: |
+          VERSION=${{ github.ref_name }}
+          if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
+            VERSION="nightly"
+          fi
 
-      - name: Prepare artifacts for Linux
-        if: matrix.os == 'ubuntu-latest'
-        run: | 
-          mv target/release/ascii-rs target/release/ascii-rs-ubuntu-${{ github.ref }}
-        shell: bash
+          ASSET_PATH=""
+          ASSET_NAME=""
+          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            src="target/release/ascii-rs.exe"
+            ASSET_NAME="ascii-rs-windows-${VERSION}.exe"
+            mv "${src}" "${ASSET_NAME}"
+            ASSET_PATH="${ASSET_NAME}"
+          elif [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+            src="target/release/ascii-rs"
+            ASSET_NAME="ascii-rs-linux-${VERSION}"
+            mv "${src}" "${ASSET_NAME}"
+            ASSET_PATH="${ASSET_NAME}"
+          else
+            src="target/release/ascii-rs"
+            ASSET_NAME="ascii-rs-macos-${VERSION}"
+            mv "${src}" "${ASSET_NAME}"
+            ASSET_PATH="${ASSET_NAME}"
+          fi
+          echo "ASSET_PATH=${ASSET_PATH}" >> $GITHUB_OUTPUT
 
-      - name: Prepare artifacts for macOS
-        if: matrix.os == 'macos-latest'
-        run: | 
-          mv target/release/ascii-rs target/release/ascii-rs-macos-${{ github.ref }}
-        shell: bash
-
-      - name: Upload artifacts
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ascii-rs-${{ matrix.os }}
-          path: |
-            target/release/ascii-rs-ubuntu-${{ github.ref }}
-            target/release/ascii-rs-windows-${{ github.ref }}.exe
-            target/release/ascii-rs-macos-${{ github.ref }}
+          path: ${{ steps.prep.outputs.ASSET_PATH }}
 
   create-release:
     name: Create Release
@@ -66,7 +77,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           prerelease: ${{ !startsWith(github.ref, 'refs/tags/v') }}
-          files: |
-            artifacts/ascii-rs-ubuntu-${{ github.ref }}/ascii-rs-ubuntu-${{ github.ref }}
-            artifacts/ascii-rs-windows-${{ github.ref }}.exe/ascii-rs-windows-${{ github.ref }}.exe
-            artifacts/ascii-rs-macos-${{ github.ref }}/ascii-rs-macos-${{ github.ref }}
+          files: artifacts/*/*
