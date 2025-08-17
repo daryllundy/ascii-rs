@@ -7,6 +7,7 @@ use rodio::{Decoder, OutputStream, PlayError, Sink, Source};
 use std::collections::VecDeque;
 use std::fs::File;
 use std::io::BufReader;
+use std::io::Write;
 use std::path::PathBuf;
 use std::sync::{
     Arc,
@@ -31,16 +32,26 @@ fn reconstruct_frame_string(frame: &RleFrame) -> String {
             if current_color.is_some() {
                 buffer.push_str("\x1b[0m");
             }
-            buffer.push_str(&format!(
+
+            let mut w = Vec::with_capacity(20);
+
+            write!(
+                w,
                 "\x1b[38;2;{};{};{}m",
                 run.color[0], run.color[1], run.color[2]
-            ));
+            )
+            .unwrap();
+
+            // I hope this is faster
+            buffer.push_str(unsafe { std::str::from_utf8_unchecked(&w) });
             current_color = Some(run.color);
         }
+
         let ch = ASCII_CHARS
             .get(run.ascii_idx as usize)
             .copied()
             .unwrap_or(' ');
+
         for _ in 0..run.count {
             buffer.push(ch);
             current_col += 1;
