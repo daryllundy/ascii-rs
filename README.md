@@ -16,7 +16,7 @@ And everyone's favourite:
 
 -   CPU with decent performance
 -   FFmpeg (must be on your system PATH)
--   A terminal emulator that supports Unicode and ANSI escape codes
+-   Any modern terminal emulator that supports Unicode and ANSI escape codes
 
 ## Usage
 
@@ -24,7 +24,7 @@ And everyone's favourite:
 -   Run in your terminal:
     ```bash
     ./ascii-rs <path-to-video> # play the video
-
+    ./ascii-rs <path-to-video> --compatibility-mode # for limited 256-color terminals
     ./ascii-rs <path-to-video> --regenerate # force rebuild the ASCII cache
     ```
 

@@ -1,4 +1,5 @@
 use crate::ascii::RleFrame;
+use crate::color::rgb_to_ansi256;
 use crate::config::ASCII_CHARS;
 use crate::error::AppError;
 use crate::metrics::MetricsMonitor;
@@ -16,7 +17,7 @@ use std::sync::{
 use std::thread;
 use std::time::{Duration, Instant};
 
-fn reconstruct_frame_string(frame: &RleFrame) -> String {
+fn reconstruct_frame_string(frame: &RleFrame, compatibility_mode: bool) -> String {
     if frame.width == 0 || frame.runs.is_empty() {
         return String::new();
     }
@@ -26,25 +27,37 @@ fn reconstruct_frame_string(frame: &RleFrame) -> String {
     let mut buffer = String::with_capacity(estimated_capacity.max(frame.width as usize + 1));
     let mut current_col: u32 = 0;
     let mut current_color: Option<[u8; 3]> = None;
+    let mut current_ansi_color: Option<u8> = None;
 
     for run in &frame.runs {
-        if current_color != Some(run.color) {
-            if current_color.is_some() {
-                buffer.push_str("\x1b[0m");
+        if compatibility_mode {
+            let ansi_color = rgb_to_ansi256(run.color[0], run.color[1], run.color[2]);
+            if current_ansi_color != Some(ansi_color) {
+                if current_color.is_some() || current_ansi_color.is_some() {
+                    buffer.push_str("\x1b[0m");
+                }
+                let mut w = Vec::with_capacity(12);
+                write!(w, "\x1b[38;5;{}m", ansi_color).unwrap();
+                buffer.push_str(unsafe { std::str::from_utf8_unchecked(&w) });
+                current_ansi_color = Some(ansi_color);
             }
-
-            let mut w = Vec::with_capacity(20);
-
-            write!(
-                w,
-                "\x1b[38;2;{};{};{}m",
-                run.color[0], run.color[1], run.color[2]
-            )
-            .unwrap();
+        } else {
+            if current_color != Some(run.color) {
+                if current_color.is_some() {
+                    buffer.push_str("\x1b[0m");
+                }
+                let mut w = Vec::with_capacity(20);
+                write!(
+                    w,
+                    "\x1b[38;2;{};{};{}m",
+                    run.color[0], run.color[1], run.color[2]
+                )
+                .unwrap();
 
             // I hope this is faster
-            buffer.push_str(unsafe { std::str::from_utf8_unchecked(&w) });
-            current_color = Some(run.color);
+                buffer.push_str(unsafe { std::str::from_utf8_unchecked(&w) });
+                current_color = Some(run.color);
+            }
         }
 
         let ch = ASCII_CHARS
@@ -79,6 +92,7 @@ pub struct Player {
     terminal_manager: TerminalManager,
     metrics_monitor: MetricsMonitor,
     pub stop_signal: Arc<AtomicBool>,
+    compatibility_mode: bool,
 }
 
 impl Player {
@@ -88,6 +102,7 @@ impl Player {
         original_frame_rate: f32,
         terminal_manager: TerminalManager,
         metrics_monitor: MetricsMonitor,
+        compatibility_mode: bool,
     ) -> Result<Self, AppError> {
         if rle_frames.is_empty() {
             return Err(AppError::FrameProcessing);
@@ -133,6 +148,7 @@ impl Player {
             terminal_manager,
             metrics_monitor,
             stop_signal: Arc::new(AtomicBool::new(false)),
+            compatibility_mode,
         })
     }
 
@@ -179,7 +195,7 @@ impl Player {
                 thread::sleep(target - now);
             }
 
-            let frame_str = reconstruct_frame_string(&self.rle_frames[idx]);
+            let frame_str = reconstruct_frame_string(&self.rle_frames[idx], self.compatibility_mode);
             let elapsed = Instant::now().saturating_duration_since(start);
             let fps = times
                 .iter()
