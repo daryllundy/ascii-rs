@@ -12,21 +12,36 @@ And everyone's favourite:
 
 ![bad_apple.png](img/bad_apple.png)
 
-## Steps to run
+## Pre-requisites
+
+-   CPU with decent performance
+-   FFmpeg (must be on your system PATH)
+-   A terminal emulator that supports Unicode and ANSI escape codes
+
+## Usage
+
+-   Grab the latest release from [releases](https://github.com/minhcrafters/ascii-rs/releases) (Windows-only for now).
+-   Extract the archive and navigate to the root directory.
+-   Run in your terminal:
+    ```bash
+    ./ascii-rs(.exe) <path-to-video> # play the video
+
+    ./ascii-rs(.exe) <path-to-video> --regenerate # force rebuild the ASCII cache
+    ```
+
+## Manual Installation
 
 -   If not already, install Rust [via rustup](https://rustup.rs) and FFmpeg (ffmpeg must be on your system PATH).
--   Put a video file somewhere on your machine (e.g., videos/sample.mp4).
+-   Clone this repository and navigate to the root directory.
 -   From the project root, run in your terminal:
-    -   Debug: `cargo run -- <path-to-video>`
-    -   Release: `cargo run --release -- <path-to-video>`
--   Use Ctrl+C to stop playback at any time.
+    -   Debug: `cargo run -- <path-to-video> # --regenerate`
+    -   Release: `cargo run --release -- <path-to-video> # --regenerate`
 
 ## Notes
 
 -   Larger terminals look better; a minimum of `30 columns x 20 rows` is recommended.
 -   Tested on Windows Terminal (Powershell): Achieved ~30fps with `305 columns x 109 rows` (from a 1080p/30fps video) running on a 3.6GHz CPU.
 -   A cache file is created to speed up subsequent runs of the same video.
--   Add --regenerate to force rebuilding the ASCII cache for that video.
 
 ## Dependencies
 
