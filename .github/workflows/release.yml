@@ -57,10 +57,12 @@ jobs:
             ASSET_PATH="${ASSET_NAME}"
           fi
           echo "ASSET_PATH=${ASSET_PATH}" >> $GITHUB_OUTPUT
+          echo "ASSET_NAME=${ASSET_NAME}" >> $GITHUB_OUTPUT
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
+          name: ${{ steps.prep.outputs.ASSET_NAME }}
           path: ${{ steps.prep.outputs.ASSET_PATH }}
 
   create-release:
