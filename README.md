@@ -20,13 +20,12 @@ And everyone's favourite:
 
 ## Usage
 
--   Grab the latest release from [releases](https://github.com/minhcrafters/ascii-rs/releases) (Windows-only for now).
--   Extract the archive and navigate to the root directory.
+-   Grab the latest release from [releases](https://github.com/minhcrafters/ascii-rs/releases).
 -   Run in your terminal:
     ```bash
-    ./ascii-rs(.exe) <path-to-video> # play the video
+    ./ascii-rs <path-to-video> # play the video
 
-    ./ascii-rs(.exe) <path-to-video> --regenerate # force rebuild the ASCII cache
+    ./ascii-rs <path-to-video> --regenerate # force rebuild the ASCII cache
     ```
 
 ## Manual Installation
