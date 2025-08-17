@@ -7,7 +7,7 @@ pub struct CliArgs {
     #[arg(required = true)]
     pub video: PathBuf,
 
-    #[arg(action = clap::ArgAction::SetTrue)]
+    #[arg(long, action = clap::ArgAction::SetTrue)]
     pub regenerate: bool,
 }
 
