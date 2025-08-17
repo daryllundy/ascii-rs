@@ -7,8 +7,6 @@ videos/
 
 *.log
 
-Cargo.lock
-
 debug/
 target/
 
