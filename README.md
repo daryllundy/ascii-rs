@@ -24,17 +24,17 @@ And everyone's favourite:
 -   Run in your terminal:
     ```bash
     ./ascii-rs <path-to-video> # play the video
-    ./ascii-rs <path-to-video> --compatibility-mode # for limited 256-color terminals
+    ./ascii-rs <path-to-video> --compat # for limited 256-color terminals
     ./ascii-rs <path-to-video> --regenerate # force rebuild the ASCII cache
     ```
 
-## Manual Installation
+## Build from source
 
 -   If not already, install Rust [via rustup](https://rustup.rs) and FFmpeg (ffmpeg must be on your system PATH).
 -   Clone this repository and navigate to the root directory.
 -   From the project root, run in your terminal:
-    -   Debug: `cargo run -- <path-to-video> # --regenerate`
-    -   Release: `cargo run --release -- <path-to-video> # --regenerate`
+    -   Debug: `cargo build`
+    -   Release: `cargo build --release`
 
 ## Notes
 

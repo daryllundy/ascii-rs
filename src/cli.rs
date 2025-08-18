@@ -15,7 +15,7 @@ pub struct CliArgs {
     pub regenerate: bool,
 
     #[arg(long, action = clap::ArgAction::SetTrue)]
-    pub compatibility_mode: bool,
+    pub compat: bool,
 }
 
 pub fn parse_args() -> CliArgs {

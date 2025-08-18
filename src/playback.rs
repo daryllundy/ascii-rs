@@ -54,7 +54,7 @@ fn reconstruct_frame_string(frame: &RleFrame, compatibility_mode: bool) -> Strin
                 )
                 .unwrap();
 
-            // I hope this is faster
+                // I hope this is faster
                 buffer.push_str(unsafe { std::str::from_utf8_unchecked(&w) });
                 current_color = Some(run.color);
             }
@@ -75,9 +75,10 @@ fn reconstruct_frame_string(frame: &RleFrame, compatibility_mode: bool) -> Strin
         }
     }
 
-    if current_color.is_some() {
+    if current_color.is_some() || current_ansi_color.is_some() {
         buffer.push_str("\x1b[0m");
     }
+    
     if buffer.ends_with('\n') {
         buffer.pop();
     }
@@ -195,7 +196,8 @@ impl Player {
                 thread::sleep(target - now);
             }
 
-            let frame_str = reconstruct_frame_string(&self.rle_frames[idx], self.compatibility_mode);
+            let frame_str =
+                reconstruct_frame_string(&self.rle_frames[idx], self.compatibility_mode);
             let elapsed = Instant::now().saturating_duration_since(start);
             let fps = times
                 .iter()

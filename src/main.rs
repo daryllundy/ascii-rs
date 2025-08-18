@@ -158,7 +158,7 @@ fn run_app() -> Result<(), AppError> {
         video_info.frame_rate,
         terminal_manager,
         metrics_monitor,
-        args.compatibility_mode,
+        args.compat,
     )?;
 
     player.stop_signal = global_stop_signal;
