@@ -24,7 +24,7 @@ And everyone's favourite:
 -   Run in your terminal:
     ```bash
     ./ascii-rs <path-to-video> # play the video
-    ./ascii-rs <path-to-video> --compat # for limited 256-color terminals
+    ./ascii-rs <path-to-video> --compat # for terminals with limited color support
     ./ascii-rs <path-to-video> --regenerate # force rebuild the ASCII cache
     ```
 
