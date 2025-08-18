@@ -20,7 +20,8 @@ And everyone's favourite:
 
 ## Usage
 
--   Grab the latest release from [releases](https://github.com/minhcrafters/ascii-rs/releases).
+-   Download the latest stable release from [releases](https://github.com/minhcrafters/ascii-rs/releases).
+-   Alternatively, get the nightly build from [GitHub Actions](https://github.com/minhcrafters/ascii-rs/actions).
 -   Run in your terminal:
     ```bash
     ./ascii-rs <path-to-video> # play the video
@@ -30,7 +31,7 @@ And everyone's favourite:
 
 ## Build from source
 
--   If not already, install Rust [via rustup](https://rustup.rs) and FFmpeg (ffmpeg must be on your system PATH).
+-   If not already, install Rust [via rustup](https://rustup.rs) and FFmpeg (must be on your system PATH).
 -   Clone this repository and navigate to the root directory.
 -   From the project root, run in your terminal:
     -   Debug: `cargo build`

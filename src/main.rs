@@ -91,6 +91,7 @@ fn run_app() -> Result<(), AppError> {
             "Found existing cache file: {}",
             video_info.ascii_cache_path.display()
         );
+        
         match storage::load_ascii_frames(&video_info.ascii_cache_path) {
             Ok(frames) => {
                 log::info!("Successfully loaded {} frames from cache.", frames.len());
@@ -148,7 +149,7 @@ fn run_app() -> Result<(), AppError> {
         return Err(AppError::FrameProcessing);
     }
 
-    log::info!("Prepared {} frames for playback.", rle_frames.len());
+    log::info!("Prepared {} frames for playback", rle_frames.len());
 
     let metrics_monitor = metrics::MetricsMonitor::new()?;
 
