@@ -16,5 +16,6 @@ target/
 **/*.rs.bk
 
 # MSVC Windows builds of rustc generate these, which store debugging information
-*.pdb.DS_Store
+*.pdb
+.DS_Store
 .history/

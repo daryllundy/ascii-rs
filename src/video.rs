@@ -127,7 +127,43 @@ impl VideoInfo {
     }
 
     pub fn extract_audio(&self) -> Result<(), AppError> {
-        let status = Command::new("ffmpeg")
+        // First, check if the video has an audio stream
+        let probe_output = Command::new("ffprobe")
+            .args(&[
+                "-v",
+                "error",
+                "-select_streams",
+                "a:0",
+                "-show_entries",
+                "stream=codec_type",
+                "-of",
+                "csv=p=0",
+                self.video_path.to_str().unwrap(),
+            ])
+            .output()
+            .map_err(|e| AppError::FFprobe(format!("Failed to run ffprobe: {}", e)))?;
+
+        if !probe_output.status.success() {
+            let stderr = String::from_utf8_lossy(&probe_output.stderr);
+            log::warn!("Failed to probe audio stream: {}", stderr);
+            // Assume no audio stream if ffprobe fails
+            return Ok(());
+        }
+
+        let audio_stream_output = String::from_utf8(probe_output.stdout)
+            .map_err(|e| AppError::Utf8 {
+                source: e,
+                context: Some("ffprobe output".to_string()),
+            })?;
+
+        // If no audio stream is found, ffprobe will return empty output
+        if audio_stream_output.trim().is_empty() {
+            log::info!("No audio stream found in video. Skipping audio extraction.");
+            return Ok(());
+        }
+
+        // If we get here, the video has an audio stream, so try to extract it
+        let output = Command::new("ffmpeg")
             .args(&[
                 "-y",
                 "-i",
@@ -138,20 +174,30 @@ impl VideoInfo {
                 "-ac",
                 "2",
                 "-loglevel",
-                "quiet",
+                "error",
                 self.audio_path.to_str().unwrap(),
             ])
-            .status()
+            .output()
             .map_err(|e| AppError::FFmpeg(format!("Failed to run ffmpeg: {}", e)))?;
-        if status.success() {
+
+        if output.status.success() {
             Ok(())
         } else {
-            if status.code().unwrap() == -22 {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            let stdout = String::from_utf8_lossy(&output.stdout);
+
+            log::error!("FFmpeg stderr: {}", stderr);
+            log::error!("FFmpeg stdout: {}", stdout);
+
+            // Check for specific error codes that we want to treat as non-fatal
+            if output.status.code().unwrap() == -22 || stderr.contains("Output file does not contain any stream") {
+                log::warn!("Audio extraction failed but continuing with video-only playback.");
                 Ok(())
             } else {
                 Err(AppError::FFmpeg(format!(
-                    "Audio extraction failed with code {:?}",
-                    status.code()
+                    "Audio extraction failed with code {:?}. Stderr: {}",
+                    output.status.code(),
+                    stderr
                 )))
             }
         }
