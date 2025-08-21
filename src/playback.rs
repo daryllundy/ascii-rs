@@ -94,6 +94,7 @@ pub struct Player {
     metrics_monitor: MetricsMonitor,
     pub stop_signal: Arc<AtomicBool>,
     compatibility_mode: bool,
+    loop_video: bool,
 }
 
 impl Player {
@@ -104,6 +105,7 @@ impl Player {
         terminal_manager: TerminalManager,
         metrics_monitor: MetricsMonitor,
         compatibility_mode: bool,
+        loop_video: bool,
     ) -> Result<Self, AppError> {
         if rle_frames.is_empty() {
             return Err(AppError::FrameProcessing);
@@ -155,6 +157,7 @@ impl Player {
             metrics_monitor,
             stop_signal: Arc::new(AtomicBool::new(false)),
             compatibility_mode,
+            loop_video,
         })
     }
 
@@ -189,7 +192,14 @@ impl Player {
         let mut idx = 0;
         let mut times = VecDeque::with_capacity(128);
 
-        while idx < self.rle_frames.len() && !self.stop_signal.load(Ordering::Relaxed) {
+        while !self.stop_signal.load(Ordering::Relaxed) {
+            if self.loop_video {
+                idx = idx % self.rle_frames.len();
+            } else {
+                if idx >= self.rle_frames.len() {
+                    break;
+                }
+            }
             if TerminalManager::check_for_exit()? {
                 break;
             }

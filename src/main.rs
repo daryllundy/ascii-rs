@@ -91,7 +91,7 @@ fn run_app() -> Result<(), AppError> {
             "Found existing cache file: {}",
             video_info.ascii_cache_path.display()
         );
-        
+
         match storage::load_ascii_frames(&video_info.ascii_cache_path) {
             Ok(frames) => {
                 log::info!("Successfully loaded {} frames from cache.", frames.len());
@@ -160,6 +160,7 @@ fn run_app() -> Result<(), AppError> {
         terminal_manager,
         metrics_monitor,
         args.compat,
+        args.loop_video,
     )?;
 
     player.stop_signal = global_stop_signal;
