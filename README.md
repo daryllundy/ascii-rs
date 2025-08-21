@@ -27,6 +27,7 @@ And everyone's favourite:
     ./ascii-rs <path-to-video> # play the video
     ./ascii-rs <path-to-video> --compat # for terminals with limited color support
     ./ascii-rs <path-to-video> --regenerate # force rebuild the ASCII cache
+    ./ascii-rs <path-to-video> --loop-video # loop the video playback
     ```
 
 ## Build from source
