@@ -16,6 +16,9 @@ pub struct CliArgs {
 
     #[arg(long, action = clap::ArgAction::SetTrue)]
     pub compat: bool,
+
+    #[arg(long, action = clap::ArgAction::SetTrue)]
+    pub loop_video: bool,
 }
 
 pub fn parse_args() -> CliArgs {

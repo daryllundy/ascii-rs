@@ -78,7 +78,7 @@ fn reconstruct_frame_string(frame: &RleFrame, compatibility_mode: bool) -> Strin
     if current_color.is_some() || current_ansi_color.is_some() {
         buffer.push_str("\x1b[0m");
     }
-    
+
     if buffer.ends_with('\n') {
         buffer.pop();
     }
@@ -94,6 +94,7 @@ pub struct Player {
     metrics_monitor: MetricsMonitor,
     pub stop_signal: Arc<AtomicBool>,
     compatibility_mode: bool,
+    loop_video: bool,
 }
 
 impl Player {
@@ -104,27 +105,33 @@ impl Player {
         terminal_manager: TerminalManager,
         metrics_monitor: MetricsMonitor,
         compatibility_mode: bool,
+        loop_video: bool,
     ) -> Result<Self, AppError> {
         if rle_frames.is_empty() {
             return Err(AppError::FrameProcessing);
         }
 
         let num_frames = rle_frames.len();
-        let audio_duration = get_audio_duration(&audio_path)
-            .map_err(|e| {
-                log::error!("Failed to get audio duration: {}", e);
-                AppError::AudioDecode {
-                    source: rodio::decoder::DecoderError::IoError(
-                        std::io::Error::new(
-                            std::io::ErrorKind::Other,
-                            format!("Failed to get audio duration: {}", e),
-                        )
-                        .to_string(),
-                    ),
-                    context: Some(audio_path.display().to_string()),
-                }
-            })
-            .ok();
+        let audio_duration = if audio_path.exists() {
+            get_audio_duration(&audio_path)
+                .map_err(|e| {
+                    log::error!("Failed to get audio duration for {}: {}", audio_path.display(), e);
+                    AppError::AudioDecode {
+                        source: rodio::decoder::DecoderError::IoError(
+                            std::io::Error::new(
+                                std::io::ErrorKind::Other,
+                                format!("Failed to get audio duration: {}", e),
+                            )
+                            .to_string(),
+                        ),
+                        context: Some(audio_path.display().to_string()),
+                    }
+                })
+                .ok()
+        } else {
+            log::warn!("Audio file not found at {}. Proceeding without audio duration.", audio_path.display());
+            None
+        };
 
         let (sync_frame_delay, total_audio_duration) = if original_frame_rate > 0.0 {
             let d = Duration::from_secs_f32(1.0 / original_frame_rate);
@@ -150,6 +157,7 @@ impl Player {
             metrics_monitor,
             stop_signal: Arc::new(AtomicBool::new(false)),
             compatibility_mode,
+            loop_video,
         })
     }
 
@@ -184,7 +192,14 @@ impl Player {
         let mut idx = 0;
         let mut times = VecDeque::with_capacity(128);
 
-        while idx < self.rle_frames.len() && !self.stop_signal.load(Ordering::Relaxed) {
+        while !self.stop_signal.load(Ordering::Relaxed) {
+            if self.loop_video {
+                idx = idx % self.rle_frames.len();
+            } else {
+                if idx >= self.rle_frames.len() {
+                    break;
+                }
+            }
             if TerminalManager::check_for_exit()? {
                 break;
             }
