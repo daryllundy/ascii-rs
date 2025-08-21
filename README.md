@@ -20,8 +20,8 @@ And everyone's favourite:
 
 ## Usage
 
--   Download the latest stable release from [releases](https://github.com/minhcrafters/ascii-rs/releases).
--   Alternatively, get the nightly build from [GitHub Actions](https://github.com/minhcrafters/ascii-rs/actions).
+-   Download the latest stable release from [releases](https://github.com/daryllundy/ascii-rs/releases).
+-   Alternatively, get the nightly build from [GitHub Actions](https://github.com/daryllundy/ascii-rs/actions).
 -   Run in your terminal:
     ```bash
     ./ascii-rs <path-to-video> # play the video
